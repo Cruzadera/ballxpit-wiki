@@ -1,20 +1,15 @@
-import { useEffect, useMemo, useState } from "react";
+import { useMemo } from "react";
 import { Link } from "react-router-dom";
-import { useTranslations } from "../i18n/translations";
-import { DEFAULT_ICON, getBallIcon } from "../utils/getBallIcon";
+import { useTranslation } from "react-i18next";
+import { getIcon } from "../utils/getBallIcon";
 
 export type BallLike = {
   id: number;
   name?: string | null;
   nombre?: string | null;
-  type?: string | null;
-  tipo?: string | null;
-  level?: number | null;
-  nivel?: number | null;
-  imageUrl?: string | null;
-  imagen?: string | null;
   descripcion?: string | null;
   description?: string | null;
+  fusionResults?: { id: number }[] | null;
 };
 
 interface BallCardProps {
@@ -22,38 +17,27 @@ interface BallCardProps {
 }
 
 export default function BallCard({ ball }: BallCardProps) {
-  const texts = useTranslations();
+  const { t } = useTranslation();
   const displayName = useMemo(
-    () => ball.nombre || ball.name || "Bola misteriosa",
-    [ball.nombre, ball.name]
+    () => ball.nombre || ball.name || t("unknownBallName"),
+    [ball.nombre, ball.name, t]
   );
 
   const description =
-    ball.descripcion || ball.description || texts.cardFallbackDescription;
+    ball.descripcion || ball.description || t("cardFallbackDescription");
 
-  const [imageSrc, setImageSrc] = useState<string>(() => getBallIcon(ball));
-
-  useEffect(() => {
-    setImageSrc(getBallIcon(ball));
-  }, [ball.nombre, ball.name, ball.tipo, ball.type, ball.imageUrl, ball.imagen]);
-
-  const handleImageError = () => {
-    if (imageSrc !== DEFAULT_ICON) {
-      setImageSrc(DEFAULT_ICON);
-    }
-  };
+  const iconSrc = getIcon(ball.nombre || ball.name || "");
 
   return (
     <Link
       to={`/ball/${ball.id}`}
-      className="block rounded-2xl shadow-md bg-white/70 dark:bg-gray-800/70 p-4 hover:shadow-xl transition border border-white/50 dark:border-gray-700/40 backdrop-blur"
+      className="block rounded-2xl shadow p-4 bg-white/90 dark:bg-gray-800/80 hover:scale-105 transition-transform duration-200 border border-gray-200/60 dark:border-gray-700/60"
     >
       <div className="flex flex-col items-center text-center">
         <img
-          src={imageSrc}
+          src={iconSrc}
           alt={displayName}
-          onError={handleImageError}
-          className="w-20 h-20 object-contain mb-3"
+          className="w-20 h-20 object-contain mx-auto mb-3"
         />
         <h3 className="font-semibold text-center text-gray-800 dark:text-gray-100 text-lg">
           {displayName}
@@ -62,7 +46,7 @@ export default function BallCard({ ball }: BallCardProps) {
           {description}
         </p>
         <span className="mt-4 text-xs font-medium uppercase tracking-wide text-indigo-600 dark:text-indigo-300">
-          {texts.cardCallToAction}
+          {t("cardCallToAction")}
         </span>
       </div>
     </Link>

@@ -1,0 +1,19 @@
+{
+  "headerTitle": "⚪ Ball x Pit Wiki",
+  "heroTitle": "Explora las bolas",
+  "heroSubtitle": "Busca por nombre o descubre sus fusiones y evoluciones.",
+  "searchPlaceholder": "Buscar por nombre…",
+  "loadingBalls": "Cargando bolas…",
+  "noResults": "No se encontraron bolas que coincidan con la búsqueda.",
+  "cardFallbackDescription": "Haz clic para ver más detalles.",
+  "cardCallToAction": "Haz clic para ver más detalles.",
+  "darkModeLight": "☀️ Modo claro",
+  "darkModeDark": "🌙 Modo oscuro",
+  "detailBack": "← Volver a la lista",
+  "detailLoading": "Cargando…",
+  "detailNotFound": "Bola no encontrada",
+  "detailDescriptionFallback": "No hay descripción disponible.",
+  "detailFusionsTitle": "🔗 Fusiones relacionadas",
+  "detailFusionsEmpty": "No hay fusiones registradas para esta bola.",
+  "unknownBallName": "Bola misteriosa"
+}
