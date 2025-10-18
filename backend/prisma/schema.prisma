@@ -25,6 +25,12 @@ model Ball {
 model FusionRecipe {
   id            Int           @id @default(autoincrement())
   requiredLevel Int
+  origenA       String?
+  origenB       String?
+  resultado     String?
+  descripcion   String?
+  emoji         String?
+  tipo          String?
   resultId      Int
   result        Ball          @relation("FusionResult", fields: [resultId], references: [id])
   inputs        FusionInput[]

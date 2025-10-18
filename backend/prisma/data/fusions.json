@@ -1,12 +1,522 @@
 [
-  { "comb": ["Bleed", "Brood Mother"], "result": "Leech", "resultado": "Sanguijuela" },
-  { "comb": ["Bleed", "Charm"], "result": "Berserk", "resultado": "Frenesí" },
-  { "comb": ["Bleed", "Dark"], "result": "Sacrifice", "resultado": "Sacrificio" },
-  { "comb": ["Bleed", "Iron"], "result": "Hemorrhage", "resultado": "Hemorragia" },
-  { "comb": ["Bleed", "Vampire"], "result": "Vampire Lord", "resultado": "Señor Vampiro" },
-  { "comb": ["Burn", "Iron"], "result": "Bomb", "resultado": "Bomba" },
-  { "comb": ["Dark", "Sun"], "result": "Black Hole", "resultado": "Agujero Negro" },
-  { "comb": ["Bomb", "Poison"], "result": "Nuclear Bomb", "resultado": "Bomba Nuclear" },
-  { "comb": ["Incubus", "Succubus"], "result": "Satan", "resultado": "Satán" },
-  { "comb": ["Vampire Lord", "Mosquito King", "Spider Queen"], "result": "Nosferatu", "resultado": "Nosferatu" }
+  {
+    "comb": ["Bleed", "Brood Mother"],
+    "result": "Leech",
+    "resultado": "Sanguijuela",
+    "origenA": "Sangrar",
+    "origenB": "Madre Cría",
+    "descripcion": "Fusión que crea una sanguijuela que absorbe vida.",
+    "emoji": "🩸",
+    "tipo": "fusión"
+  },
+  {
+    "comb": ["Bleed", "Charm"],
+    "result": "Berserk",
+    "resultado": "Frenesí",
+    "origenA": "Sangrar",
+    "origenB": "Encanto",
+    "descripcion": "Incrementa el ataque al costo de perder control.",
+    "emoji": "⚔️",
+    "tipo": "fusión"
+  },
+  {
+    "comb": ["Bleed", "Dark"],
+    "result": "Sacrifice",
+    "resultado": "Sacrificio",
+    "origenA": "Sangrar",
+    "origenB": "Oscuridad",
+    "descripcion": "Convierte tu vida en poder destructivo.",
+    "emoji": "☠️",
+    "tipo": "fusión"
+  },
+  {
+    "comb": ["Bleed", "Iron"],
+    "result": "Hemorrhage",
+    "resultado": "Hemorragia",
+    "origenA": "Sangrar",
+    "origenB": "Hierro",
+    "descripcion": "Daño continuo con cada impacto.",
+    "emoji": "💉",
+    "tipo": "fusión"
+  },
+  {
+    "comb": ["Bleed", "Vampire"],
+    "result": "Vampire Lord",
+    "resultado": "Señor Vampiro",
+    "origenA": "Sangrar",
+    "origenB": "Vampiro",
+    "descripcion": "Versión superior que roba vida de forma constante.",
+    "emoji": "🧛",
+    "tipo": "fusión"
+  },
+  {
+    "comb": ["Brood Mother", "Cell"],
+    "result": "Larva",
+    "resultado": "Larva",
+    "origenA": "Madre Cría",
+    "origenB": "Célula",
+    "descripcion": "Crea una nueva forma biológica primigenia.",
+    "emoji": "🪲",
+    "tipo": "fusión"
+  },
+  {
+    "comb": ["Brood Mother", "Egg Sack"],
+    "result": "Spider Queen",
+    "resultado": "Reina Araña",
+    "origenA": "Madre Cría",
+    "origenB": "Saco de Huevos",
+    "descripcion": "Invoca enjambres arácnidos.",
+    "emoji": "👑",
+    "tipo": "fusión"
+  },
+  {
+    "comb": ["Brood Mother", "Vampire"],
+    "result": "Mosquito King",
+    "resultado": "Rey Mosquito",
+    "origenA": "Madre Cría",
+    "origenB": "Vampiro",
+    "descripcion": "Otorga drenaje de vida aéreo.",
+    "emoji": "🦟",
+    "tipo": "fusión"
+  },
+  {
+    "comb": ["Burn", "Charm"],
+    "result": "Berserk",
+    "resultado": "Frenesí",
+    "origenA": "Fuego",
+    "origenB": "Encanto",
+    "descripcion": "Fusión ardiente que provoca frenesí de combate.",
+    "emoji": "⚔️",
+    "tipo": "fusión"
+  },
+  {
+    "comb": ["Burn", "Earthquake"],
+    "result": "Magma",
+    "resultado": "Magma",
+    "origenA": "Fuego",
+    "origenB": "Terremoto",
+    "descripcion": "Genera un núcleo ardiente que quema el suelo.",
+    "emoji": "🌋",
+    "tipo": "fusión"
+  },
+  {
+    "comb": ["Burn", "Freeze"],
+    "result": "Frozen Flame",
+    "resultado": "Llama Congelada",
+    "origenA": "Fuego",
+    "origenB": "Hielo",
+    "descripcion": "Une fuego y hielo en equilibrio mortal.",
+    "emoji": "🔥❄️",
+    "tipo": "fusión"
+  },
+  {
+    "comb": ["Burn", "Iron"],
+    "result": "Bomb",
+    "resultado": "Bomba",
+    "origenA": "Fuego",
+    "origenB": "Hierro",
+    "descripcion": "Explota causando daño masivo.",
+    "emoji": "💣",
+    "tipo": "fusión"
+  },
+  {
+    "comb": ["Burn", "Light"],
+    "result": "Sun",
+    "resultado": "Sol",
+    "origenA": "Fuego",
+    "origenB": "Luz",
+    "descripcion": "Emite calor y curación constante.",
+    "emoji": "☀️",
+    "tipo": "fusión"
+  },
+  {
+    "comb": ["Burn", "Wind"],
+    "result": "Inferno",
+    "resultado": "Infierno",
+    "origenA": "Fuego",
+    "origenB": "Viento",
+    "descripcion": "Llama viva que arrasa con todo.",
+    "emoji": "🔥",
+    "tipo": "fusión"
+  },
+  {
+    "comb": ["Cell", "Earthquake"],
+    "result": "Overgrowth",
+    "resultado": "Sobrecrecimiento",
+    "origenA": "Célula",
+    "origenB": "Terremoto",
+    "descripcion": "Multiplica la materia viva.",
+    "emoji": "🌱",
+    "tipo": "fusión"
+  },
+  {
+    "comb": ["Cell", "Laser"],
+    "result": "Radioactive Beam",
+    "resultado": "Rayo Radiactivo",
+    "origenA": "Célula",
+    "origenB": "Láser",
+    "descripcion": "Fusión de energía pura y biología.",
+    "emoji": "☢️",
+    "tipo": "fusión"
+  },
+  {
+    "comb": ["Cell", "Poison"],
+    "result": "Virus",
+    "resultado": "Virus",
+    "origenA": "Célula",
+    "origenB": "Veneno",
+    "descripcion": "Crea un patógeno de rápida propagación.",
+    "emoji": "🧫",
+    "tipo": "fusión"
+  },
+  {
+    "comb": ["Charm", "Dark"],
+    "result": "Incubus",
+    "resultado": "Íncubo",
+    "origenA": "Encanto",
+    "origenB": "Oscuridad",
+    "descripcion": "Entidad de deseo oscuro.",
+    "emoji": "😈",
+    "tipo": "fusión"
+  },
+  {
+    "comb": ["Charm", "Light"],
+    "result": "Enamored",
+    "resultado": "Enamorado",
+    "origenA": "Encanto",
+    "origenB": "Luz",
+    "descripcion": "Irradia atracción y poder.",
+    "emoji": "💘",
+    "tipo": "fusión"
+  },
+  {
+    "comb": ["Charm", "Lightning"],
+    "result": "Enamored",
+    "resultado": "Enamorado",
+    "origenA": "Encanto",
+    "origenB": "Rayo",
+    "descripcion": "Variante energética del encantamiento.",
+    "emoji": "⚡",
+    "tipo": "fusión"
+  },
+  {
+    "comb": ["Charm", "Vampire"],
+    "result": "Succubus",
+    "resultado": "Súcubo",
+    "origenA": "Encanto",
+    "origenB": "Vampiro",
+    "descripcion": "Encanta y drena a sus víctimas.",
+    "emoji": "💋",
+    "tipo": "fusión"
+  },
+  {
+    "comb": ["Dark", "Ghost"],
+    "result": "Phantom",
+    "resultado": "Fantasma",
+    "origenA": "Oscuridad",
+    "origenB": "Fantasma",
+    "descripcion": "Manifestación espiritual completa.",
+    "emoji": "👻",
+    "tipo": "fusión"
+  },
+  {
+    "comb": ["Dark", "Iron"],
+    "result": "Assassin",
+    "resultado": "Asesino",
+    "origenA": "Oscuridad",
+    "origenB": "Hierro",
+    "descripcion": "Cazador de sombras y precisión.",
+    "emoji": "🗡️",
+    "tipo": "fusión"
+  },
+  {
+    "comb": ["Dark", "Light"],
+    "result": "Flash",
+    "resultado": "Destello",
+    "origenA": "Oscuridad",
+    "origenB": "Luz",
+    "descripcion": "Breve unión entre luz y oscuridad.",
+    "emoji": "✨",
+    "tipo": "fusión"
+  },
+  {
+    "comb": ["Dark", "Vampire"],
+    "result": "Vampire Lord",
+    "resultado": "Señor Vampiro",
+    "origenA": "Oscuridad",
+    "origenB": "Vampiro",
+    "descripcion": "Evolución oscura definitiva.",
+    "emoji": "🧛",
+    "tipo": "fusión"
+  },
+  {
+    "comb": ["Dark", "Wind"],
+    "result": "Noxious",
+    "resultado": "Nocivo",
+    "origenA": "Oscuridad",
+    "origenB": "Viento",
+    "descripcion": "Expulsa toxinas invisibles.",
+    "emoji": "🌫️",
+    "tipo": "fusión"
+  },
+  {
+    "comb": ["Earthquake", "Freeze"],
+    "result": "Glacier",
+    "resultado": "Glaciar",
+    "origenA": "Terremoto",
+    "origenB": "Hielo",
+    "descripcion": "Tierras heladas que aprisionan enemigos.",
+    "emoji": "🧊",
+    "tipo": "fusión"
+  },
+  {
+    "comb": ["Earthquake", "Poison"],
+    "result": "Swamp",
+    "resultado": "Pantano",
+    "origenA": "Terremoto",
+    "origenB": "Veneno",
+    "descripcion": "Campo venenoso persistente.",
+    "emoji": "🧪",
+    "tipo": "fusión"
+  },
+  {
+    "comb": ["Earthquake", "Wind"],
+    "result": "Sandstorm",
+    "resultado": "Tormenta de Arena",
+    "origenA": "Terremoto",
+    "origenB": "Viento",
+    "descripcion": "Reduce la visibilidad y movilidad enemiga.",
+    "emoji": "🌪️",
+    "tipo": "fusión"
+  },
+  {
+    "comb": ["Egg Sack", "Iron"],
+    "result": "Shotgun",
+    "resultado": "Escopeta",
+    "origenA": "Saco de Huevos",
+    "origenB": "Hierro",
+    "descripcion": "Dispara proyectiles metálicos concentrados.",
+    "emoji": "🔫",
+    "tipo": "fusión"
+  },
+  {
+    "comb": ["Egg Sack", "Vampire"],
+    "result": "Mosquito Swarm",
+    "resultado": "Enjambre de Mosquitos",
+    "origenA": "Saco de Huevos",
+    "origenB": "Vampiro",
+    "descripcion": "Drena vida en área.",
+    "emoji": "🦟",
+    "tipo": "fusión"
+  },
+  {
+    "comb": ["Freeze", "Ghost"],
+    "result": "Apparition",
+    "resultado": "Aparición",
+    "origenA": "Hielo",
+    "origenB": "Fantasma",
+    "descripcion": "Entidad congelante espectral.",
+    "emoji": "👻",
+    "tipo": "fusión"
+  },
+  {
+    "comb": ["Freeze", "Laser"],
+    "result": "Ice Ray",
+    "resultado": "Rayo de Hielo",
+    "origenA": "Hielo",
+    "origenB": "Láser",
+    "descripcion": "Congela y corta simultáneamente.",
+    "emoji": "❄️",
+    "tipo": "fusión"
+  },
+  {
+    "comb": ["Freeze", "Lightning"],
+    "result": "Blizzard",
+    "resultado": "Ventisca",
+    "origenA": "Hielo",
+    "origenB": "Rayo",
+    "descripcion": "Genera tormentas heladas.",
+    "emoji": "🌨️",
+    "tipo": "fusión"
+  },
+  {
+    "comb": ["Freeze", "Wind"],
+    "result": "Blizzard",
+    "resultado": "Ventisca",
+    "origenA": "Hielo",
+    "origenB": "Viento",
+    "descripcion": "Versión natural del mismo fenómeno.",
+    "emoji": "🌬️",
+    "tipo": "fusión"
+  },
+  {
+    "comb": ["Ghost", "Iron"],
+    "result": "Assassin",
+    "resultado": "Asesino",
+    "origenA": "Fantasma",
+    "origenB": "Hierro",
+    "descripcion": "Entidad etérea afilada.",
+    "emoji": "🗡️",
+    "tipo": "fusión"
+  },
+  {
+    "comb": ["Ghost", "Poison"],
+    "result": "Virus",
+    "resultado": "Virus",
+    "origenA": "Fantasma",
+    "origenB": "Veneno",
+    "descripcion": "Transmite enfermedades espirituales.",
+    "emoji": "🧫",
+    "tipo": "fusión"
+  },
+  {
+    "comb": ["Ghost", "Vampire"],
+    "result": "Soul Siphon",
+    "resultado": "Succiona Almas",
+    "origenA": "Fantasma",
+    "origenB": "Vampiro",
+    "descripcion": "Absorbe energía vital de enemigos.",
+    "emoji": "🩸",
+    "tipo": "fusión"
+  },
+  {
+    "comb": ["Iron", "Lightning"],
+    "result": "Lightning Rod",
+    "resultado": "Pararrayos",
+    "origenA": "Hierro",
+    "origenB": "Rayo",
+    "descripcion": "Canaliza la energía de tormentas.",
+    "emoji": "⚡",
+    "tipo": "fusión"
+  },
+  {
+    "comb": ["Laser", "Light"],
+    "result": "Laser Beam",
+    "resultado": "Rayo Láser",
+    "origenA": "Láser",
+    "origenB": "Luz",
+    "descripcion": "Concentración pura de energía luminosa.",
+    "emoji": "🔆",
+    "tipo": "fusión"
+  },
+  {
+    "comb": ["Laser", "Poison"],
+    "result": "Radioactive Beam",
+    "resultado": "Rayo Radiactivo",
+    "origenA": "Láser",
+    "origenB": "Veneno",
+    "descripcion": "Combina energía y veneno.",
+    "emoji": "☢️",
+    "tipo": "fusión"
+  },
+  {
+    "comb": ["Laser Vertical", "Laser Horizontal"],
+    "result": "Sacred Laser",
+    "resultado": "Láser Sagrado",
+    "origenA": "Láser Vertical",
+    "origenB": "Láser Horizontal",
+    "descripcion": "Daña enemigos en toda la cuadrícula.",
+    "emoji": "🔱",
+    "tipo": "fusión"
+  },
+  {
+    "comb": ["Light", "Lightning"],
+    "result": "Lightning Bolt",
+    "resultado": "Relámpago",
+    "origenA": "Luz",
+    "origenB": "Rayo",
+    "descripcion": "Golpea instantáneamente a múltiples objetivos.",
+    "emoji": "⚡",
+    "tipo": "fusión"
+  },
+  {
+    "comb": ["Lightning", "Wind"],
+    "result": "Storm",
+    "resultado": "Tormenta",
+    "origenA": "Rayo",
+    "origenB": "Viento",
+    "descripcion": "Fusión caótica que golpea en área.",
+    "emoji": "🌩️",
+    "tipo": "fusión"
+  },
+  {
+    "comb": ["Poison", "Wind"],
+    "result": "Noxious",
+    "resultado": "Nocivo",
+    "origenA": "Veneno",
+    "origenB": "Viento",
+    "descripcion": "Dispersa toxinas por el aire.",
+    "emoji": "🌫️",
+    "tipo": "fusión"
+  },
+  {
+    "comb": ["Baby Rattle", "War Horn"],
+    "result": "Cornucopia",
+    "resultado": "Cornucopia",
+    "origenA": "Sonaja",
+    "origenB": "Cuerno de Guerra",
+    "descripcion": "Aumenta regeneración y defensa.",
+    "emoji": "🐏",
+    "tipo": "pasiva"
+  },
+  {
+    "comb": ["Everflowing Goblet", "Vampiric Sword"],
+    "result": "Soul Reaper",
+    "resultado": "Segador de Almas",
+    "origenA": "Cáliz Inagotable",
+    "origenB": "Espada Vampírica",
+    "descripcion": "Roba vida con cada ataque.",
+    "emoji": "☠️",
+    "tipo": "pasiva"
+  },
+  {
+    "comb": ["Diamond Dagger", "Emerald Dagger", "Ruby Dagger", "Sapphire Dagger"],
+    "result": "Sharpshooter Crossbow",
+    "resultado": "Ballesta del Tirador",
+    "origenA": "Daga de Diamante",
+    "origenB": "Daga de Esmeralda + Daga de Rubí + Daga de Zafiro",
+    "descripcion": "Mejora precisión y daño crítico.",
+    "emoji": "🎯",
+    "tipo": "pasiva"
+  },
+  {
+    "comb": ["Bomb", "Poison"],
+    "result": "Nuclear Bomb",
+    "resultado": "Bomba Nuclear",
+    "origenA": "Bomba",
+    "origenB": "Veneno",
+    "descripcion": "Fusiona una Bomba con una bola Veneno.",
+    "emoji": "☢️",
+    "tipo": "especial"
+  },
+  {
+    "comb": ["Sun", "Dark"],
+    "result": "Black Hole",
+    "resultado": "Agujero Negro",
+    "origenA": "Sol",
+    "origenB": "Oscuridad",
+    "descripcion": "Fusiona una Sol con una Oscura.",
+    "emoji": "🌌",
+    "tipo": "especial"
+  },
+  {
+    "comb": ["Incubus", "Succubus"],
+    "result": "Satan",
+    "resultado": "Satán",
+    "origenA": "Íncubo",
+    "origenB": "Súcubo",
+    "descripcion": "Funde un Íncubo con un Súcubo.",
+    "emoji": "😈",
+    "tipo": "especial"
+  },
+  {
+    "comb": ["Vampire Lord", "Mosquito King", "Spider Queen"],
+    "result": "Nosferatu",
+    "resultado": "Nosferatu",
+    "origenA": "Señor Vampiro",
+    "origenB": "Rey Mosquito + Reina Araña",
+    "descripcion": "Une Señor Vampiro, Rey Mosquito y Reina Araña.",
+    "emoji": "🧛",
+    "tipo": "especial"
+  }
 ]

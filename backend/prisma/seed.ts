@@ -16,6 +16,11 @@ type FusionSeed = {
   comb: string[];
   result: string;
   resultado?: string;
+  origenA?: string;
+  origenB?: string;
+  descripcion?: string;
+  emoji?: string;
+  tipo?: string;
   requiredLevel?: number;
 };
 
@@ -58,7 +63,10 @@ async function main() {
       ballSeeds.set(fusion.result, {
         name: fusion.result,
         type: 'Especial',
-        descripcion: fusion.resultado ?? `Resultado de la fusión ${fusion.result}`,
+        descripcion:
+          fusion.descripcion ??
+          fusion.resultado ??
+          `Resultado de la fusión ${fusion.result}`,
         level: 1
       });
     }
@@ -112,6 +120,14 @@ async function main() {
     const recipe = await prisma.fusionRecipe.create({
       data: {
         requiredLevel: fusion.requiredLevel ?? 3,
+        origenA: fusion.origenA ?? fusion.comb[0] ?? null,
+        origenB:
+          fusion.origenB ??
+          (fusion.comb.length > 1 ? fusion.comb.slice(1).join(' + ') : null),
+        resultado: fusion.resultado ?? null,
+        descripcion: fusion.descripcion ?? null,
+        emoji: fusion.emoji ?? null,
+        tipo: fusion.tipo ?? null,
         result: { connect: { id: resultId } }
       }
     });
