@@ -13,6 +13,7 @@
   "detailLoading": "Loading…",
   "detailNotFound": "Ball not found",
   "detailDescriptionFallback": "No description available.",
+  "components": "Composed of",
   "detailFusionsTitle": "🔗 Related fusions",
   "detailFusionsEmpty": "No fusions are registered for this ball.",
   "unknownBallName": "Mystery ball"

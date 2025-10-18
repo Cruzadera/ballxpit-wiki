@@ -13,6 +13,7 @@
   "detailLoading": "Cargando…",
   "detailNotFound": "Bola no encontrada",
   "detailDescriptionFallback": "No hay descripción disponible.",
+  "components": "Se compone de",
   "detailFusionsTitle": "🔗 Fusiones relacionadas",
   "detailFusionsEmpty": "No hay fusiones registradas para esta bola.",
   "unknownBallName": "Bola misteriosa"

@@ -27,6 +27,9 @@ type BallDetailData = BallLike & {
   description?: string | null;
   descripcion?: string | null;
   fusionInputs?: FusionRecipe[];
+  fusionResults?: FusionRecipe[];
+  componentes?: FusionInput[];
+  components?: FusionInput[];
 };
 
 export default function BallDetail() {
@@ -60,6 +63,11 @@ export default function BallDetail() {
   const description = useMemo(
     () => translateBallName(rawDescription),
     [rawDescription, i18n.language]
+  );
+
+  const componentList = useMemo(
+    () => ball?.componentes || ball?.components || [],
+    [ball]
   );
 
   const iconSrc = getIcon(ball?.nombre || ball?.name || "");
@@ -98,6 +106,27 @@ export default function BallDetail() {
           <h2 className="text-3xl font-extrabold text-gray-900 dark:text-gray-100 mb-2">{displayName}</h2>
           <p className="mt-4 text-base text-gray-700 dark:text-gray-300 max-w-2xl">{description}</p>
         </div>
+
+        {componentList.length > 0 && (
+          <div className="mt-6">
+            <h3 className="text-lg font-semibold mb-2 flex items-center justify-center gap-2 text-gray-900 dark:text-gray-100">
+              <span role="img" aria-hidden="true">
+                🧩
+              </span>
+              {t("components")}
+            </h3>
+            <div className="flex flex-wrap justify-center gap-3">
+              {componentList.map((comp, index) => (
+                <span
+                  key={`${comp.id}-${index}`}
+                  className="bg-gray-800/50 dark:bg-gray-700/60 text-gray-100 px-3 py-1 rounded-xl text-sm font-medium"
+                >
+                  {translateBallName(comp.nombre || comp.name || "?")}
+                </span>
+              ))}
+            </div>
+          </div>
+        )}
 
         <div className="mt-10">
           <h3 className="text-lg font-semibold mb-4 text-gray-900 dark:text-gray-100 text-center">

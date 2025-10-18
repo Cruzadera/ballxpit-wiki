@@ -33,10 +33,18 @@ export class BallsService {
             some: { ballId: id }
           }
         },
-        include: {
+        select: {
+          id: true,
+          requiredLevel: true,
+          origenA: true,
+          origenB: true,
+          resultado: true,
+          descripcion: true,
+          emoji: true,
+          tipo: true,
           result: true,
           inputs: {
-            include: {
+            select: {
               ball: true
             }
           }
@@ -44,16 +52,53 @@ export class BallsService {
       }),
       this.prisma.fusionRecipe.findMany({
         where: { resultId: id },
-        include: {
+        select: {
+          id: true,
+          requiredLevel: true,
+          origenA: true,
+          origenB: true,
+          resultado: true,
+          descripcion: true,
+          emoji: true,
+          tipo: true,
           result: true,
           inputs: {
-            include: {
+            select: {
               ball: true
             }
           }
         }
       })
     ]);
+
+    type FusionInputBall = NonNullable<
+      (typeof fusionResults)[number]['inputs'][number]['ball']
+    >;
+
+    const mappedFusionResults = fusionResults.map((recipe) => ({
+      id: recipe.id,
+      requiredLevel: recipe.requiredLevel,
+      origenA: recipe.origenA,
+      origenB: recipe.origenB,
+      resultado: recipe.resultado,
+      descripcion: recipe.descripcion,
+      emoji: recipe.emoji,
+      tipo: recipe.tipo,
+      result: recipe.result,
+      inputs: recipe.inputs
+        .map(({ ball }) => ball)
+        .filter((inputBall): inputBall is FusionInputBall => Boolean(inputBall))
+    }));
+
+    const componentesMap = new Map<number, FusionInputBall>();
+
+    mappedFusionResults.forEach((recipe) => {
+      recipe.inputs.forEach((inputBall) => {
+        if (!componentesMap.has(inputBall.id)) {
+          componentesMap.set(inputBall.id, inputBall);
+        }
+      });
+    });
 
     return {
       ...ball,
@@ -71,18 +116,8 @@ export class BallsService {
         result: recipe.result,
         inputs: recipe.inputs.map(({ ball }) => ball)
       })),
-      fusionResults: fusionResults.map((recipe) => ({
-        id: recipe.id,
-        requiredLevel: recipe.requiredLevel,
-        origenA: recipe.origenA,
-        origenB: recipe.origenB,
-        resultado: recipe.resultado,
-        descripcion: recipe.descripcion,
-        emoji: recipe.emoji,
-        tipo: recipe.tipo,
-        result: recipe.result,
-        inputs: recipe.inputs.map(({ ball }) => ball)
-      }))
+      fusionResults: mappedFusionResults,
+      componentes: Array.from(componentesMap.values())
     };
   }
 }
