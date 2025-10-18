@@ -23,6 +23,11 @@ type RelatedBall = {
   nombre?: string | null;
 };
 
+type EvolutionFormula = {
+  resultado: string;
+  componentes: string[];
+};
+
 type FusionRecipe = {
   id: number;
   result: FusionResult;
@@ -38,7 +43,7 @@ type BallDetailData = BallLike & {
   componentes?: FusionInput[];
   components?: FusionInput[];
   fusionesRelacionadas?: RelatedBall[];
-  evolucionesRelacionadas?: RelatedBall[];
+  evolucionesRelacionadas?: EvolutionFormula[];
 };
 
 export default function BallDetail() {
@@ -194,20 +199,32 @@ export default function BallDetail() {
         </div>
 
         <div className="mt-10">
-          <h3 className="text-lg font-semibold mb-4 text-gray-900 dark:text-gray-100 text-center">
+          <h3 className="text-lg font-semibold mb-3 flex items-center justify-center gap-2 text-gray-900 dark:text-gray-100">
+            <span role="img" aria-hidden="true">
+              💥
+            </span>
             {t("relatedEvolutions")}
           </h3>
           {relatedEvolutions.length ? (
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {relatedEvolutions.map((evolution) => (
-                <Link
-                  key={evolution.id}
-                  to={`/balls/${evolution.id}`}
-                  className="p-4 rounded-2xl bg-white/60 dark:bg-gray-800/70 shadow border border-white/30 dark:border-gray-700/40 text-center hover:shadow-lg transition"
-                >
-                  {translateBallName(evolution.nombre || evolution.name || "?")}
-                </Link>
-              ))}
+            <div className="grid gap-3 md:grid-cols-2">
+              {relatedEvolutions.map((evo, index) => {
+                const translatedComponents = (evo.componentes ?? []).map((componento) =>
+                  translateBallName(componento)
+                );
+                const formula = translatedComponents.length
+                  ? translatedComponents.join(" + ")
+                  : displayName;
+
+                return (
+                  <div
+                    key={`${evo.resultado}-${evo.componentes?.join('-') ?? index}`}
+                    className="bg-gray-800/60 dark:bg-gray-700/50 rounded-xl p-3 text-center text-gray-200"
+                  >
+                    <span className="font-medium">{formula}</span>{" "}
+                    → <strong>{translateBallName(evo.resultado)}</strong>
+                  </div>
+                );
+              })}
             </div>
           ) : (
             <p className="text-center text-sm text-gray-500 dark:text-gray-400">
