@@ -1,0 +1,12 @@
+[
+  { "comb": ["Bleed", "Brood Mother"], "result": "Leech", "resultado": "Sanguijuela" },
+  { "comb": ["Bleed", "Charm"], "result": "Berserk", "resultado": "Frenesí" },
+  { "comb": ["Bleed", "Dark"], "result": "Sacrifice", "resultado": "Sacrificio" },
+  { "comb": ["Bleed", "Iron"], "result": "Hemorrhage", "resultado": "Hemorragia" },
+  { "comb": ["Bleed", "Vampire"], "result": "Vampire Lord", "resultado": "Señor Vampiro" },
+  { "comb": ["Burn", "Iron"], "result": "Bomb", "resultado": "Bomba" },
+  { "comb": ["Dark", "Sun"], "result": "Black Hole", "resultado": "Agujero Negro" },
+  { "comb": ["Bomb", "Poison"], "result": "Nuclear Bomb", "resultado": "Bomba Nuclear" },
+  { "comb": ["Incubus", "Succubus"], "result": "Satan", "resultado": "Satán" },
+  { "comb": ["Vampire Lord", "Mosquito King", "Spider Queen"], "result": "Nosferatu", "resultado": "Nosferatu" }
+]

@@ -1,0 +1,19 @@
+[
+  { "name": "Bleed", "nombre": "Sangrar", "type": "Físico", "descripcion": "Causa daño continuo al enemigo." },
+  { "name": "Brood Mother", "nombre": "Madre Cría", "type": "Orgánico", "descripcion": "Engendra criaturas parasitarias." },
+  { "name": "Burn", "nombre": "Fuego", "type": "Elemento", "descripcion": "Inflige daño ígneo persistente." },
+  { "name": "Cell", "nombre": "Célula", "type": "Biológico", "descripcion": "Base de toda materia viva." },
+  { "name": "Charm", "nombre": "Encanto", "type": "Místico", "descripcion": "Seduce o manipula a los enemigos." },
+  { "name": "Dark", "nombre": "Oscuridad", "type": "Sombra", "descripcion": "Canaliza energía negativa o prohibida." },
+  { "name": "Earthquake", "nombre": "Terremoto", "type": "Tierra", "descripcion": "Provoca temblores devastadores." },
+  { "name": "Egg Sack", "nombre": "Saco de Huevos", "type": "Orgánico", "descripcion": "Contiene larvas listas para eclosionar." },
+  { "name": "Freeze", "nombre": "Hielo", "type": "Frío", "descripcion": "Congela a los enemigos y ralentiza su movimiento." },
+  { "name": "Ghost", "nombre": "Fantasma", "type": "Espiritual", "descripcion": "Atraviesa muros y enemigos." },
+  { "name": "Iron", "nombre": "Hierro", "type": "Metal", "descripcion": "Sólida y resistente, con rebotes potentes." },
+  { "name": "Laser", "nombre": "Láser", "type": "Energía", "descripcion": "Dispara rayos de energía concentrada." },
+  { "name": "Light", "nombre": "Luz", "type": "Sagrado", "descripcion": "Purifica y revela lo oculto." },
+  { "name": "Lightning", "nombre": "Rayo", "type": "Eléctrico", "descripcion": "Descarga energía en cadena." },
+  { "name": "Poison", "nombre": "Veneno", "type": "Tóxico", "descripcion": "Debilita lentamente al enemigo." },
+  { "name": "Vampire", "nombre": "Vampiro", "type": "Oscura", "descripcion": "Absorbe vida de los enemigos." },
+  { "name": "Wind", "nombre": "Viento", "type": "Aéreo", "descripcion": "Controla corrientes y tormentas." }
+]
