@@ -14,7 +14,9 @@ WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY package.json ./
 COPY tsconfig*.json ./
-COPY prisma ./prisma
+COPY prisma/schema.prisma ./prisma/schema.prisma
+COPY prisma/seed.ts ./prisma/seed.ts
+COPY prisma/data ./prisma/data
 COPY src ./src
 RUN npx prisma generate
 RUN npm run build
