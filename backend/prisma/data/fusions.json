@@ -1,17 +1,23 @@
 [
   {
-    "comb": ["Bleed", "Brood Mother"],
-    "result": "Leech",
+    "comb": [
+      "Sangrar",
+      "Madre Criadora"
+    ],
+    "result": "Sanguijuela",
     "resultado": "Sanguijuela",
     "origenA": "Sangrar",
-    "origenB": "Madre Cría",
+    "origenB": "Madre Criadora",
     "descripcion": "Fusión que crea una sanguijuela que absorbe vida.",
     "emoji": "🩸",
     "tipo": "fusión"
   },
   {
-    "comb": ["Bleed", "Charm"],
-    "result": "Berserk",
+    "comb": [
+      "Sangrar",
+      "Encanto"
+    ],
+    "result": "Frenesí",
     "resultado": "Frenesí",
     "origenA": "Sangrar",
     "origenB": "Encanto",
@@ -20,28 +26,37 @@
     "tipo": "fusión"
   },
   {
-    "comb": ["Bleed", "Dark"],
-    "result": "Sacrifice",
+    "comb": [
+      "Sangrar",
+      "Oscuro"
+    ],
+    "result": "Sacrificio",
     "resultado": "Sacrificio",
     "origenA": "Sangrar",
-    "origenB": "Oscuridad",
+    "origenB": "Oscuro",
     "descripcion": "Convierte tu vida en poder destructivo.",
     "emoji": "☠️",
     "tipo": "fusión"
   },
   {
-    "comb": ["Bleed", "Iron"],
-    "result": "Hemorrhage",
+    "comb": [
+      "Sangrar",
+      "Metal"
+    ],
+    "result": "Hemorragia",
     "resultado": "Hemorragia",
     "origenA": "Sangrar",
-    "origenB": "Hierro",
+    "origenB": "Metal",
     "descripcion": "Daño continuo con cada impacto.",
     "emoji": "💉",
     "tipo": "fusión"
   },
   {
-    "comb": ["Bleed", "Vampire"],
-    "result": "Vampire Lord",
+    "comb": [
+      "Sangrar",
+      "Vampiro"
+    ],
+    "result": "Señor Vampiro",
     "resultado": "Señor Vampiro",
     "origenA": "Sangrar",
     "origenB": "Vampiro",
@@ -50,38 +65,50 @@
     "tipo": "fusión"
   },
   {
-    "comb": ["Brood Mother", "Cell"],
+    "comb": [
+      "Madre Criadora",
+      "Célula"
+    ],
     "result": "Larva",
     "resultado": "Larva",
-    "origenA": "Madre Cría",
+    "origenA": "Madre Criadora",
     "origenB": "Célula",
     "descripcion": "Crea una nueva forma biológica primigenia.",
     "emoji": "🪲",
     "tipo": "fusión"
   },
   {
-    "comb": ["Brood Mother", "Egg Sack"],
-    "result": "Spider Queen",
+    "comb": [
+      "Madre Criadora",
+      "Saco de Huevos"
+    ],
+    "result": "Reina Araña",
     "resultado": "Reina Araña",
-    "origenA": "Madre Cría",
+    "origenA": "Madre Criadora",
     "origenB": "Saco de Huevos",
     "descripcion": "Invoca enjambres arácnidos.",
     "emoji": "👑",
     "tipo": "fusión"
   },
   {
-    "comb": ["Brood Mother", "Vampire"],
-    "result": "Mosquito King",
+    "comb": [
+      "Madre Criadora",
+      "Vampiro"
+    ],
+    "result": "Rey Mosquito",
     "resultado": "Rey Mosquito",
-    "origenA": "Madre Cría",
+    "origenA": "Madre Criadora",
     "origenB": "Vampiro",
     "descripcion": "Otorga drenaje de vida aéreo.",
     "emoji": "🦟",
     "tipo": "fusión"
   },
   {
-    "comb": ["Burn", "Charm"],
-    "result": "Berserk",
+    "comb": [
+      "Fuego",
+      "Encanto"
+    ],
+    "result": "Frenesí",
     "resultado": "Frenesí",
     "origenA": "Fuego",
     "origenB": "Encanto",
@@ -90,7 +117,10 @@
     "tipo": "fusión"
   },
   {
-    "comb": ["Burn", "Earthquake"],
+    "comb": [
+      "Fuego",
+      "Terremoto"
+    ],
     "result": "Magma",
     "resultado": "Magma",
     "origenA": "Fuego",
@@ -100,28 +130,37 @@
     "tipo": "fusión"
   },
   {
-    "comb": ["Burn", "Freeze"],
-    "result": "Frozen Flame",
+    "comb": [
+      "Fuego",
+      "Congelar"
+    ],
+    "result": "Llama Congelada",
     "resultado": "Llama Congelada",
     "origenA": "Fuego",
-    "origenB": "Hielo",
+    "origenB": "Congelar",
     "descripcion": "Une fuego y hielo en equilibrio mortal.",
     "emoji": "🔥❄️",
     "tipo": "fusión"
   },
   {
-    "comb": ["Burn", "Iron"],
-    "result": "Bomb",
+    "comb": [
+      "Fuego",
+      "Metal"
+    ],
+    "result": "Bomba",
     "resultado": "Bomba",
     "origenA": "Fuego",
-    "origenB": "Hierro",
+    "origenB": "Metal",
     "descripcion": "Explota causando daño masivo.",
     "emoji": "💣",
     "tipo": "fusión"
   },
   {
-    "comb": ["Burn", "Light"],
-    "result": "Sun",
+    "comb": [
+      "Fuego",
+      "Luz"
+    ],
+    "result": "Sol",
     "resultado": "Sol",
     "origenA": "Fuego",
     "origenB": "Luz",
@@ -130,8 +169,11 @@
     "tipo": "fusión"
   },
   {
-    "comb": ["Burn", "Wind"],
-    "result": "Inferno",
+    "comb": [
+      "Fuego",
+      "Viento"
+    ],
+    "result": "Infierno",
     "resultado": "Infierno",
     "origenA": "Fuego",
     "origenB": "Viento",
@@ -140,8 +182,11 @@
     "tipo": "fusión"
   },
   {
-    "comb": ["Cell", "Earthquake"],
-    "result": "Overgrowth",
+    "comb": [
+      "Célula",
+      "Terremoto"
+    ],
+    "result": "Sobrecrecimiento",
     "resultado": "Sobrecrecimiento",
     "origenA": "Célula",
     "origenB": "Terremoto",
@@ -150,8 +195,11 @@
     "tipo": "fusión"
   },
   {
-    "comb": ["Cell", "Laser"],
-    "result": "Radioactive Beam",
+    "comb": [
+      "Célula",
+      "Láser"
+    ],
+    "result": "Rayo Radiactivo",
     "resultado": "Rayo Radiactivo",
     "origenA": "Célula",
     "origenB": "Láser",
@@ -160,7 +208,10 @@
     "tipo": "fusión"
   },
   {
-    "comb": ["Cell", "Poison"],
+    "comb": [
+      "Célula",
+      "Veneno"
+    ],
     "result": "Virus",
     "resultado": "Virus",
     "origenA": "Célula",
@@ -170,18 +221,24 @@
     "tipo": "fusión"
   },
   {
-    "comb": ["Charm", "Dark"],
-    "result": "Incubus",
+    "comb": [
+      "Encanto",
+      "Oscuro"
+    ],
+    "result": "Íncubo",
     "resultado": "Íncubo",
     "origenA": "Encanto",
-    "origenB": "Oscuridad",
+    "origenB": "Oscuro",
     "descripcion": "Entidad de deseo oscuro.",
     "emoji": "😈",
     "tipo": "fusión"
   },
   {
-    "comb": ["Charm", "Light"],
-    "result": "Enamored",
+    "comb": [
+      "Encanto",
+      "Luz"
+    ],
+    "result": "Enamorado",
     "resultado": "Enamorado",
     "origenA": "Encanto",
     "origenB": "Luz",
@@ -190,18 +247,24 @@
     "tipo": "fusión"
   },
   {
-    "comb": ["Charm", "Lightning"],
-    "result": "Enamored",
+    "comb": [
+      "Encanto",
+      "Relámpago"
+    ],
+    "result": "Enamorado",
     "resultado": "Enamorado",
     "origenA": "Encanto",
-    "origenB": "Rayo",
+    "origenB": "Relámpago",
     "descripcion": "Variante energética del encantamiento.",
     "emoji": "⚡",
     "tipo": "fusión"
   },
   {
-    "comb": ["Charm", "Vampire"],
-    "result": "Succubus",
+    "comb": [
+      "Encanto",
+      "Vampiro"
+    ],
+    "result": "Súcubo",
     "resultado": "Súcubo",
     "origenA": "Encanto",
     "origenB": "Vampiro",
@@ -210,68 +273,89 @@
     "tipo": "fusión"
   },
   {
-    "comb": ["Dark", "Ghost"],
-    "result": "Phantom",
+    "comb": [
+      "Oscuro",
+      "Fantasma"
+    ],
+    "result": "Fantasma",
     "resultado": "Fantasma",
-    "origenA": "Oscuridad",
+    "origenA": "Oscuro",
     "origenB": "Fantasma",
     "descripcion": "Manifestación espiritual completa.",
     "emoji": "👻",
     "tipo": "fusión"
   },
   {
-    "comb": ["Dark", "Iron"],
-    "result": "Assassin",
+    "comb": [
+      "Oscuro",
+      "Metal"
+    ],
+    "result": "Asesino",
     "resultado": "Asesino",
-    "origenA": "Oscuridad",
-    "origenB": "Hierro",
+    "origenA": "Oscuro",
+    "origenB": "Metal",
     "descripcion": "Cazador de sombras y precisión.",
     "emoji": "🗡️",
     "tipo": "fusión"
   },
   {
-    "comb": ["Dark", "Light"],
-    "result": "Flash",
+    "comb": [
+      "Oscuro",
+      "Luz"
+    ],
+    "result": "Destello",
     "resultado": "Destello",
-    "origenA": "Oscuridad",
+    "origenA": "Oscuro",
     "origenB": "Luz",
     "descripcion": "Breve unión entre luz y oscuridad.",
     "emoji": "✨",
     "tipo": "fusión"
   },
   {
-    "comb": ["Dark", "Vampire"],
-    "result": "Vampire Lord",
+    "comb": [
+      "Oscuro",
+      "Vampiro"
+    ],
+    "result": "Señor Vampiro",
     "resultado": "Señor Vampiro",
-    "origenA": "Oscuridad",
+    "origenA": "Oscuro",
     "origenB": "Vampiro",
     "descripcion": "Evolución oscura definitiva.",
     "emoji": "🧛",
     "tipo": "fusión"
   },
   {
-    "comb": ["Dark", "Wind"],
-    "result": "Noxious",
+    "comb": [
+      "Oscuro",
+      "Viento"
+    ],
+    "result": "Nocivo",
     "resultado": "Nocivo",
-    "origenA": "Oscuridad",
+    "origenA": "Oscuro",
     "origenB": "Viento",
     "descripcion": "Expulsa toxinas invisibles.",
     "emoji": "🌫️",
     "tipo": "fusión"
   },
   {
-    "comb": ["Earthquake", "Freeze"],
-    "result": "Glacier",
+    "comb": [
+      "Terremoto",
+      "Congelar"
+    ],
+    "result": "Glaciar",
     "resultado": "Glaciar",
     "origenA": "Terremoto",
-    "origenB": "Hielo",
+    "origenB": "Congelar",
     "descripcion": "Tierras heladas que aprisionan enemigos.",
     "emoji": "🧊",
     "tipo": "fusión"
   },
   {
-    "comb": ["Earthquake", "Poison"],
-    "result": "Swamp",
+    "comb": [
+      "Terremoto",
+      "Veneno"
+    ],
+    "result": "Pantano",
     "resultado": "Pantano",
     "origenA": "Terremoto",
     "origenB": "Veneno",
@@ -280,8 +364,11 @@
     "tipo": "fusión"
   },
   {
-    "comb": ["Earthquake", "Wind"],
-    "result": "Sandstorm",
+    "comb": [
+      "Terremoto",
+      "Viento"
+    ],
+    "result": "Tormenta de Arena",
     "resultado": "Tormenta de Arena",
     "origenA": "Terremoto",
     "origenB": "Viento",
@@ -290,18 +377,24 @@
     "tipo": "fusión"
   },
   {
-    "comb": ["Egg Sack", "Iron"],
-    "result": "Shotgun",
+    "comb": [
+      "Saco de Huevos",
+      "Metal"
+    ],
+    "result": "Escopeta",
     "resultado": "Escopeta",
     "origenA": "Saco de Huevos",
-    "origenB": "Hierro",
+    "origenB": "Metal",
     "descripcion": "Dispara proyectiles metálicos concentrados.",
     "emoji": "🔫",
     "tipo": "fusión"
   },
   {
-    "comb": ["Egg Sack", "Vampire"],
-    "result": "Mosquito Swarm",
+    "comb": [
+      "Saco de Huevos",
+      "Vampiro"
+    ],
+    "result": "Enjambre de Mosquitos",
     "resultado": "Enjambre de Mosquitos",
     "origenA": "Saco de Huevos",
     "origenB": "Vampiro",
@@ -310,57 +403,75 @@
     "tipo": "fusión"
   },
   {
-    "comb": ["Freeze", "Ghost"],
-    "result": "Apparition",
+    "comb": [
+      "Congelar",
+      "Fantasma"
+    ],
+    "result": "Aparición",
     "resultado": "Aparición",
-    "origenA": "Hielo",
+    "origenA": "Congelar",
     "origenB": "Fantasma",
     "descripcion": "Entidad congelante espectral.",
     "emoji": "👻",
     "tipo": "fusión"
   },
   {
-    "comb": ["Freeze", "Laser"],
-    "result": "Ice Ray",
+    "comb": [
+      "Congelar",
+      "Láser"
+    ],
+    "result": "Rayo de Hielo",
     "resultado": "Rayo de Hielo",
-    "origenA": "Hielo",
+    "origenA": "Congelar",
     "origenB": "Láser",
     "descripcion": "Congela y corta simultáneamente.",
     "emoji": "❄️",
     "tipo": "fusión"
   },
   {
-    "comb": ["Freeze", "Lightning"],
-    "result": "Blizzard",
+    "comb": [
+      "Congelar",
+      "Relámpago"
+    ],
+    "result": "Ventisca",
     "resultado": "Ventisca",
-    "origenA": "Hielo",
-    "origenB": "Rayo",
+    "origenA": "Congelar",
+    "origenB": "Relámpago",
     "descripcion": "Genera tormentas heladas.",
     "emoji": "🌨️",
     "tipo": "fusión"
   },
   {
-    "comb": ["Freeze", "Wind"],
-    "result": "Blizzard",
+    "comb": [
+      "Congelar",
+      "Viento"
+    ],
+    "result": "Ventisca",
     "resultado": "Ventisca",
-    "origenA": "Hielo",
+    "origenA": "Congelar",
     "origenB": "Viento",
     "descripcion": "Versión natural del mismo fenómeno.",
     "emoji": "🌬️",
     "tipo": "fusión"
   },
   {
-    "comb": ["Ghost", "Iron"],
-    "result": "Assassin",
+    "comb": [
+      "Fantasma",
+      "Metal"
+    ],
+    "result": "Asesino",
     "resultado": "Asesino",
     "origenA": "Fantasma",
-    "origenB": "Hierro",
+    "origenB": "Metal",
     "descripcion": "Entidad etérea afilada.",
     "emoji": "🗡️",
     "tipo": "fusión"
   },
   {
-    "comb": ["Ghost", "Poison"],
+    "comb": [
+      "Fantasma",
+      "Veneno"
+    ],
     "result": "Virus",
     "resultado": "Virus",
     "origenA": "Fantasma",
@@ -370,8 +481,11 @@
     "tipo": "fusión"
   },
   {
-    "comb": ["Ghost", "Vampire"],
-    "result": "Soul Siphon",
+    "comb": [
+      "Fantasma",
+      "Vampiro"
+    ],
+    "result": "Succiona Almas",
     "resultado": "Succiona Almas",
     "origenA": "Fantasma",
     "origenB": "Vampiro",
@@ -380,18 +494,24 @@
     "tipo": "fusión"
   },
   {
-    "comb": ["Iron", "Lightning"],
-    "result": "Lightning Rod",
+    "comb": [
+      "Metal",
+      "Relámpago"
+    ],
+    "result": "Pararrayos",
     "resultado": "Pararrayos",
-    "origenA": "Hierro",
-    "origenB": "Rayo",
+    "origenA": "Metal",
+    "origenB": "Relámpago",
     "descripcion": "Canaliza la energía de tormentas.",
     "emoji": "⚡",
     "tipo": "fusión"
   },
   {
-    "comb": ["Laser", "Light"],
-    "result": "Laser Beam",
+    "comb": [
+      "Láser",
+      "Luz"
+    ],
+    "result": "Rayo Láser",
     "resultado": "Rayo Láser",
     "origenA": "Láser",
     "origenB": "Luz",
@@ -400,8 +520,11 @@
     "tipo": "fusión"
   },
   {
-    "comb": ["Laser", "Poison"],
-    "result": "Radioactive Beam",
+    "comb": [
+      "Láser",
+      "Veneno"
+    ],
+    "result": "Rayo Radiactivo",
     "resultado": "Rayo Radiactivo",
     "origenA": "Láser",
     "origenB": "Veneno",
@@ -410,8 +533,11 @@
     "tipo": "fusión"
   },
   {
-    "comb": ["Laser Vertical", "Laser Horizontal"],
-    "result": "Sacred Laser",
+    "comb": [
+      "Láser Vertical",
+      "Láser Horizontal"
+    ],
+    "result": "Láser Sagrado",
     "resultado": "Láser Sagrado",
     "origenA": "Láser Vertical",
     "origenB": "Láser Horizontal",
@@ -420,28 +546,37 @@
     "tipo": "fusión"
   },
   {
-    "comb": ["Light", "Lightning"],
-    "result": "Lightning Bolt",
+    "comb": [
+      "Luz",
+      "Relámpago"
+    ],
+    "result": "Relámpago",
     "resultado": "Relámpago",
     "origenA": "Luz",
-    "origenB": "Rayo",
+    "origenB": "Relámpago",
     "descripcion": "Golpea instantáneamente a múltiples objetivos.",
     "emoji": "⚡",
     "tipo": "fusión"
   },
   {
-    "comb": ["Lightning", "Wind"],
-    "result": "Storm",
+    "comb": [
+      "Relámpago",
+      "Viento"
+    ],
+    "result": "Tormenta",
     "resultado": "Tormenta",
-    "origenA": "Rayo",
+    "origenA": "Relámpago",
     "origenB": "Viento",
     "descripcion": "Fusión caótica que golpea en área.",
     "emoji": "🌩️",
     "tipo": "fusión"
   },
   {
-    "comb": ["Poison", "Wind"],
-    "result": "Noxious",
+    "comb": [
+      "Veneno",
+      "Viento"
+    ],
+    "result": "Nocivo",
     "resultado": "Nocivo",
     "origenA": "Veneno",
     "origenB": "Viento",
@@ -450,7 +585,10 @@
     "tipo": "fusión"
   },
   {
-    "comb": ["Baby Rattle", "War Horn"],
+    "comb": [
+      "Sonaja",
+      "Cuerno de Guerra"
+    ],
     "result": "Cornucopia",
     "resultado": "Cornucopia",
     "origenA": "Sonaja",
@@ -460,8 +598,11 @@
     "tipo": "pasiva"
   },
   {
-    "comb": ["Everflowing Goblet", "Vampiric Sword"],
-    "result": "Soul Reaper",
+    "comb": [
+      "Cáliz Inagotable",
+      "Espada Vampírica"
+    ],
+    "result": "Segador de Almas",
     "resultado": "Segador de Almas",
     "origenA": "Cáliz Inagotable",
     "origenB": "Espada Vampírica",
@@ -470,8 +611,13 @@
     "tipo": "pasiva"
   },
   {
-    "comb": ["Diamond Dagger", "Emerald Dagger", "Ruby Dagger", "Sapphire Dagger"],
-    "result": "Sharpshooter Crossbow",
+    "comb": [
+      "Daga de Diamante",
+      "Daga de Esmeralda",
+      "Daga de Rubí",
+      "Daga de Zafiro"
+    ],
+    "result": "Ballesta del Tirador",
     "resultado": "Ballesta del Tirador",
     "origenA": "Daga de Diamante",
     "origenB": "Daga de Esmeralda + Daga de Rubí + Daga de Zafiro",
@@ -480,8 +626,11 @@
     "tipo": "pasiva"
   },
   {
-    "comb": ["Bomb", "Poison"],
-    "result": "Nuclear Bomb",
+    "comb": [
+      "Bomba",
+      "Veneno"
+    ],
+    "result": "Bomba Nuclear",
     "resultado": "Bomba Nuclear",
     "origenA": "Bomba",
     "origenB": "Veneno",
@@ -490,18 +639,24 @@
     "tipo": "especial"
   },
   {
-    "comb": ["Sun", "Dark"],
-    "result": "Black Hole",
+    "comb": [
+      "Sol",
+      "Oscuro"
+    ],
+    "result": "Agujero Negro",
     "resultado": "Agujero Negro",
     "origenA": "Sol",
-    "origenB": "Oscuridad",
-    "descripcion": "Fusiona una Sol con una Oscura.",
+    "origenB": "Oscuro",
+    "descripcion": "Fusiona un Sol con un Oscuro.",
     "emoji": "🌌",
     "tipo": "especial"
   },
   {
-    "comb": ["Incubus", "Succubus"],
-    "result": "Satan",
+    "comb": [
+      "Íncubo",
+      "Súcubo"
+    ],
+    "result": "Satán",
     "resultado": "Satán",
     "origenA": "Íncubo",
     "origenB": "Súcubo",
@@ -510,7 +665,11 @@
     "tipo": "especial"
   },
   {
-    "comb": ["Vampire Lord", "Mosquito King", "Spider Queen"],
+    "comb": [
+      "Señor Vampiro",
+      "Rey Mosquito",
+      "Reina Araña"
+    ],
     "result": "Nosferatu",
     "resultado": "Nosferatu",
     "origenA": "Señor Vampiro",
