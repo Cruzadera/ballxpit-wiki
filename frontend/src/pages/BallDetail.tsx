@@ -3,6 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import type { BallLike } from "../components/BallCard";
 import { getIcon } from "../utils/getBallIcon";
+import { translateBallName } from "../utils/translateBall";
 
 type FusionResult = {
   id: number;
@@ -30,7 +31,7 @@ type BallDetailData = BallLike & {
 
 export default function BallDetail() {
   const { id } = useParams();
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [ball, setBall] = useState<BallDetailData | null>(null);
   const [loading, setLoading] = useState(true);
 
@@ -46,15 +47,20 @@ export default function BallDetail() {
         console.error("Error loading ball:", err);
         setLoading(false);
       });
-  }, [id]);
+  }, [id, i18n.language]);
 
+  const rawName = ball?.nombre || ball?.name || t("unknownBallName");
   const displayName = useMemo(
-    () => ball?.nombre || ball?.name || t("unknownBallName"),
-    [ball?.nombre, ball?.name, t]
+    () => translateBallName(rawName),
+    [rawName, i18n.language]
   );
 
-  const description =
+  const rawDescription =
     ball?.descripcion || ball?.description || t("detailDescriptionFallback");
+  const description = useMemo(
+    () => translateBallName(rawDescription),
+    [rawDescription, i18n.language]
+  );
 
   const iconSrc = getIcon(ball?.nombre || ball?.name || "");
 
@@ -100,9 +106,13 @@ export default function BallDetail() {
           {ball.fusionInputs?.length ? (
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {ball.fusionInputs.map((fusion) => {
-                const resultName = fusion.result.nombre || fusion.result.name || "?";
+                const resultName = translateBallName(
+                  fusion.result.nombre || fusion.result.name || "?"
+                );
                 const inputNames = fusion.inputs
-                  .map((input) => input.nombre || input.name || "?")
+                  .map((input) =>
+                    translateBallName(input.nombre || input.name || "?")
+                  )
                   .join(" + ");
                 return (
                   <div

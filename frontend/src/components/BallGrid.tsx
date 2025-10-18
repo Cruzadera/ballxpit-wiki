@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import BallCard, { BallLike } from "./BallCard";
+import { translateBallName } from "../utils/translateBall";
 
 type BallSummary = BallLike & {
   descripcion?: string | null;
@@ -11,7 +12,7 @@ export default function BallGrid() {
   const [balls, setBalls] = useState<BallSummary[]>([]);
   const [loading, setLoading] = useState(true);
   const [query, setQuery] = useState("");
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   useEffect(() => {
     const apiUrl = import.meta.env.VITE_API_URL || "http://localhost:3000";
@@ -44,16 +45,23 @@ export default function BallGrid() {
         console.error("Error fetching balls:", err);
         setLoading(false);
       });
-  }, []);
+  }, [i18n.language]);
 
   const filteredBalls = useMemo(() => {
     const normalizedQuery = query.trim().toLowerCase();
 
     return balls.filter((ball) => {
-      const displayName = (ball.nombre || ball.name || "").toLowerCase();
-      return normalizedQuery ? displayName.includes(normalizedQuery) : true;
+      const originalName = (ball.nombre || ball.name || "").toLowerCase();
+      const translatedName = translateBallName(ball.nombre || ball.name || "").toLowerCase();
+      if (!normalizedQuery) {
+        return true;
+      }
+      return (
+        originalName.includes(normalizedQuery) ||
+        translatedName.includes(normalizedQuery)
+      );
     });
-  }, [balls, query]);
+  }, [balls, query, i18n.language]);
 
   if (loading) {
     return (
