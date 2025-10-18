@@ -6,12 +6,12 @@ export class FusionsController {
   constructor(private readonly fusionsService: FusionsService) {}
 
   @Get()
-  findAll() {
+  async findAll() {
     return this.fusionsService.findAll();
   }
 
   @Get(':id')
-  findOne(@Param('id', ParseIntPipe) id: number) {
+  async findOne(@Param('id', ParseIntPipe) id: number) {
     return this.fusionsService.findOne(id);
   }
 }

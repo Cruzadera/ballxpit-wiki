@@ -1,29 +1,48 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
+import { Prisma } from '@prisma/client';
 import { PrismaService } from '../prisma/prisma.service';
+
+const ballSelection = {
+  id: true,
+  name: true,
+  type: true,
+  level: true,
+  description: true,
+  imageUrl: true
+} satisfies Prisma.BallSelect;
 
 @Injectable()
 export class FusionsService {
   constructor(private readonly prisma: PrismaService) {}
 
-  findAll() {
-    return this.prisma.fusionRecipe.findMany({
+  async findAll() {
+    const recipes = await this.prisma.fusionRecipe.findMany({
       include: {
-        result: true,
+        result: { select: ballSelection },
         inputs: {
-          include: { ball: true }
+          include: {
+            ball: { select: ballSelection }
+          }
         }
       },
       orderBy: { id: 'asc' }
     });
+
+    return recipes.map(({ inputs, ...recipe }) => ({
+      ...recipe,
+      inputs: inputs.map(({ ball }) => ball)
+    }));
   }
 
   async findOne(id: number) {
     const fusion = await this.prisma.fusionRecipe.findUnique({
       where: { id },
       include: {
-        result: true,
+        result: { select: ballSelection },
         inputs: {
-          include: { ball: true }
+          include: {
+            ball: { select: ballSelection }
+          }
         }
       }
     });
@@ -32,6 +51,9 @@ export class FusionsService {
       throw new NotFoundException(`Fusion recipe with id ${id} not found`);
     }
 
-    return fusion;
+    return {
+      ...fusion,
+      inputs: fusion.inputs.map(({ ball }) => ball)
+    };
   }
 }
