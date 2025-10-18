@@ -1,0 +1,4 @@
+# This file is automatically created by Prisma.
+# Do not edit it manually.
+
+provider = "sqlite"
