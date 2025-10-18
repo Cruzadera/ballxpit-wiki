@@ -62,12 +62,24 @@ export class BallsService {
       fusionInputs: fusionInputs.map((recipe) => ({
         id: recipe.id,
         requiredLevel: recipe.requiredLevel,
+        origenA: recipe.origenA,
+        origenB: recipe.origenB,
+        resultado: recipe.resultado,
+        descripcion: recipe.descripcion,
+        emoji: recipe.emoji,
+        tipo: recipe.tipo,
         result: recipe.result,
         inputs: recipe.inputs.map(({ ball }) => ball)
       })),
       fusionResults: fusionResults.map((recipe) => ({
         id: recipe.id,
         requiredLevel: recipe.requiredLevel,
+        origenA: recipe.origenA,
+        origenB: recipe.origenB,
+        resultado: recipe.resultado,
+        descripcion: recipe.descripcion,
+        emoji: recipe.emoji,
+        tipo: recipe.tipo,
         result: recipe.result,
         inputs: recipe.inputs.map(({ ball }) => ball)
       }))
