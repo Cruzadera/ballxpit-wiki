@@ -2,6 +2,7 @@ import { useMemo } from "react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { getIcon } from "../utils/getBallIcon";
+import { translateBallName } from "../utils/translateBall";
 
 export type BallLike = {
   id: number;
@@ -17,14 +18,19 @@ interface BallCardProps {
 }
 
 export default function BallCard({ ball }: BallCardProps) {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const rawName = ball.nombre || ball.name || t("unknownBallName");
   const displayName = useMemo(
-    () => ball.nombre || ball.name || t("unknownBallName"),
-    [ball.nombre, ball.name, t]
+    () => translateBallName(rawName),
+    [rawName, i18n.language]
   );
 
-  const description =
+  const rawDescription =
     ball.descripcion || ball.description || t("cardFallbackDescription");
+  const description = useMemo(
+    () => translateBallName(rawDescription),
+    [rawDescription, i18n.language]
+  );
 
   const iconSrc = getIcon(ball.nombre || ball.name || "");
 
