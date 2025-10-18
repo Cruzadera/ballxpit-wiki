@@ -127,18 +127,78 @@ export class BallsService {
 
     const evolucionesRelacionadasMap = new Map<
       number,
-      { id: number; name?: string | null; nombre?: string | null }
+      { resultado: string; componentes: string[] }
     >();
 
+    const currentBallName =
+      (ball as { nombre?: string | null }).nombre ?? ball.nombre ?? ball.name ?? '';
+
     ball.evolutionComponents.forEach(({ evolution }) => {
-      if (evolution?.result) {
-        evolucionesRelacionadasMap.set(evolution.result.id, {
-          id: evolution.result.id,
-          name: evolution.result.name,
-          nombre:
-            (evolution.result as { nombre?: string | null }).nombre ?? evolution.result.nombre
-        });
+      if (!evolution?.result) {
+        return;
       }
+
+      const componentesEncontrados = (evolution.components ?? [])
+        .map(({ ball: componentBall }) => componentBall)
+        .filter((componentBall): componentBall is typeof ball => Boolean(componentBall));
+
+      if (!componentesEncontrados.length) {
+        return;
+      }
+
+      const componentesOrdenados = [...componentesEncontrados];
+      const currentIndex = componentesOrdenados.findIndex(
+        (componentBall) => componentBall.id === ball.id
+      );
+
+      if (currentIndex > 0) {
+        const [currentBallComponent] = componentesOrdenados.splice(currentIndex, 1);
+        componentesOrdenados.unshift(currentBallComponent);
+      } else if (currentIndex === -1 && currentBallName) {
+        const fallbackIndex = componentesOrdenados.findIndex((componentBall) => {
+          const componentName =
+            (componentBall as { nombre?: string | null }).nombre ??
+            componentBall.nombre ??
+            componentBall.name ??
+            '';
+          return componentName === currentBallName;
+        });
+
+        if (fallbackIndex > 0) {
+          const [currentBallComponent] = componentesOrdenados.splice(fallbackIndex, 1);
+          componentesOrdenados.unshift(currentBallComponent);
+        }
+      }
+
+      const componentes = componentesOrdenados
+        .map((componentBall) => {
+          const displayName =
+            (componentBall as { nombre?: string | null }).nombre ??
+            componentBall.nombre ??
+            componentBall.name ??
+            '';
+          return displayName;
+        })
+        .filter((name) => Boolean(name));
+
+      if (!componentes.length) {
+        return;
+      }
+
+      const resultado =
+        (evolution.result as { nombre?: string | null }).nombre ??
+        evolution.result.nombre ??
+        evolution.result.name ??
+        '';
+
+      if (!resultado) {
+        return;
+      }
+
+      evolucionesRelacionadasMap.set(evolution.id, {
+        resultado,
+        componentes
+      });
     });
 
     const { fusionResults, fusionInputs, evolutionResults, evolutionComponents, ...rest } = ball;
