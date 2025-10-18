@@ -16,8 +16,8 @@ services:
     build: ./frontend
     container_name: ballxpit-frontend
     environment:
-      - API_URL=http://localhost:3000
-      - VITE_API_URL=http://localhost:3000
+      - API_URL=http://ballxpit-backend:3000
+      - VITE_API_URL=http://api.ballxpitwiki.com
     ports:
       - '5173:5173'
     depends_on:

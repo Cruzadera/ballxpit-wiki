@@ -7,7 +7,7 @@ async function bootstrap() {
   app.enableCors({ origin: '*' });
 
   const port = process.env.PORT ? Number(process.env.PORT) : 3000;
-  await app.listen(port);
+  await app.listen(port, '0.0.0.0');
   console.log(`Ball x Pit API running on http://localhost:${port}`);
 }
 
