@@ -36,7 +36,7 @@ export default function BallCard({ ball }: BallCardProps) {
 
   return (
     <Link
-      to={`/ball/${ball.id}`}
+      to={`/balls/${ball.id}`}
       className="block rounded-2xl shadow p-4 bg-white/90 dark:bg-gray-800/80 hover:scale-105 transition-transform duration-200 border border-gray-200/60 dark:border-gray-700/60"
     >
       <div className="flex flex-col items-center text-center">

@@ -26,6 +26,7 @@ export default function App() {
         <main className="pb-16">
           <Routes>
             <Route path="/" element={<BallGrid />} />
+            <Route path="/balls/:id" element={<BallDetail />} />
             <Route path="/ball/:id" element={<BallDetail />} />
           </Routes>
         </main>
