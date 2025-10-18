@@ -1,201 +1,139 @@
 import { PrismaClient } from '@prisma/client';
+import fs from 'fs';
+import path from 'path';
 
 const prisma = new PrismaClient();
 
+type BallSeed = {
+  name: string;
+  nombre?: string;
+  type: string;
+  descripcion: string;
+  level?: number;
+};
+
+type FusionSeed = {
+  comb: string[];
+  result: string;
+  resultado?: string;
+  requiredLevel?: number;
+};
+
+const dataDir = path.join(__dirname, 'data');
+
+function readJson<T>(fileName: string): T {
+  const filePath = path.join(dataDir, fileName);
+  const fileContents = fs.readFileSync(filePath, 'utf8');
+  return JSON.parse(fileContents) as T;
+}
+
+function slugify(value: string): string {
+  return value
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/[^a-z0-9]+/g, '_')
+    .replace(/^_|_$/g, '');
+}
+
 async function main() {
+  console.log('🌱 Cargando datos iniciales...');
+
+  const balls = readJson<BallSeed[]>('balls.json');
+  const fusions = readJson<FusionSeed[]>('fusions.json');
+
   await prisma.fusionInput.deleteMany();
   await prisma.fusionRecipe.deleteMany();
   await prisma.evolution.deleteMany();
   await prisma.ball.deleteMany();
 
-  const balls = [
-    {
-      name: 'Burn',
-      type: 'Fire',
-      level: 5,
-      description: 'A volatile ember ready to ignite.',
-      imageUrl: 'https://via.placeholder.com/128?text=Burn'
-    },
-    {
-      name: 'Iron',
-      type: 'Metal',
-      level: 4,
-      description: 'Sturdy and unyielding metal sphere.',
-      imageUrl: 'https://via.placeholder.com/128?text=Iron'
-    },
-    {
-      name: 'Bomb',
-      type: 'Explosive',
-      level: 12,
-      description: 'An unstable orb primed to detonate.',
-      imageUrl: 'https://via.placeholder.com/128?text=Bomb'
-    },
-    {
-      name: 'Ghost',
-      type: 'Spirit',
-      level: 6,
-      description: 'A translucent ball that phases through matter.',
-      imageUrl: 'https://via.placeholder.com/128?text=Ghost'
-    },
-    {
-      name: 'Freeze',
-      type: 'Ice',
-      level: 6,
-      description: 'Chills anything it touches to the core.',
-      imageUrl: 'https://via.placeholder.com/128?text=Freeze'
-    },
-    {
-      name: 'Wrath',
-      type: 'Spirit',
-      level: 14,
-      description: 'Manifested rage ready to be unleashed.',
-      imageUrl: 'https://via.placeholder.com/128?text=Wrath'
-    },
-    {
-      name: 'Poison',
-      type: 'Toxic',
-      level: 7,
-      description: 'Seeps toxins into other balls on contact.',
-      imageUrl: 'https://via.placeholder.com/128?text=Poison'
-    },
-    {
-      name: 'Virus',
-      type: 'Toxic',
-      level: 15,
-      description: 'Rapidly replicates inside unlucky opponents.',
-      imageUrl: 'https://via.placeholder.com/128?text=Virus'
-    },
-    {
-      name: 'Bleed',
-      type: 'Dark',
-      level: 8,
-      description: 'Draws life force from every strike.',
-      imageUrl: 'https://via.placeholder.com/128?text=Bleed'
-    },
-    {
-      name: 'Brood Mother',
-      type: 'Nature',
-      level: 18,
-      description: 'A hive mind orb that commands lesser spawn.',
-      imageUrl: 'https://via.placeholder.com/128?text=Brood+Mother'
-    },
-    {
-      name: 'Leech',
-      type: 'Dark',
-      level: 16,
-      description: 'Feeds on lingering vitality to grow stronger.',
-      imageUrl: 'https://via.placeholder.com/128?text=Leech'
-    },
-    {
-      name: 'Ember',
-      type: 'Fire',
-      level: 10,
-      description: 'A glowing coal that signals greater flames.',
-      imageUrl: 'https://via.placeholder.com/128?text=Ember'
-    },
-    {
-      name: 'Inferno',
-      type: 'Fire',
-      level: 20,
-      description: 'A roaring wildfire contained in a sphere.',
-      imageUrl: 'https://via.placeholder.com/128?text=Inferno'
-    },
-    {
-      name: 'Wisp',
-      type: 'Spirit',
-      level: 9,
-      description: 'Drifts silently, guiding allies in the dark.',
-      imageUrl: 'https://via.placeholder.com/128?text=Wisp'
-    },
-    {
-      name: 'Phantom',
-      type: 'Spirit',
-      level: 19,
-      description: 'An ethereal menace made of pure intent.',
-      imageUrl: 'https://via.placeholder.com/128?text=Phantom'
-    }
-  ];
-
-  const createdBalls = new Map<string, number>();
+  const ballSeeds = new Map<string, BallSeed>();
 
   for (const ball of balls) {
-    const created = await prisma.ball.create({
-      data: ball
-    });
-    createdBalls.set(created.name, created.id);
+    ballSeeds.set(ball.name, ball);
   }
 
-  const fusionRecipes = [
-    {
-      result: 'Bomb',
-      requiredLevel: 10,
-      inputs: ['Burn', 'Iron']
-    },
-    {
-      result: 'Wrath',
-      requiredLevel: 14,
-      inputs: ['Ghost', 'Freeze']
-    },
-    {
-      result: 'Virus',
-      requiredLevel: 15,
-      inputs: ['Ghost', 'Poison']
-    },
-    {
-      result: 'Leech',
-      requiredLevel: 16,
-      inputs: ['Bleed', 'Brood Mother']
+  for (const fusion of fusions) {
+    if (!ballSeeds.has(fusion.result)) {
+      ballSeeds.set(fusion.result, {
+        name: fusion.result,
+        type: 'Especial',
+        descripcion: fusion.resultado ?? `Resultado de la fusión ${fusion.result}`,
+        level: 1
+      });
     }
-  ];
 
-  for (const recipe of fusionRecipes) {
-    const resultId = createdBalls.get(recipe.result);
-    if (!resultId) continue;
-
-    await prisma.fusionRecipe.create({
-      data: {
-        requiredLevel: recipe.requiredLevel,
-        resultId,
-        inputs: {
-          create: recipe.inputs
-            .map((name) => createdBalls.get(name))
-            .filter((id): id is number => Boolean(id))
-            .map((ballId) => ({ ballId }))
-        }
+    for (const inputName of fusion.comb) {
+      if (!ballSeeds.has(inputName)) {
+        ballSeeds.set(inputName, {
+          name: inputName,
+          type: 'Especial',
+          descripcion: `Componente de fusión para ${fusion.resultado ?? fusion.result}`,
+          level: 1
+        });
       }
-    });
+    }
   }
 
-  const evolutions = [
-    { base: 'Burn', evolved: 'Ember', requiredLevel: 8 },
-    { base: 'Ember', evolved: 'Inferno', requiredLevel: 18 },
-    { base: 'Ghost', evolved: 'Wisp', requiredLevel: 9 },
-    { base: 'Wisp', evolved: 'Phantom', requiredLevel: 17 },
-    { base: 'Bleed', evolved: 'Leech', requiredLevel: 16 }
-  ];
+  const ballIds = new Map<string, number>();
 
-  for (const evo of evolutions) {
-    const baseBallId = createdBalls.get(evo.base);
-    const evolvedBallId = createdBalls.get(evo.evolved);
+  for (const ball of ballSeeds.values()) {
+    const imageSlug = slugify(ball.name);
 
-    if (!baseBallId || !evolvedBallId) continue;
-
-    await prisma.evolution.create({
+    const created = await prisma.ball.create({
       data: {
-        baseBallId,
-        evolvedBallId,
-        requiredLevel: evo.requiredLevel
+        name: ball.name,
+        type: ball.type,
+        level: ball.level ?? 1,
+        description: ball.descripcion,
+        imageUrl: `/images/${imageSlug}.png`
       }
     });
+
+    ballIds.set(created.name, created.id);
   }
+
+  for (const fusion of fusions) {
+    const inputIds = fusion.comb
+      .map((name) => ballIds.get(name))
+      .filter((id): id is number => id !== undefined);
+
+    if (inputIds.length !== fusion.comb.length) {
+      console.warn(`⚠️  No se encontraron todas las bolas para la fusión ${fusion.result}`);
+      continue;
+    }
+
+    const resultId = ballIds.get(fusion.result);
+    if (!resultId) {
+      console.warn(`⚠️  No se encontró la bola resultado para ${fusion.result}`);
+      continue;
+    }
+
+    const recipe = await prisma.fusionRecipe.create({
+      data: {
+        requiredLevel: fusion.requiredLevel ?? 3,
+        result: { connect: { id: resultId } }
+      }
+    });
+
+    if (inputIds.length > 0) {
+      await prisma.fusionInput.createMany({
+        data: inputIds.map((ballId) => ({
+          recipeId: recipe.id,
+          ballId
+        }))
+      });
+    }
+  }
+
+  console.log('✅ Base de datos inicial cargada correctamente');
 }
 
 main()
-  .then(async () => {
-    await prisma.$disconnect();
-  })
-  .catch(async (e) => {
+  .catch((e) => {
     console.error(e);
-    await prisma.$disconnect();
     process.exit(1);
+  })
+  .finally(async () => {
+    await prisma.$disconnect();
   });
