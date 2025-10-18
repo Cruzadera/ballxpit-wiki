@@ -1,0 +1,19 @@
+{
+  "headerTitle": "⚪ Ball x Pit Wiki",
+  "heroTitle": "Explore the balls",
+  "heroSubtitle": "Search by name or discover their fusions and evolutions.",
+  "searchPlaceholder": "Search by name…",
+  "loadingBalls": "Loading balls…",
+  "noResults": "No balls matched your search.",
+  "cardFallbackDescription": "Click to view more details.",
+  "cardCallToAction": "Click to view more details.",
+  "darkModeLight": "☀️ Light mode",
+  "darkModeDark": "🌙 Dark mode",
+  "detailBack": "← Back to the list",
+  "detailLoading": "Loading…",
+  "detailNotFound": "Ball not found",
+  "detailDescriptionFallback": "No description available.",
+  "detailFusionsTitle": "🔗 Related fusions",
+  "detailFusionsEmpty": "No fusions are registered for this ball.",
+  "unknownBallName": "Mystery ball"
+}

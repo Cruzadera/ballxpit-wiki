@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useTranslations } from "../i18n/translations";
+import { useTranslation } from "react-i18next";
 
 const THEME_STORAGE_KEY = "theme";
 
@@ -24,7 +24,7 @@ function readInitialTheme(): ThemePreference {
 
 export default function DarkModeToggle() {
   const [theme, setTheme] = useState<ThemePreference>(() => readInitialTheme());
-  const texts = useTranslations();
+  const { t } = useTranslation();
 
   useEffect(() => {
     if (typeof document === "undefined") return;
@@ -51,7 +51,7 @@ export default function DarkModeToggle() {
       className="rounded-full px-3 py-1 text-sm bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 transition"
       type="button"
     >
-      {isDark ? texts.darkModeLight : texts.darkModeDark}
+      {isDark ? t("darkModeLight") : t("darkModeDark")}
     </button>
   );
 }
