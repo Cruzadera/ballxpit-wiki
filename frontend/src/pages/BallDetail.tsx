@@ -117,12 +117,13 @@ export default function BallDetail() {
             </h3>
             <div className="flex flex-wrap justify-center gap-3">
               {componentList.map((comp, index) => (
-                <span
-                  key={`${comp.id}-${index}`}
-                  className="bg-gray-800/50 dark:bg-gray-700/60 text-gray-100 px-3 py-1 rounded-xl text-sm font-medium"
+                <Link
+                  key={comp.id ?? index}
+                  to={typeof comp.id === "number" ? `/balls/${comp.id}` : "#"}
+                  className="bg-gray-800/60 dark:bg-gray-700/50 text-indigo-300 hover:text-indigo-100 px-3 py-1 rounded-xl text-sm font-medium hover:underline transition"
                 >
                   {translateBallName(comp.nombre || comp.name || "?")}
-                </span>
+                </Link>
               ))}
             </div>
           </div>
