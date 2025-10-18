@@ -5,9 +5,12 @@ import { PrismaService } from '../prisma/prisma.service';
 const ballSelection = {
   id: true,
   name: true,
+  nombre: true,
   type: true,
+  tipo: true,
   level: true,
   description: true,
+  descripcion: true,
   imageUrl: true
 } satisfies Prisma.BallSelect;
 

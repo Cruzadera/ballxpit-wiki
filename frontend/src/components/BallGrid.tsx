@@ -6,39 +6,34 @@ import { translateBallName } from "../utils/translateBall";
 type BallSummary = BallLike & {
   descripcion?: string | null;
   description?: string | null;
+  tipo?: string | null;
 };
 
 export default function BallGrid() {
-  const [balls, setBalls] = useState<BallSummary[]>([]);
+  const [pureBalls, setPureBalls] = useState<BallSummary[]>([]);
+  const [fusionBalls, setFusionBalls] = useState<BallSummary[]>([]);
+  const [evolutionBalls, setEvolutionBalls] = useState<BallSummary[]>([]);
   const [loading, setLoading] = useState(true);
   const [query, setQuery] = useState("");
   const { t, i18n } = useTranslation();
 
   useEffect(() => {
     const apiUrl = import.meta.env.VITE_API_URL || "http://localhost:3000";
-
-    fetch(`${apiUrl}/balls`)
-      .then((res) => res.json())
-      .then((data: BallSummary[]) => {
-        const sorted = data.sort((a, b) => {
-          const aHasFusionResults = Array.isArray(a.fusionResults) && a.fusionResults.length > 0;
-          const bHasFusionResults = Array.isArray(b.fusionResults) && b.fusionResults.length > 0;
-          const aIsPure = Array.isArray(a.fusionResults) ? a.fusionResults.length === 0 : false;
-          const bIsPure = Array.isArray(b.fusionResults) ? b.fusionResults.length === 0 : false;
-
-          if (aIsPure && !bIsPure) return -1;
-          if (!aIsPure && bIsPure) return 1;
-
-          if (!aHasFusionResults && bHasFusionResults) return 1;
-          if (aHasFusionResults && !bHasFusionResults) return -1;
-
+    Promise.all([
+      fetch(`${apiUrl}/balls/puras`).then((res) => res.json() as Promise<BallSummary[]>),
+      fetch(`${apiUrl}/balls/fusions`).then((res) => res.json() as Promise<BallSummary[]>),
+      fetch(`${apiUrl}/balls/evolutions`).then((res) => res.json() as Promise<BallSummary[]>)
+    ])
+      .then(([puras, fusiones, evoluciones]) => {
+        const byName = (a: BallSummary, b: BallSummary) => {
           const aName = a.nombre || a.name || "";
           const bName = b.nombre || b.name || "";
-
           return aName.localeCompare(bName);
-        });
+        };
 
-        setBalls(sorted);
+        setPureBalls([...puras].sort(byName));
+        setFusionBalls([...fusiones].sort(byName));
+        setEvolutionBalls([...evoluciones].sort(byName));
         setLoading(false);
       })
       .catch((err) => {
@@ -49,19 +44,30 @@ export default function BallGrid() {
 
   const filteredBalls = useMemo(() => {
     const normalizedQuery = query.trim().toLowerCase();
+    const filterBalls = (balls: BallSummary[]) =>
+      balls.filter((ball) => {
+        const originalName = (ball.nombre || ball.name || "").toLowerCase();
+        const translatedName = translateBallName(ball.nombre || ball.name || "").toLowerCase();
+        if (!normalizedQuery) {
+          return true;
+        }
+        return (
+          originalName.includes(normalizedQuery) ||
+          translatedName.includes(normalizedQuery)
+        );
+      });
 
-    return balls.filter((ball) => {
-      const originalName = (ball.nombre || ball.name || "").toLowerCase();
-      const translatedName = translateBallName(ball.nombre || ball.name || "").toLowerCase();
-      if (!normalizedQuery) {
-        return true;
-      }
-      return (
-        originalName.includes(normalizedQuery) ||
-        translatedName.includes(normalizedQuery)
-      );
-    });
-  }, [balls, query, i18n.language]);
+    return {
+      puras: filterBalls(pureBalls),
+      fusiones: filterBalls(fusionBalls),
+      evoluciones: filterBalls(evolutionBalls)
+    };
+  }, [pureBalls, fusionBalls, evolutionBalls, query, i18n.language]);
+
+  const hasResults =
+    filteredBalls.puras.length > 0 ||
+    filteredBalls.fusiones.length > 0 ||
+    filteredBalls.evoluciones.length > 0;
 
   if (loading) {
     return (
@@ -83,13 +89,48 @@ export default function BallGrid() {
         />
       </div>
 
-      {filteredBalls.length === 0 ? (
+      {!hasResults ? (
         <p className="text-center text-gray-600 dark:text-gray-300">{t("noResults")}</p>
       ) : (
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-          {filteredBalls.map((ball) => (
-            <BallCard key={ball.id} ball={ball} />
-          ))}
+        <div className="flex flex-col gap-10">
+          {filteredBalls.puras.length > 0 && (
+            <div>
+              <h2 className="text-xl font-semibold mb-4 text-gray-800 dark:text-gray-100">
+                {t("pureBallsHeading")}
+              </h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                {filteredBalls.puras.map((ball) => (
+                  <BallCard key={`pure-${ball.id}`} ball={ball} />
+                ))}
+              </div>
+            </div>
+          )}
+
+          {filteredBalls.fusiones.length > 0 && (
+            <div>
+              <h2 className="text-xl font-semibold mb-4 text-gray-800 dark:text-gray-100">
+                {t("fusionBallsHeading")}
+              </h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                {filteredBalls.fusiones.map((ball) => (
+                  <BallCard key={`fusion-${ball.id}`} ball={ball} />
+                ))}
+              </div>
+            </div>
+          )}
+
+          {filteredBalls.evoluciones.length > 0 && (
+            <div>
+              <h2 className="text-xl font-semibold mb-4 text-gray-800 dark:text-gray-100">
+                {t("evolutionBallsHeading")}
+              </h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                {filteredBalls.evoluciones.map((ball) => (
+                  <BallCard key={`evolution-${ball.id}`} ball={ball} />
+                ))}
+              </div>
+            </div>
+          )}
         </div>
       )}
     </section>

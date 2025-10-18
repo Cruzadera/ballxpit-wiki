@@ -14,7 +14,16 @@
   "detailNotFound": "Bola no encontrada",
   "detailDescriptionFallback": "No hay descripción disponible.",
   "components": "Se compone de",
+  "pureBall": "Bola esencial: no proviene de ninguna combinación.",
+  "evolvesFrom": "Evoluciona desde",
   "detailFusionsTitle": "🔗 Fusiones relacionadas",
   "detailFusionsEmpty": "No hay fusiones registradas para esta bola.",
+  "pureBallsHeading": "⚪ Bolas puras",
+  "fusionBallsHeading": "🧪 Fusiones",
+  "evolutionBallsHeading": "💥 Evoluciones",
+  "relatedFusions": "🔗 Fusiones relacionadas",
+  "relatedFusionsEmpty": "No hay fusiones registradas para esta bola.",
+  "relatedEvolutions": "💥 Evoluciones relacionadas",
+  "relatedEvolutionsEmpty": "No hay evoluciones registradas para esta bola.",
   "unknownBallName": "Bola misteriosa"
 }

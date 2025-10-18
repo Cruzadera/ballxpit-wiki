@@ -14,7 +14,16 @@
   "detailNotFound": "Ball not found",
   "detailDescriptionFallback": "No description available.",
   "components": "Composed of",
+  "pureBall": "Essential ball: does not come from any combination.",
+  "evolvesFrom": "Evolves from",
   "detailFusionsTitle": "🔗 Related fusions",
   "detailFusionsEmpty": "No fusions are registered for this ball.",
+  "pureBallsHeading": "⚪ Pure balls",
+  "fusionBallsHeading": "🧪 Fusions",
+  "evolutionBallsHeading": "💥 Evolutions",
+  "relatedFusions": "🔗 Related fusions",
+  "relatedFusionsEmpty": "This ball does not participate in any fusion.",
+  "relatedEvolutions": "💥 Related evolutions",
+  "relatedEvolutionsEmpty": "This ball is not involved in any evolution.",
   "unknownBallName": "Mystery ball"
 }

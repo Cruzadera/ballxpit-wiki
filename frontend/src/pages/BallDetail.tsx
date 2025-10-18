@@ -17,6 +17,12 @@ type FusionInput = {
   nombre?: string | null;
 };
 
+type RelatedBall = {
+  id: number;
+  name?: string | null;
+  nombre?: string | null;
+};
+
 type FusionRecipe = {
   id: number;
   result: FusionResult;
@@ -26,10 +32,13 @@ type FusionRecipe = {
 type BallDetailData = BallLike & {
   description?: string | null;
   descripcion?: string | null;
+  tipo?: string | null;
   fusionInputs?: FusionRecipe[];
   fusionResults?: FusionRecipe[];
   componentes?: FusionInput[];
   components?: FusionInput[];
+  fusionesRelacionadas?: RelatedBall[];
+  evolucionesRelacionadas?: RelatedBall[];
 };
 
 export default function BallDetail() {
@@ -70,6 +79,16 @@ export default function BallDetail() {
     [ball]
   );
 
+  const relatedFusions = useMemo(
+    () => ball?.fusionesRelacionadas || [],
+    [ball]
+  );
+
+  const relatedEvolutions = useMemo(
+    () => ball?.evolucionesRelacionadas || [],
+    [ball]
+  );
+
   const iconSrc = getIcon(ball?.nombre || ball?.name || "");
 
   if (loading) {
@@ -107,13 +126,35 @@ export default function BallDetail() {
           <p className="mt-4 text-base text-gray-700 dark:text-gray-300 max-w-2xl">{description}</p>
         </div>
 
-        {componentList.length > 0 && (
+        {ball.tipo === "pura" && (
+          <p className="text-gray-400 dark:text-gray-500 mt-4 italic">{t("pureBall")}</p>
+        )}
+
+        {ball.tipo === "fusion" && componentList.length > 0 && (
           <div className="mt-6">
             <h3 className="text-lg font-semibold mb-2 flex items-center justify-center gap-2 text-gray-900 dark:text-gray-100">
-              <span role="img" aria-hidden="true">
-                🧩
-              </span>
+              <span role="img" aria-hidden="true">🧩</span>
               {t("components")}
+            </h3>
+            <div className="flex flex-wrap justify-center gap-3">
+              {componentList.map((comp, index) => (
+                <Link
+                  key={comp.id ?? index}
+                  to={typeof comp.id === "number" ? `/balls/${comp.id}` : "#"}
+                  className="bg-gray-800/60 dark:bg-gray-700/50 text-indigo-300 hover:text-indigo-100 px-3 py-1 rounded-xl text-sm font-medium hover:underline transition"
+                >
+                  {translateBallName(comp.nombre || comp.name || "?")}
+                </Link>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {ball.tipo === "evolucion" && componentList.length > 0 && (
+          <div className="mt-6">
+            <h3 className="text-lg font-semibold mb-2 flex items-center justify-center gap-2 text-gray-900 dark:text-gray-100">
+              <span role="img" aria-hidden="true">🔥</span>
+              {t("evolvesFrom")}
             </h3>
             <div className="flex flex-wrap justify-center gap-3">
               {componentList.map((comp, index) => (
@@ -131,32 +172,46 @@ export default function BallDetail() {
 
         <div className="mt-10">
           <h3 className="text-lg font-semibold mb-4 text-gray-900 dark:text-gray-100 text-center">
-            {t("detailFusionsTitle")}
+            {t("relatedFusions")}
           </h3>
-          {ball.fusionInputs?.length ? (
+          {relatedFusions.length ? (
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {ball.fusionInputs.map((fusion) => {
-                const resultName = translateBallName(
-                  fusion.result.nombre || fusion.result.name || "?"
-                );
-                const inputNames = fusion.inputs
-                  .map((input) =>
-                    translateBallName(input.nombre || input.name || "?")
-                  )
-                  .join(" + ");
-                return (
-                  <div
-                    key={fusion.id}
-                    className="p-4 rounded-2xl bg-white/60 dark:bg-gray-800/70 shadow border border-white/30 dark:border-gray-700/40 text-center"
-                  >
-                    {inputNames} → <strong>{resultName}</strong>
-                  </div>
-                );
-              })}
+              {relatedFusions.map((fusion) => (
+                <Link
+                  key={fusion.id}
+                  to={`/balls/${fusion.id}`}
+                  className="p-4 rounded-2xl bg-white/60 dark:bg-gray-800/70 shadow border border-white/30 dark:border-gray-700/40 text-center hover:shadow-lg transition"
+                >
+                  {translateBallName(fusion.nombre || fusion.name || "?")}
+                </Link>
+              ))}
             </div>
           ) : (
             <p className="text-center text-sm text-gray-500 dark:text-gray-400">
-              {t("detailFusionsEmpty")}
+              {t("relatedFusionsEmpty")}
+            </p>
+          )}
+        </div>
+
+        <div className="mt-10">
+          <h3 className="text-lg font-semibold mb-4 text-gray-900 dark:text-gray-100 text-center">
+            {t("relatedEvolutions")}
+          </h3>
+          {relatedEvolutions.length ? (
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {relatedEvolutions.map((evolution) => (
+                <Link
+                  key={evolution.id}
+                  to={`/balls/${evolution.id}`}
+                  className="p-4 rounded-2xl bg-white/60 dark:bg-gray-800/70 shadow border border-white/30 dark:border-gray-700/40 text-center hover:shadow-lg transition"
+                >
+                  {translateBallName(evolution.nombre || evolution.name || "?")}
+                </Link>
+              ))}
+            </div>
+          ) : (
+            <p className="text-center text-sm text-gray-500 dark:text-gray-400">
+              {t("relatedEvolutionsEmpty")}
             </p>
           )}
         </div>
