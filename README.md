@@ -33,7 +33,7 @@ ballxpit-wiki/
    - Frontend disponible en: http://localhost:5173
    - Backend disponible en: http://localhost:3000
 
-El volumen `sqlite_data` conserva la base de datos `dev.db` generada por Prisma (ubicada en `backend/prisma/data/dev.db`).
+El volumen `sqlite_data` conserva la base de datos `dev.db` generada por Prisma (ubicada en `backend/prisma/dev.db`).
 
 ## 🧠 API REST (MVP)
 
@@ -71,7 +71,7 @@ npx prisma db push
 npx prisma db seed
 ```
 
-El archivo `.env` del backend define `DATABASE_URL=file:./prisma/data/dev.db` y `PORT=3000`.
+El archivo `.env` del backend define `DATABASE_URL=file:./prisma/dev.db` y `PORT=3000`.
 
 ## ➕ Añadir nuevos registros
 
@@ -89,7 +89,7 @@ También puedes importar datos desde un JSON adaptando el seed o creando un scri
 ## 🔧 Variables de entorno
 
 - **Backend (`backend/.env`):**
-  - `DATABASE_URL="file:./prisma/data/dev.db"`
+  - `DATABASE_URL="file:./prisma/dev.db"`
   - `PORT=3000`
 - **Frontend:**
   - Copia `frontend/.env.example` a `frontend/.env` y ajusta `VITE_API_URL` si necesitas apuntar a otro backend.

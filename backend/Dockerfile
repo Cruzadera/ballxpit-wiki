@@ -1,9 +1,15 @@
-FROM node:18-alpine AS deps
+FROM node:20-slim AS base
+
+RUN apt-get update \
+  && apt-get install -y --no-install-recommends openssl \
+  && rm -rf /var/lib/apt/lists/*
+
+FROM base AS deps
 WORKDIR /app
 COPY package.json ./
 RUN npm install
 
-FROM node:18-alpine AS builder
+FROM base AS builder
 WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY package.json ./
@@ -13,7 +19,7 @@ COPY src ./src
 RUN npx prisma generate
 RUN npm run build
 
-FROM node:18-alpine AS runner
+FROM base AS runner
 WORKDIR /app
 ENV NODE_ENV=production
 COPY --from=deps /app/node_modules ./node_modules

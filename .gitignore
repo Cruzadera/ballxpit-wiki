@@ -15,7 +15,7 @@ backend/.env.local
 frontend/.env
 
 # SQLite database
-backend/prisma/data/dev.db
+backend/prisma/dev.db
 
 # Misc
 .DS_Store
