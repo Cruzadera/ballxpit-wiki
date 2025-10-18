@@ -1,0 +1,50 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Ball {
+  id              Int              @id @default(autoincrement())
+  name            String           @unique
+  type            String
+  level           Int
+  description     String
+  imageUrl        String
+  fusionResults   FusionRecipe[]   @relation("FusionResult")
+  fusionInputs    FusionInput[]
+  evolutionsFrom  Evolution[]      @relation("BaseBall")
+  evolutionsTo    Evolution[]      @relation("EvolvedBall")
+  createdAt       DateTime         @default(now())
+  updatedAt       DateTime         @updatedAt
+}
+
+model FusionRecipe {
+  id            Int           @id @default(autoincrement())
+  requiredLevel Int
+  resultId      Int
+  result        Ball          @relation("FusionResult", fields: [resultId], references: [id])
+  inputs        FusionInput[]
+  createdAt     DateTime      @default(now())
+  updatedAt     DateTime      @updatedAt
+}
+
+model FusionInput {
+  id        Int           @id @default(autoincrement())
+  recipeId  Int
+  ballId    Int
+  recipe    FusionRecipe  @relation(fields: [recipeId], references: [id], onDelete: Cascade)
+  ball      Ball          @relation(fields: [ballId], references: [id], onDelete: Cascade)
+}
+
+model Evolution {
+  id            Int   @id @default(autoincrement())
+  requiredLevel Int
+  baseBallId    Int
+  evolvedBallId Int
+  baseBall      Ball  @relation("BaseBall", fields: [baseBallId], references: [id])
+  evolvedBall   Ball  @relation("EvolvedBall", fields: [evolvedBallId], references: [id])
+}
