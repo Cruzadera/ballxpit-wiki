@@ -10,6 +10,7 @@ export type BallLike = {
   nombre?: string | null;
   descripcion?: string | null;
   description?: string | null;
+  tipo?: string | null;
   fusionResults?: { id: number }[] | null;
 };
 

@@ -8,8 +8,12 @@ export class EvolutionsService {
   findAll() {
     return this.prisma.evolution.findMany({
       include: {
-        baseBall: true,
-        evolvedBall: true
+        result: true,
+        components: {
+          include: {
+            ball: true
+          }
+        }
       },
       orderBy: { id: 'asc' }
     });
@@ -19,8 +23,12 @@ export class EvolutionsService {
     const evolution = await this.prisma.evolution.findUnique({
       where: { id },
       include: {
-        baseBall: true,
-        evolvedBall: true
+        result: true,
+        components: {
+          include: {
+            ball: true
+          }
+        }
       }
     });
 

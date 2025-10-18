@@ -8,18 +8,21 @@ datasource db {
 }
 
 model Ball {
-  id              Int              @id @default(autoincrement())
-  name            String           @unique
-  type            String
-  level           Int
-  description     String
-  imageUrl        String
-  fusionResults   FusionRecipe[]   @relation("FusionResult")
-  fusionInputs    FusionInput[]
-  evolutionsFrom  Evolution[]      @relation("BaseBall")
-  evolutionsTo    Evolution[]      @relation("EvolvedBall")
-  createdAt       DateTime         @default(now())
-  updatedAt       DateTime         @updatedAt
+  id                   Int                   @id @default(autoincrement())
+  name                 String                @unique
+  nombre               String?
+  type                 String
+  tipo                 String                @default("pura")
+  level                Int
+  description          String
+  descripcion          String?
+  imageUrl             String
+  fusionResults        FusionRecipe[]        @relation("FusionResult")
+  fusionInputs         FusionInput[]
+  evolutionResults     Evolution[]           @relation("EvolutionResult")
+  evolutionComponents  EvolutionComponent[]
+  createdAt            DateTime              @default(now())
+  updatedAt            DateTime              @updatedAt
 }
 
 model FusionRecipe {
@@ -30,7 +33,7 @@ model FusionRecipe {
   resultado     String?
   descripcion   String?
   emoji         String?
-  tipo          String?
+  tipo          String        @default("fusion")
   resultId      Int
   result        Ball          @relation("FusionResult", fields: [resultId], references: [id])
   inputs        FusionInput[]
@@ -47,10 +50,22 @@ model FusionInput {
 }
 
 model Evolution {
-  id            Int   @id @default(autoincrement())
+  id            Int                 @id @default(autoincrement())
   requiredLevel Int
-  baseBallId    Int
-  evolvedBallId Int
-  baseBall      Ball  @relation("BaseBall", fields: [baseBallId], references: [id])
-  evolvedBall   Ball  @relation("EvolvedBall", fields: [evolvedBallId], references: [id])
+  descripcion   String?
+  emoji         String?
+  tipo          String              @default("evolucion")
+  resultId      Int
+  result        Ball                @relation("EvolutionResult", fields: [resultId], references: [id])
+  components    EvolutionComponent[]
+  createdAt     DateTime            @default(now())
+  updatedAt     DateTime            @updatedAt
+}
+
+model EvolutionComponent {
+  id          Int        @id @default(autoincrement())
+  evolutionId Int
+  ballId      Int
+  evolution   Evolution  @relation(fields: [evolutionId], references: [id], onDelete: Cascade)
+  ball        Ball       @relation(fields: [ballId], references: [id], onDelete: Cascade)
 }
