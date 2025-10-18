@@ -1,5 +1,56 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
+import { Prisma } from '@prisma/client';
 import { PrismaService } from '../prisma/prisma.service';
+
+type BallWithRelations = Prisma.BallGetPayload<{
+  include: {
+    fusionResults: {
+      include: {
+        inputs: {
+          include: {
+            ball: true;
+          };
+        };
+      };
+    };
+    fusionInputs: {
+      include: {
+        recipe: {
+          include: {
+            result: true;
+          };
+        };
+      };
+    };
+    evolutionResults: {
+      include: {
+        components: {
+          include: {
+            ball: true;
+          };
+        };
+      };
+    };
+    evolutionComponents: {
+      include: {
+        evolution: {
+          include: {
+            result: true;
+            components: {
+              include: {
+                ball: true;
+              };
+            }
+          };
+        };
+      };
+    };
+  };
+}>;
+
+type EvolutionComponentBall = NonNullable<
+  BallWithRelations['evolutionResults'][number]['components'][number]['ball']
+>;
 
 @Injectable()
 export class BallsService {
@@ -33,7 +84,7 @@ export class BallsService {
   }
 
   async findOne(id: number) {
-    const ball = await this.prisma.ball.findUnique({
+    const rawBall = await this.prisma.ball.findUnique({
       where: { id },
       include: {
         fusionResults: {
@@ -67,7 +118,12 @@ export class BallsService {
           include: {
             evolution: {
               include: {
-                result: true
+                result: true,
+                components: {
+                  include: {
+                    ball: true
+                  }
+                }
               }
             }
           }
@@ -75,9 +131,11 @@ export class BallsService {
       }
     });
 
-    if (!ball) {
+    if (!rawBall) {
       throw new NotFoundException(`Ball with id ${id} not found`);
     }
+
+    const ball = rawBall as BallWithRelations;
 
     const componentesMap = new Map<number, { id: number; name?: string | null; nombre?: string | null }>();
 
@@ -95,7 +153,9 @@ export class BallsService {
       });
     } else if (ball.tipo === 'evolucion') {
       ball.evolutionResults.forEach((evolution) => {
-        evolution.components.forEach(({ ball: componentBall }) => {
+        (evolution.components ?? []).forEach((component) => {
+          const componentBall = component.ball;
+
           if (componentBall) {
             componentesMap.set(componentBall.id, {
               id: componentBall.id,
@@ -139,8 +199,10 @@ export class BallsService {
       }
 
       const componentesEncontrados = (evolution.components ?? [])
-        .map(({ ball: componentBall }) => componentBall)
-        .filter((componentBall): componentBall is typeof ball => Boolean(componentBall));
+        .map((component) => component.ball)
+        .filter(
+          (componentBall): componentBall is EvolutionComponentBall => Boolean(componentBall)
+        );
 
       if (!componentesEncontrados.length) {
         return;
