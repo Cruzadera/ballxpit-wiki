@@ -98,6 +98,7 @@ También puedes importar datos desde un JSON adaptando el seed o creando un scri
 
 - El backend habilita CORS para permitir solicitudes desde el frontend Vite.
 - Las imágenes de las bolas utilizan placeholders (`https://via.placeholder.com/128`). Sustitúyelas por assets reales cuando los tengas disponibles.
+- ⚙️ Requiere Node 20 o superior para ejecutar el frontend con Vite 5 correctamente.
 - Para un despliegue productivo considera construir el frontend estático y servirlo desde un CDN o servidor dedicado.
 
 ¡Disfruta explorando las fusiones del Ball x Pit! 🔥
