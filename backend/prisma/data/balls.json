@@ -2,331 +2,378 @@
   {
     "name": "Bleed",
     "nombre": "Sangrar",
-    "description": "Inflicts steady bleed damage that stacks with each hit.",
-    "descripcion": "Causa daño continuo al enemigo.",
-    "imageUrl": "/icons/dark.svg"
+    "description": "A cursed ball that feeds on the wounds of others.",
+    "descripcion": "Una bola maldita que se alimenta de las heridas de los demás.",
+    "imageUrl": "/icons/dark.svg",
+    "type": "pure"
   },
   {
     "name": "Brood Mother",
     "nombre": "Madre Criadora",
-    "description": "Spawns parasitic offspring that overwhelm the arena.",
-    "descripcion": "Engendra criaturas parasitarias.",
-    "imageUrl": "/icons/default.svg"
+    "description": "Spawns lesser orbs under her control.",
+    "descripcion": "Engendra orbes menores bajo su control.",
+    "imageUrl": "/icons/default.svg",
+    "type": "pure"
   },
   {
-    "name": "Fire",
+    "name": "Burn",
     "nombre": "Fuego",
-    "description": "Engulfs targets in lingering flames that scorch armor and flesh.",
-    "descripcion": "Inflige daño ígneo persistente.",
-    "imageUrl": "/icons/fire.svg"
+    "description": "A volatile ember that ignites everything nearby.",
+    "descripcion": "Una brasa volátil que prende todo a su alrededor.",
+    "imageUrl": "/icons/fire.svg",
+    "type": "pure"
   },
   {
     "name": "Cell",
     "nombre": "Célula",
-    "description": "A living nucleus that adapts quickly to any battlefield threat.",
-    "descripcion": "Base de toda materia viva.",
-    "imageUrl": "/icons/default.svg"
+    "description": "The origin of all life, simple but full of potential.",
+    "descripcion": "El origen de toda vida, simple pero lleno de potencial.",
+    "imageUrl": "/icons/default.svg",
+    "type": "pure"
   },
   {
     "name": "Charm",
     "nombre": "Encanto",
-    "description": "Bends foes to your will through irresistible allure.",
-    "descripcion": "Seduce o manipula a los enemigos.",
-    "imageUrl": "/icons/magic.svg"
+    "description": "A mesmerizing ball that manipulates enemies.",
+    "descripcion": "Una bola hipnótica que manipula a los enemigos.",
+    "imageUrl": "/icons/magic.svg",
+    "type": "pure"
   },
   {
     "name": "Dark",
     "nombre": "Oscuro",
-    "description": "Channels forbidden shadow energy to curse and drain enemies.",
-    "descripcion": "Canaliza energía negativa o prohibida.",
-    "imageUrl": "/icons/dark.svg"
+    "description": "The essence of shadow and forbidden power.",
+    "descripcion": "La esencia de la sombra y el poder prohibido.",
+    "imageUrl": "/icons/dark.svg",
+    "type": "pure"
   },
   {
     "name": "Earthquake",
     "nombre": "Terremoto",
-    "description": "Shakes the ground with destructive tremors that topple formations.",
-    "descripcion": "Provoca temblores devastadores.",
-    "imageUrl": "/icons/nature.svg"
+    "description": "A trembling force that shatters the ground.",
+    "descripcion": "Una fuerza temblorosa que hace añicos el suelo.",
+    "imageUrl": "/icons/nature.svg",
+    "type": "pure"
   },
   {
     "name": "Egg Sack",
     "nombre": "Saco de Huevos",
-    "description": "Packed with hatchlings ready to burst forth on impact.",
-    "descripcion": "Contiene larvas listas para eclosionar.",
-    "imageUrl": "/icons/default.svg"
+    "description": "Fragile container of countless possibilities.",
+    "descripcion": "Contenedor frágil de incontables posibilidades.",
+    "imageUrl": "/icons/default.svg",
+    "type": "pure"
   },
   {
     "name": "Freeze",
-    "nombre": "Congelar",
-    "description": "Encases opponents in ice, slowing them to a crawl.",
-    "descripcion": "Congela a los enemigos y ralentiza su movimiento.",
-    "imageUrl": "/icons/ice.svg"
+    "nombre": "Congelación",
+    "description": "A frozen sphere that stops time itself.",
+    "descripcion": "Una esfera helada que detiene el tiempo mismo.",
+    "imageUrl": "/icons/ice.svg",
+    "type": "pure"
   },
   {
     "name": "Ghost",
     "nombre": "Fantasma",
-    "description": "Slips through walls and foes alike, ignoring physical barriers.",
-    "descripcion": "Atraviesa muros y enemigos.",
-    "imageUrl": "/icons/ghost.svg"
+    "description": "A spectral orb that passes through matter.",
+    "descripcion": "Una esfera espectral que atraviesa la materia.",
+    "imageUrl": "/icons/ghost.svg",
+    "type": "pure"
   },
   {
     "name": "Iron",
-    "nombre": "Metal",
-    "description": "A dense sphere that rebounds with brutal force and barely dents.",
-    "descripcion": "Sólida y resistente, con rebotes potentes.",
-    "imageUrl": "/icons/metal.svg"
+    "nombre": "Hierro",
+    "description": "A metallic orb of resilience and strength.",
+    "descripcion": "Una esfera metálica de resistencia y fuerza.",
+    "imageUrl": "/icons/metal.svg",
+    "type": "pure"
   },
   {
     "name": "Laser",
     "nombre": "Láser",
-    "description": "Fires concentrated energy beams that pierce straight lines.",
-    "descripcion": "Dispara rayos de energía concentrada.",
-    "imageUrl": "/icons/default.svg"
+    "description": "A precise beam condensed into solid form.",
+    "descripcion": "Un rayo preciso condensado en forma sólida.",
+    "imageUrl": "/icons/default.svg",
+    "type": "pure"
   },
   {
     "name": "Light",
     "nombre": "Luz",
-    "description": "Bathes the arena in purifying radiance that reveals hidden threats.",
-    "descripcion": "Purifica y revela lo oculto.",
-    "imageUrl": "/icons/light.svg"
+    "description": "A radiant sphere of pure illumination.",
+    "descripcion": "Una esfera radiante de pura iluminación.",
+    "imageUrl": "/icons/light.svg",
+    "type": "pure"
   },
   {
     "name": "Lightning",
-    "nombre": "Relámpago",
-    "description": "Unleashes chained bolts that race between clustered targets.",
-    "descripcion": "Descarga energía en cadena.",
-    "imageUrl": "/icons/light.svg"
+    "nombre": "Rayo",
+    "description": "A ball of pure electric discharge.",
+    "descripcion": "Una bola de pura descarga eléctrica.",
+    "imageUrl": "/icons/light.svg",
+    "type": "pure"
   },
   {
     "name": "Poison",
     "nombre": "Veneno",
-    "description": "Corrodes enemies over time with toxic spores.",
-    "descripcion": "Debilita lentamente al enemigo.",
-    "imageUrl": "/icons/poison.svg"
+    "description": "Slowly corrupts and infects everything it touches.",
+    "descripcion": "Corrompe e infecta lentamente todo lo que toca.",
+    "imageUrl": "/icons/poison.svg",
+    "type": "pure"
   },
   {
     "name": "Vampire",
     "nombre": "Vampiro",
-    "description": "Drains vitality from every collision to sustain the wielder.",
-    "descripcion": "Absorbe vida de los enemigos.",
-    "imageUrl": "/icons/dark.svg"
+    "description": "An ancient orb that feeds on the life of others.",
+    "descripcion": "Una esfera ancestral que se alimenta de la vida ajena.",
+    "imageUrl": "/icons/dark.svg",
+    "type": "pure"
   },
   {
     "name": "Wind",
     "nombre": "Viento",
-    "description": "Commands swirling gusts that redirect trajectories midair.",
-    "descripcion": "Controla corrientes y tormentas.",
-    "imageUrl": "/icons/wind.svg"
+    "description": "A constantly shifting sphere of air and motion.",
+    "descripcion": "Una esfera en constante movimiento de aire y energía.",
+    "imageUrl": "/icons/wind.svg",
+    "type": "pure"
   },
   {
     "name": "Leech",
     "nombre": "Sanguijuela",
-    "description": "Clings to enemies and siphons their lifeblood relentlessly.",
-    "descripcion": "Fusión que crea una sanguijuela que absorbe vida.",
-    "imageUrl": "/icons/dark.svg"
+    "description": "Draws vitality from every target struck.",
+    "descripcion": "Extrae vitalidad de cada objetivo golpeado.",
+    "imageUrl": "/icons/dark.svg",
+    "type": "evolution"
   },
   {
-    "name": "Frenzy",
-    "nombre": "Frenesí",
-    "description": "Explodes with reckless aggression, trading control for ferocity.",
-    "descripcion": "Incrementa el ataque al costo de perder control.",
-    "imageUrl": "/icons/default.svg"
+    "name": "Berserk",
+    "nombre": "Furia",
+    "description": "Unleashes uncontrollable rage that increases attack speed.",
+    "descripcion": "Desata una furia incontrolable que aumenta la velocidad de ataque.",
+    "imageUrl": "/icons/default.svg",
+    "type": "evolution"
   },
   {
     "name": "Sacrifice",
     "nombre": "Sacrificio",
-    "description": "Converts your own life force into devastating annihilation.",
-    "descripcion": "Convierte tu vida en poder destructivo.",
-    "imageUrl": "/icons/ice.svg"
+    "description": "Destroys itself to empower allies or trigger devastation.",
+    "descripcion": "Se destruye a sí misma para potenciar aliados o causar devastación.",
+    "imageUrl": "/icons/ice.svg",
+    "type": "evolution"
   },
   {
     "name": "Hemorrhage",
     "nombre": "Hemorragia",
-    "description": "Deepens every wound until foes collapse from blood loss.",
-    "descripcion": "Daño continuo con cada impacto.",
-    "imageUrl": "/icons/dark.svg"
+    "description": "Causes enemies to bleed continuously.",
+    "descripcion": "Hace que los enemigos sangren de forma continua.",
+    "imageUrl": "/icons/dark.svg",
+    "type": "evolution"
   },
   {
     "name": "Vampire Lord",
     "nombre": "Señor Vampiro",
-    "description": "An apex predator that feeds continuously on the battlefield.",
-    "descripcion": "Versión superior que roba vida de forma constante.",
-    "imageUrl": "/icons/dark.svg"
+    "description": "Apex form of the vampire, commanding darkness itself.",
+    "descripcion": "Forma suprema del vampiro, que domina la oscuridad.",
+    "imageUrl": "/icons/dark.svg",
+    "type": "evolution"
   },
   {
-    "name": "Larva",
-    "nombre": "Larva",
-    "description": "A primordial creature that evolves rapidly into new threats.",
-    "descripcion": "Crea una nueva forma biológica primigenia.",
-    "imageUrl": "/icons/default.svg"
+    "name": "Maggot",
+    "nombre": "Gusano",
+    "description": "Larval form that consumes decayed life.",
+    "descripcion": "Forma larval que devora vida en descomposición.",
+    "imageUrl": "/icons/default.svg",
+    "type": "evolution"
   },
   {
     "name": "Spider Queen",
     "nombre": "Reina Araña",
-    "description": "Commands venomous broods that blanket the arena in webs.",
-    "descripcion": "Invoca enjambres arácnidos.",
-    "imageUrl": "/icons/default.svg"
+    "description": "Matriarch of webs and predators.",
+    "descripcion": "Matriarca de telarañas y depredadores.",
+    "imageUrl": "/icons/default.svg",
+    "type": "evolution"
   },
   {
     "name": "Mosquito King",
     "nombre": "Rey Mosquito",
-    "description": "Aerial leech that drains foes from above with relentless bites.",
-    "descripcion": "Otorga drenaje de vida aéreo.",
-    "imageUrl": "/icons/default.svg"
+    "description": "Sovereign of bloodthirsty swarms.",
+    "descripcion": "Soberano de los enjambres sedientos de sangre.",
+    "imageUrl": "/icons/default.svg",
+    "type": "evolution"
   },
   {
     "name": "Magma",
     "nombre": "Magma",
-    "description": "Spills molten rock trails that sear anything they touch.",
-    "descripcion": "Genera un núcleo ardiente que quema el suelo.",
-    "imageUrl": "/icons/fire.svg"
+    "description": "Fusion of fire and earth in a molten core.",
+    "descripcion": "Fusión de fuego y tierra en un núcleo fundido.",
+    "imageUrl": "/icons/fire.svg",
+    "type": "evolution"
   },
   {
     "name": "Frozen Flame",
-    "nombre": "Llama Congelada",
-    "description": "Balances opposing elements to flash-freeze and cauterise at once.",
-    "descripcion": "Une fuego y hielo en equilibrio mortal.",
-    "imageUrl": "/icons/fire.svg"
+    "nombre": "Llama Helada",
+    "description": "Perfect balance of frost and flame.",
+    "descripcion": "Equilibrio perfecto entre escarcha y fuego.",
+    "imageUrl": "/icons/fire.svg",
+    "type": "evolution"
   },
   {
     "name": "Bomb",
     "nombre": "Bomba",
-    "description": "Detonates on command to obliterate clustered enemies.",
-    "descripcion": "Explota causando daño masivo.",
-    "imageUrl": "/icons/default.svg"
+    "description": "Explodes violently, damaging everything nearby.",
+    "descripcion": "Explota violentamente, dañando todo lo cercano.",
+    "imageUrl": "/icons/default.svg",
+    "type": "evolution"
   },
   {
     "name": "Sun",
     "nombre": "Sol",
-    "description": "Radiates constant warmth that heals allies and burns invaders.",
-    "descripcion": "Emite calor y curación constante.",
-    "imageUrl": "/icons/fire.svg"
+    "description": "Radiates life and destruction in equal measure.",
+    "descripcion": "Irradia vida y destrucción a partes iguales.",
+    "imageUrl": "/icons/fire.svg",
+    "type": "evolution"
   },
   {
     "name": "Inferno",
     "nombre": "Infierno",
-    "description": "Summons a living wildfire that devours the battlefield.",
-    "descripcion": "Llama viva que arrasa con todo.",
-    "imageUrl": "/icons/fire.svg"
+    "description": "Endless burning storm that consumes everything.",
+    "descripcion": "Tormenta ardiente que lo consume todo.",
+    "imageUrl": "/icons/fire.svg",
+    "type": "evolution"
   },
   {
     "name": "Overgrowth",
     "nombre": "Sobrecrecimiento",
-    "description": "Unleashes rampant biomass that overruns terrain instantly.",
-    "descripcion": "Multiplica la materia viva.",
-    "imageUrl": "/icons/nature.svg"
+    "description": "Spreads uncontrollably, overwhelming its host.",
+    "descripcion": "Se propaga sin control, desbordando su huésped.",
+    "imageUrl": "/icons/nature.svg",
+    "type": "evolution"
   },
   {
-    "name": "Radioactive Beam",
+    "name": "Radiation Beam",
     "nombre": "Rayo Radiactivo",
-    "description": "Fuses light and toxin into a beam that irradiates targets.",
-    "descripcion": "Fusión de energía pura y biología.",
-    "imageUrl": "/icons/light.svg"
+    "description": "Emits lethal waves of unstable energy.",
+    "descripcion": "Emite ondas letales de energía inestable.",
+    "imageUrl": "/icons/light.svg",
+    "type": "evolution"
   },
   {
     "name": "Virus",
     "nombre": "Virus",
-    "description": "Spreads a fast-acting plague that debilitates entire waves.",
-    "descripcion": "Crea un patógeno de rápida propagación.",
-    "imageUrl": "/icons/poison.svg"
+    "description": "Infectious creation that multiplies rapidly.",
+    "descripcion": "Creación infecciosa que se multiplica rápidamente.",
+    "imageUrl": "/icons/poison.svg",
+    "type": "evolution"
   },
   {
     "name": "Incubus",
     "nombre": "Íncubo",
-    "description": "A shadowy tempter that feeds on the desires of prey.",
-    "descripcion": "Entidad de deseo oscuro.",
-    "imageUrl": "/icons/magic.svg"
+    "description": "Male demon orb that corrupts others with temptation.",
+    "descripcion": "Esfera demoníaca masculina que corrompe mediante la tentación.",
+    "imageUrl": "/icons/magic.svg",
+    "type": "evolution"
   },
   {
-    "name": "Enamored",
+    "name": "Lovestruck",
     "nombre": "Enamorado",
-    "description": "Charms everything nearby into a lovestruck stupor.",
-    "descripcion": "Irradia atracción y poder.",
-    "imageUrl": "/icons/magic.svg"
+    "description": "Fights passionately, ignoring pain and logic.",
+    "descripcion": "Lucha con pasión, ignorando el dolor y la lógica.",
+    "imageUrl": "/icons/magic.svg",
+    "type": "evolution"
   },
   {
     "name": "Succubus",
     "nombre": "Súcubo",
-    "description": "Drains strength while entrancing foes with allure.",
-    "descripcion": "Encanta y drena a sus víctimas.",
-    "imageUrl": "/icons/magic.svg"
+    "description": "Seductive and deadly embodiment of charm.",
+    "descripcion": "Encarnación seductora y mortal del encanto.",
+    "imageUrl": "/icons/magic.svg",
+    "type": "evolution"
   },
   {
-    "name": "Apparition",
-    "nombre": "Aparición",
-    "description": "A spectral chill that freezes and haunts simultaneously.",
-    "descripcion": "Entidad congelante espectral.",
-    "imageUrl": "/icons/ghost.svg"
+    "name": "Phantom",
+    "nombre": "Fantasma",
+    "description": "Manifestation of restless spirits.",
+    "descripcion": "Manifestación de espíritus inquietos.",
+    "imageUrl": "/icons/ghost.svg",
+    "type": "evolution"
   },
   {
     "name": "Assassin",
     "nombre": "Asesino",
-    "description": "Strikes from the shadows with surgical lethality.",
-    "descripcion": "Cazador de sombras y precisión.",
-    "imageUrl": "/icons/default.svg"
+    "description": "Strikes with deadly precision from the shadows.",
+    "descripcion": "Ataca con precisión letal desde las sombras.",
+    "imageUrl": "/icons/default.svg",
+    "type": "evolution"
   },
   {
     "name": "Flash",
     "nombre": "Destello",
-    "description": "Releases a brief union of light and darkness that blinds.",
-    "descripcion": "Breve unión entre luz y oscuridad.",
-    "imageUrl": "/icons/default.svg"
+    "description": "Momentary burst of pure light energy.",
+    "descripcion": "Estallido momentáneo de pura energía lumínica.",
+    "imageUrl": "/icons/default.svg",
+    "type": "evolution"
   },
   {
     "name": "Noxious",
     "nombre": "Nocivo",
-    "description": "Blankets the arena in invisible, choking toxins.",
-    "descripcion": "Expulsa toxinas invisibles.",
-    "imageUrl": "/icons/poison.svg"
+    "description": "Pollutes the air and weakens nearby foes.",
+    "descripcion": "Contamina el aire y debilita a los enemigos cercanos.",
+    "imageUrl": "/icons/poison.svg",
+    "type": "evolution"
   },
   {
     "name": "Glacier",
     "nombre": "Glaciar",
-    "description": "Raises colossal ice walls that trap foes in permafrost.",
-    "descripcion": "Tierras heladas que aprisionan enemigos.",
-    "imageUrl": "/icons/ice.svg"
+    "description": "Colossal wall of ancient ice.",
+    "descripcion": "Colosal muro de hielo ancestral.",
+    "imageUrl": "/icons/ice.svg",
+    "type": "evolution"
   },
   {
     "name": "Swamp",
     "nombre": "Pantano",
-    "description": "Floods the ground with mire that poisons every step.",
-    "descripcion": "Campo venenoso persistente.",
-    "imageUrl": "/icons/nature.svg"
+    "description": "A bog of decay and toxic life.",
+    "descripcion": "Un pantano de descomposición y vida tóxica.",
+    "imageUrl": "/icons/nature.svg",
+    "type": "evolution"
   },
   {
     "name": "Sandstorm",
     "nombre": "Tormenta de Arena",
-    "description": "Scours the battlefield with blinding, abrasive winds.",
-    "descripcion": "Reduce la visibilidad y movilidad enemiga.",
-    "imageUrl": "/icons/nature.svg"
+    "description": "Obscures vision and erodes all that stands in its path.",
+    "descripcion": "Oscurece la visión y erosiona todo a su paso.",
+    "imageUrl": "/icons/nature.svg",
+    "type": "evolution"
   },
   {
-    "name": "Scattershot",
+    "name": "Shotgun",
     "nombre": "Escopeta",
-    "description": "Blasts short-range shrapnel in a brutal cone.",
-    "descripcion": "Dispara proyectiles metálicos concentrados.",
-    "imageUrl": "/icons/metal.svg"
+    "description": "Fires multiple fragments in a wide spread.",
+    "descripcion": "Dispara múltiples fragmentos en un amplio rango.",
+    "imageUrl": "/icons/metal.svg",
+    "type": "evolution"
   },
   {
     "name": "Mosquito Swarm",
     "nombre": "Enjambre de Mosquitos",
-    "description": "A buzzing cloud that drains life from every angle.",
-    "descripcion": "Drena vida en área.",
-    "imageUrl": "/icons/default.svg"
+    "description": "Summons bloodsucking hordes to drain vitality.",
+    "descripcion": "Invoca hordas chupasangre para drenar vitalidad.",
+    "imageUrl": "/icons/default.svg",
+    "type": "evolution"
   },
   {
-    "name": "Ice Ray",
-    "nombre": "Rayo de Hielo",
-    "description": "Slices foes with razor-thin streams of frozen energy.",
-    "descripcion": "Congela y corta simultáneamente.",
-    "imageUrl": "/icons/ice.svg"
+    "name": "Freeze Ray",
+    "nombre": "Rayo Congelante",
+    "description": "Emits concentrated cold that freezes targets instantly.",
+    "descripcion": "Emite frío concentrado que congela instantáneamente.",
+    "imageUrl": "/icons/ice.svg",
+    "type": "evolution"
   },
   {
     "name": "Blizzard",
     "nombre": "Ventisca",
-    "description": "Unleashes raging snowstorms that bury whole waves.",
-    "descripcion": "Genera tormentas heladas.",
-    "imageUrl": "/icons/default.svg"
+    "description": "Freezing storm that immobilizes everything.",
+    "descripcion": "Tormenta helada que inmoviliza todo.",
+    "imageUrl": "/icons/default.svg",
+    "type": "evolution"
   },
   {
     "name": "Soul Siphon",
@@ -338,23 +385,26 @@
   {
     "name": "Lightning Rod",
     "nombre": "Pararrayos",
-    "description": "Channels storms into a single, devastating discharge.",
-    "descripcion": "Canaliza la energía de tormentas.",
-    "imageUrl": "/icons/light.svg"
+    "description": "Channels electric fury through itself.",
+    "descripcion": "Canaliza furia eléctrica a través de sí misma.",
+    "imageUrl": "/icons/light.svg",
+    "type": "evolution"
   },
   {
     "name": "Laser Beam",
     "nombre": "Rayo Láser",
-    "description": "Amplifies radiant energy into a precision beam.",
-    "descripcion": "Concentración pura de energía luminosa.",
-    "imageUrl": "/icons/light.svg"
+    "description": "A perfect line of focused destruction.",
+    "descripcion": "Línea perfecta de destrucción concentrada.",
+    "imageUrl": "/icons/light.svg",
+    "type": "evolution"
   },
   {
-    "name": "Sacred Laser",
+    "name": "Holy Lazer",
     "nombre": "Láser Sagrado",
-    "description": "Sweeps holy light across the grid, searing all foes.",
-    "descripcion": "Daña enemigos en toda la cuadrícula.",
-    "imageUrl": "/icons/default.svg"
+    "description": "Purifies all it touches with divine energy.",
+    "descripcion": "Purifica todo lo que toca con energía divina.",
+    "imageUrl": "/icons/default.svg",
+    "type": "evolution"
   },
   {
     "name": "Vertical Laser",
@@ -373,9 +423,10 @@
   {
     "name": "Storm",
     "nombre": "Tormenta",
-    "description": "Calls forth chaotic winds and lightning strikes together.",
-    "descripcion": "Fusión caótica que golpea en área.",
-    "imageUrl": "/icons/wind.svg"
+    "description": "Uncontrollable surge of elemental power.",
+    "descripcion": "Oleada incontrolable de poder elemental.",
+    "imageUrl": "/icons/wind.svg",
+    "type": "evolution"
   },
   {
     "name": "Cornucopia",
@@ -457,29 +508,57 @@
   {
     "name": "Nuclear Bomb",
     "nombre": "Bomba Nuclear",
-    "description": "Combines explosive force with lethal fallout.",
-    "descripcion": "Fusiona una Bomba con una bola Veneno.",
-    "imageUrl": "/icons/default.svg"
+    "description": "Ultimate destructive fusion of fire and poison.",
+    "descripcion": "Fusión destructiva suprema de fuego y veneno.",
+    "imageUrl": "/icons/default.svg",
+    "type": "evolution"
   },
   {
     "name": "Black Hole",
     "nombre": "Agujero Negro",
-    "description": "Crushes everything nearby into an inescapable void.",
-    "descripcion": "Fusiona un Sol con un Oscuro.",
-    "imageUrl": "/icons/default.svg"
+    "description": "Absorbs everything into eternal void.",
+    "descripcion": "Absorbe todo en el vacío eterno.",
+    "imageUrl": "/icons/default.svg",
+    "type": "evolution"
   },
   {
     "name": "Satan",
     "nombre": "Satán",
-    "description": "Embodies unholy temptation and overwhelming power.",
-    "descripcion": "Funde un Íncubo con un Súcubo.",
-    "imageUrl": "/icons/default.svg"
+    "description": "Combination of temptation and darkness made flesh.",
+    "descripcion": "Combinación de tentación y oscuridad hecha carne.",
+    "imageUrl": "/icons/default.svg",
+    "type": "evolution"
   },
   {
     "name": "Nosferatu",
     "nombre": "Nosferatu",
-    "description": "An ancient bloodlord that commands every nocturnal brood.",
-    "descripcion": "Une Señor Vampiro, Rey Mosquito y Reina Araña.",
+    "description": "Ultimate vampiric evolution, ruler of night.",
+    "descripcion": "Evolución vampírica definitiva, soberano de la noche.",
+    "imageUrl": "/icons/default.svg",
+    "type": "evolution"
+  },
+  {
+    "name": "Flicker",
+    "nombre": "Destello",
+    "description": "Brief spark between light and darkness.",
+    "descripcion": "Breve chispa entre la luz y la oscuridad.",
+    "type": "evolution",
+    "imageUrl": "/icons/default.svg"
+  },
+  {
+    "name": "Wraith",
+    "nombre": "Espectro",
+    "description": "A cursed soul bound to eternal vengeance.",
+    "descripcion": "Un alma maldita ligada a la venganza eterna.",
+    "type": "evolution",
+    "imageUrl": "/icons/default.svg"
+  },
+  {
+    "name": "Voluptuous Egg Sac",
+    "nombre": "Saco de Huevos Voluptuoso",
+    "description": "Massive nest filled with pulsating life.",
+    "descripcion": "Nido masivo lleno de vida palpitante.",
+    "type": "evolution",
     "imageUrl": "/icons/default.svg"
   }
 ]

@@ -76,6 +76,7 @@ const forcedEvolutionNames = new Set<string>([
   'Nosferatu',
   'Satan',
   'Black Hole',
+  'Holy Lazer',
   'Sacred Laser',
   'Cornucopia',
   'Soul Reaper',
@@ -83,6 +84,427 @@ const forcedEvolutionNames = new Set<string>([
 ]);
 
 const forcedFusionNames = new Set<string>(['Hemorrhage', 'Inferno', 'Blizzard', 'Sun', 'Overgrowth', 'Noxious']);
+
+const ballNameAliases: Record<string, string> = {
+  Fire: 'Burn',
+  Frenzy: 'Berserk',
+  Larva: 'Maggot',
+  'Radioactive Beam': 'Radiation Beam',
+  Enamored: 'Lovestruck',
+  Apparition: 'Phantom',
+  Scattershot: 'Shotgun',
+  'Ice Ray': 'Freeze Ray',
+  'Sacred Laser': 'Holy Lazer'
+};
+
+const officialBallSeeds: BallSeed[] = [
+  {
+    name: 'Bleed',
+    nombre: 'Sangrar',
+    description: 'A cursed ball that feeds on the wounds of others.',
+    descripcion: 'Una bola maldita que se alimenta de las heridas de los demás.',
+    type: 'pure'
+  },
+  {
+    name: 'Brood Mother',
+    nombre: 'Madre Criadora',
+    description: 'Spawns lesser orbs under her control.',
+    descripcion: 'Engendra orbes menores bajo su control.',
+    type: 'pure'
+  },
+  {
+    name: 'Burn',
+    nombre: 'Fuego',
+    description: 'A volatile ember that ignites everything nearby.',
+    descripcion: 'Una brasa volátil que prende todo a su alrededor.',
+    type: 'pure'
+  },
+  {
+    name: 'Cell',
+    nombre: 'Célula',
+    description: 'The origin of all life, simple but full of potential.',
+    descripcion: 'El origen de toda vida, simple pero lleno de potencial.',
+    type: 'pure'
+  },
+  {
+    name: 'Charm',
+    nombre: 'Encanto',
+    description: 'A mesmerizing ball that manipulates enemies.',
+    descripcion: 'Una bola hipnótica que manipula a los enemigos.',
+    type: 'pure'
+  },
+  {
+    name: 'Dark',
+    nombre: 'Oscuro',
+    description: 'The essence of shadow and forbidden power.',
+    descripcion: 'La esencia de la sombra y el poder prohibido.',
+    type: 'pure'
+  },
+  {
+    name: 'Earthquake',
+    nombre: 'Terremoto',
+    description: 'A trembling force that shatters the ground.',
+    descripcion: 'Una fuerza temblorosa que hace añicos el suelo.',
+    type: 'pure'
+  },
+  {
+    name: 'Egg Sack',
+    nombre: 'Saco de Huevos',
+    description: 'Fragile container of countless possibilities.',
+    descripcion: 'Contenedor frágil de incontables posibilidades.',
+    type: 'pure'
+  },
+  {
+    name: 'Freeze',
+    nombre: 'Congelación',
+    description: 'A frozen sphere that stops time itself.',
+    descripcion: 'Una esfera helada que detiene el tiempo mismo.',
+    type: 'pure'
+  },
+  {
+    name: 'Ghost',
+    nombre: 'Fantasma',
+    description: 'A spectral orb that passes through matter.',
+    descripcion: 'Una esfera espectral que atraviesa la materia.',
+    type: 'pure'
+  },
+  {
+    name: 'Iron',
+    nombre: 'Hierro',
+    description: 'A metallic orb of resilience and strength.',
+    descripcion: 'Una esfera metálica de resistencia y fuerza.',
+    type: 'pure'
+  },
+  {
+    name: 'Laser',
+    nombre: 'Láser',
+    description: 'A precise beam condensed into solid form.',
+    descripcion: 'Un rayo preciso condensado en forma sólida.',
+    type: 'pure'
+  },
+  {
+    name: 'Light',
+    nombre: 'Luz',
+    description: 'A radiant sphere of pure illumination.',
+    descripcion: 'Una esfera radiante de pura iluminación.',
+    type: 'pure'
+  },
+  {
+    name: 'Lightning',
+    nombre: 'Rayo',
+    description: 'A ball of pure electric discharge.',
+    descripcion: 'Una bola de pura descarga eléctrica.',
+    type: 'pure'
+  },
+  {
+    name: 'Poison',
+    nombre: 'Veneno',
+    description: 'Slowly corrupts and infects everything it touches.',
+    descripcion: 'Corrompe e infecta lentamente todo lo que toca.',
+    type: 'pure'
+  },
+  {
+    name: 'Vampire',
+    nombre: 'Vampiro',
+    description: 'An ancient orb that feeds on the life of others.',
+    descripcion: 'Una esfera ancestral que se alimenta de la vida ajena.',
+    type: 'pure'
+  },
+  {
+    name: 'Wind',
+    nombre: 'Viento',
+    description: 'A constantly shifting sphere of air and motion.',
+    descripcion: 'Una esfera en constante movimiento de aire y energía.',
+    type: 'pure'
+  },
+  {
+    name: 'Leech',
+    nombre: 'Sanguijuela',
+    description: 'Draws vitality from every target struck.',
+    descripcion: 'Extrae vitalidad de cada objetivo golpeado.',
+    type: 'evolution'
+  },
+  {
+    name: 'Berserk',
+    nombre: 'Furia',
+    description: 'Unleashes uncontrollable rage that increases attack speed.',
+    descripcion: 'Desata una furia incontrolable que aumenta la velocidad de ataque.',
+    type: 'evolution'
+  },
+  {
+    name: 'Sacrifice',
+    nombre: 'Sacrificio',
+    description: 'Destroys itself to empower allies or trigger devastation.',
+    descripcion: 'Se destruye a sí misma para potenciar aliados o causar devastación.',
+    type: 'evolution'
+  },
+  {
+    name: 'Hemorrhage',
+    nombre: 'Hemorragia',
+    description: 'Causes enemies to bleed continuously.',
+    descripcion: 'Hace que los enemigos sangren de forma continua.',
+    type: 'evolution'
+  },
+  {
+    name: 'Vampire Lord',
+    nombre: 'Señor Vampiro',
+    description: 'Apex form of the vampire, commanding darkness itself.',
+    descripcion: 'Forma suprema del vampiro, que domina la oscuridad.',
+    type: 'evolution'
+  },
+  {
+    name: 'Maggot',
+    nombre: 'Gusano',
+    description: 'Larval form that consumes decayed life.',
+    descripcion: 'Forma larval que devora vida en descomposición.',
+    type: 'evolution'
+  },
+  {
+    name: 'Spider Queen',
+    nombre: 'Reina Araña',
+    description: 'Matriarch of webs and predators.',
+    descripcion: 'Matriarca de telarañas y depredadores.',
+    type: 'evolution'
+  },
+  {
+    name: 'Mosquito King',
+    nombre: 'Rey Mosquito',
+    description: 'Sovereign of bloodthirsty swarms.',
+    descripcion: 'Soberano de los enjambres sedientos de sangre.',
+    type: 'evolution'
+  },
+  {
+    name: 'Magma',
+    nombre: 'Magma',
+    description: 'Fusion of fire and earth in a molten core.',
+    descripcion: 'Fusión de fuego y tierra en un núcleo fundido.',
+    type: 'evolution'
+  },
+  {
+    name: 'Frozen Flame',
+    nombre: 'Llama Helada',
+    description: 'Perfect balance of frost and flame.',
+    descripcion: 'Equilibrio perfecto entre escarcha y fuego.',
+    type: 'evolution'
+  },
+  {
+    name: 'Bomb',
+    nombre: 'Bomba',
+    description: 'Explodes violently, damaging everything nearby.',
+    descripcion: 'Explota violentamente, dañando todo lo cercano.',
+    type: 'evolution'
+  },
+  {
+    name: 'Sun',
+    nombre: 'Sol',
+    description: 'Radiates life and destruction in equal measure.',
+    descripcion: 'Irradia vida y destrucción a partes iguales.',
+    type: 'evolution'
+  },
+  {
+    name: 'Inferno',
+    nombre: 'Infierno',
+    description: 'Endless burning storm that consumes everything.',
+    descripcion: 'Tormenta ardiente que lo consume todo.',
+    type: 'evolution'
+  },
+  {
+    name: 'Overgrowth',
+    nombre: 'Sobrecrecimiento',
+    description: 'Spreads uncontrollably, overwhelming its host.',
+    descripcion: 'Se propaga sin control, desbordando su huésped.',
+    type: 'evolution'
+  },
+  {
+    name: 'Radiation Beam',
+    nombre: 'Rayo Radiactivo',
+    description: 'Emits lethal waves of unstable energy.',
+    descripcion: 'Emite ondas letales de energía inestable.',
+    type: 'evolution'
+  },
+  {
+    name: 'Virus',
+    nombre: 'Virus',
+    description: 'Infectious creation that multiplies rapidly.',
+    descripcion: 'Creación infecciosa que se multiplica rápidamente.',
+    type: 'evolution'
+  },
+  {
+    name: 'Incubus',
+    nombre: 'Íncubo',
+    description: 'Male demon orb that corrupts others with temptation.',
+    descripcion: 'Esfera demoníaca masculina que corrompe mediante la tentación.',
+    type: 'evolution'
+  },
+  {
+    name: 'Lovestruck',
+    nombre: 'Enamorado',
+    description: 'Fights passionately, ignoring pain and logic.',
+    descripcion: 'Lucha con pasión, ignorando el dolor y la lógica.',
+    type: 'evolution'
+  },
+  {
+    name: 'Succubus',
+    nombre: 'Súcubo',
+    description: 'Seductive and deadly embodiment of charm.',
+    descripcion: 'Encarnación seductora y mortal del encanto.',
+    type: 'evolution'
+  },
+  {
+    name: 'Phantom',
+    nombre: 'Fantasma',
+    description: 'Manifestation of restless spirits.',
+    descripcion: 'Manifestación de espíritus inquietos.',
+    type: 'evolution'
+  },
+  {
+    name: 'Assassin',
+    nombre: 'Asesino',
+    description: 'Strikes with deadly precision from the shadows.',
+    descripcion: 'Ataca con precisión letal desde las sombras.',
+    type: 'evolution'
+  },
+  {
+    name: 'Flicker',
+    nombre: 'Destello',
+    description: 'Brief spark between light and darkness.',
+    descripcion: 'Breve chispa entre la luz y la oscuridad.',
+    type: 'evolution'
+  },
+  {
+    name: 'Noxious',
+    nombre: 'Nocivo',
+    description: 'Pollutes the air and weakens nearby foes.',
+    descripcion: 'Contamina el aire y debilita a los enemigos cercanos.',
+    type: 'evolution'
+  },
+  {
+    name: 'Glacier',
+    nombre: 'Glaciar',
+    description: 'Colossal wall of ancient ice.',
+    descripcion: 'Colosal muro de hielo ancestral.',
+    type: 'evolution'
+  },
+  {
+    name: 'Swamp',
+    nombre: 'Pantano',
+    description: 'A bog of decay and toxic life.',
+    descripcion: 'Un pantano de descomposición y vida tóxica.',
+    type: 'evolution'
+  },
+  {
+    name: 'Sandstorm',
+    nombre: 'Tormenta de Arena',
+    description: 'Obscures vision and erodes all that stands in its path.',
+    descripcion: 'Oscurece la visión y erosiona todo a su paso.',
+    type: 'evolution'
+  },
+  {
+    name: 'Shotgun',
+    nombre: 'Escopeta',
+    description: 'Fires multiple fragments in a wide spread.',
+    descripcion: 'Dispara múltiples fragmentos en un amplio rango.',
+    type: 'evolution'
+  },
+  {
+    name: 'Mosquito Swarm',
+    nombre: 'Enjambre de Mosquitos',
+    description: 'Summons bloodsucking hordes to drain vitality.',
+    descripcion: 'Invoca hordas chupasangre para drenar vitalidad.',
+    type: 'evolution'
+  },
+  {
+    name: 'Wraith',
+    nombre: 'Espectro',
+    description: 'A cursed soul bound to eternal vengeance.',
+    descripcion: 'Un alma maldita ligada a la venganza eterna.',
+    type: 'evolution'
+  },
+  {
+    name: 'Freeze Ray',
+    nombre: 'Rayo Congelante',
+    description: 'Emits concentrated cold that freezes targets instantly.',
+    descripcion: 'Emite frío concentrado que congela instantáneamente.',
+    type: 'evolution'
+  },
+  {
+    name: 'Blizzard',
+    nombre: 'Ventisca',
+    description: 'Freezing storm that immobilizes everything.',
+    descripcion: 'Tormenta helada que inmoviliza todo.',
+    type: 'evolution'
+  },
+  {
+    name: 'Lightning Rod',
+    nombre: 'Pararrayos',
+    description: 'Channels electric fury through itself.',
+    descripcion: 'Canaliza furia eléctrica a través de sí misma.',
+    type: 'evolution'
+  },
+  {
+    name: 'Laser Beam',
+    nombre: 'Rayo Láser',
+    description: 'A perfect line of focused destruction.',
+    descripcion: 'Línea perfecta de destrucción concentrada.',
+    type: 'evolution'
+  },
+  {
+    name: 'Flash',
+    nombre: 'Destello',
+    description: 'Momentary burst of pure light energy.',
+    descripcion: 'Estallido momentáneo de pura energía lumínica.',
+    type: 'evolution'
+  },
+  {
+    name: 'Storm',
+    nombre: 'Tormenta',
+    description: 'Uncontrollable surge of elemental power.',
+    descripcion: 'Oleada incontrolable de poder elemental.',
+    type: 'evolution'
+  },
+  {
+    name: 'Nuclear Bomb',
+    nombre: 'Bomba Nuclear',
+    description: 'Ultimate destructive fusion of fire and poison.',
+    descripcion: 'Fusión destructiva suprema de fuego y veneno.',
+    type: 'evolution'
+  },
+  {
+    name: 'Voluptuous Egg Sac',
+    nombre: 'Saco de Huevos Voluptuoso',
+    description: 'Massive nest filled with pulsating life.',
+    descripcion: 'Nido masivo lleno de vida palpitante.',
+    type: 'evolution'
+  },
+  {
+    name: 'Black Hole',
+    nombre: 'Agujero Negro',
+    description: 'Absorbs everything into eternal void.',
+    descripcion: 'Absorbe todo en el vacío eterno.',
+    type: 'evolution'
+  },
+  {
+    name: 'Satan',
+    nombre: 'Satán',
+    description: 'Combination of temptation and darkness made flesh.',
+    descripcion: 'Combinación de tentación y oscuridad hecha carne.',
+    type: 'evolution'
+  },
+  {
+    name: 'Nosferatu',
+    nombre: 'Nosferatu',
+    description: 'Ultimate vampiric evolution, ruler of night.',
+    descripcion: 'Evolución vampírica definitiva, soberano de la noche.',
+    type: 'evolution'
+  },
+  {
+    name: 'Holy Lazer',
+    nombre: 'Láser Sagrado',
+    description: 'Purifies all it touches with divine energy.',
+    descripcion: 'Purifica todo lo que toca con energía divina.',
+    type: 'evolution'
+  }
+];
 
 const passiveSeeds: PassiveSeed[] = [
   { name_en: "Archer's Effigy", name_es: 'Efigie del Arquero' },
@@ -229,6 +651,15 @@ function ensureUsage(map: Map<string, UsageCounter>, slug: string): UsageCounter
   return usage;
 }
 
+function applyBallAliases(ballIds: Map<string, { id: number; slug: string; type: BallType }>) {
+  for (const [legacyName, canonicalName] of Object.entries(ballNameAliases)) {
+    const canonical = ballIds.get(canonicalName);
+    if (canonical) {
+      ballIds.set(legacyName, canonical);
+    }
+  }
+}
+
 async function main() {
   console.log('🌱 Loading wiki seed data...');
 
@@ -285,6 +716,38 @@ async function main() {
     ballIds.set(ball.name, { id: created.id, slug, type });
     ensureUsage(usageCounter, slug);
   }
+
+  applyBallAliases(ballIds);
+
+  for (const officialBall of officialBallSeeds) {
+    if (ballIds.has(officialBall.name)) {
+      continue;
+    }
+
+    const slug = slugify(officialBall.name);
+    const type =
+      officialBall.type && (officialBall.type === 'pure' || officialBall.type === 'fusion' || officialBall.type === 'evolution')
+        ? (officialBall.type as BallType)
+        : 'pure';
+
+    const created = await prisma.ball.create({
+      data: {
+        name: officialBall.name,
+        nombre: officialBall.nombre ?? null,
+        description: officialBall.description ?? null,
+        descripcion: officialBall.descripcion ?? null,
+        imageUrl: officialBall.imageUrl ?? null,
+        slug,
+        type,
+        isPure: type === 'pure'
+      }
+    });
+
+    ballIds.set(officialBall.name, { id: created.id, slug, type });
+    ensureUsage(usageCounter, slug);
+  }
+
+  applyBallAliases(ballIds);
 
   for (const fusion of fusions) {
     const resultBall = ballIds.get(fusion.result);
