@@ -20,6 +20,11 @@ export class FusionsService {
 
   async findAll(language: SupportedLanguage) {
     const fusions = await this.prisma.fusion.findMany({
+      where: {
+        result: {
+          type: 'fusion'
+        }
+      },
       orderBy: { slug: 'asc' },
       include: {
         result: true,
@@ -48,6 +53,10 @@ export class FusionsService {
     });
 
     if (!fusion) {
+      return null;
+    }
+
+    if (fusion.result.type !== 'fusion') {
       return null;
     }
 

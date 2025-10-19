@@ -9,7 +9,7 @@ export type WikiBall = {
   name: string | null;
   description: string | null;
   imageUrl: string | null;
-  isPure: boolean;
+  type: 'pure' | 'fusion' | 'evolution' | null;
   tags: string[];
 };
 
@@ -44,8 +44,8 @@ export type WikiBallEvolution = {
 };
 
 export type WikiBallDetail = WikiBall & {
-  fusionRecipes: WikiBallFusion[];
-  fusionAppearances: Array<{
+  fusionsFrom: WikiBallFusion[];
+  fusionsInto: Array<{
     slug: string;
     result: {
       slug: string;

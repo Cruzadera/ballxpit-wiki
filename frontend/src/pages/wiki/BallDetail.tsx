@@ -93,10 +93,10 @@ export default function BallDetail() {
         </div>
       </section>
 
-      {ball.fusionRecipes.length > 0 && (
-        <WikiSection title={t('ballDetail.fusionRecipes')}>
+      {ball.fusionsFrom.length > 0 && (
+        <WikiSection title={t('ballDetail.fusionsFrom')}>
           <div className="grid gap-6 md:grid-cols-2">
-            {ball.fusionRecipes.map((fusion) => (
+            {ball.fusionsFrom.map((fusion) => (
               <div
                 key={fusion.slug}
                 className="rounded-2xl border border-slate-700/40 bg-slate-900/40 p-6 shadow-inner shadow-indigo-500/5"
@@ -120,10 +120,10 @@ export default function BallDetail() {
         </WikiSection>
       )}
 
-      {ball.fusionAppearances.length > 0 && (
-        <WikiSection title={t('ballDetail.fusionAppearances')}>
+      {ball.fusionsInto.length > 0 && (
+        <WikiSection title={t('ballDetail.fusionsInto')}>
           <div className="flex flex-wrap gap-3">
-            {ball.fusionAppearances.map((fusion) => (
+            {ball.fusionsInto.map((fusion) => (
               <Link
                 key={fusion.slug}
                 to={`/wiki/fusions/${fusion.slug}`}

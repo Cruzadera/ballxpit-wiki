@@ -6,6 +6,12 @@ import { useWikiLayout } from '../../hooks/useWikiLayout';
 import { fetchWiki } from '../../utils/wikiApi';
 import type { WikiBall } from '../../types/wiki';
 
+const TYPE_ORDER: Record<NonNullable<WikiBall['type']>, number> = {
+  pure: 0,
+  fusion: 1,
+  evolution: 2
+};
+
 export default function BallsPage() {
   const { t, i18n } = useTranslation();
   const { searchTerm } = useWikiLayout();
@@ -41,15 +47,29 @@ export default function BallsPage() {
   }, [i18n.language]);
 
   const filteredBalls = useMemo(() => {
-    if (!searchTerm) {
-      return balls;
-    }
+    const baseList = searchTerm
+      ? balls.filter((ball) => {
+        const target = `${ball.name ?? ''} ${ball.description ?? ''}`.toLowerCase();
+        return target.includes(searchTerm.toLowerCase());
+      })
+      : balls;
 
-    return balls.filter((ball) => {
-      const target = `${ball.name ?? ''} ${ball.description ?? ''}`.toLowerCase();
-      return target.includes(searchTerm.toLowerCase());
+    return [...baseList].sort((a, b) => {
+      const aRank = a.type ? TYPE_ORDER[a.type] ?? Number.MAX_SAFE_INTEGER : Number.MAX_SAFE_INTEGER;
+      const bRank = b.type ? TYPE_ORDER[b.type] ?? Number.MAX_SAFE_INTEGER : Number.MAX_SAFE_INTEGER;
+
+      if (aRank !== bRank) {
+        return aRank - bRank;
+      }
+
+      const aName = a.name ?? '';
+      const bName = b.name ?? '';
+
+      return aName.localeCompare(bName, i18n.language === 'es' ? 'es' : 'en', {
+        sensitivity: 'base'
+      });
     });
-  }, [balls, searchTerm]);
+  }, [balls, searchTerm, i18n.language]);
 
   if (isLoading) {
     return <div className="text-sm text-slate-400">{t('loading')}</div>;
