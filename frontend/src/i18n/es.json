@@ -31,6 +31,12 @@
   "layout": {
     "darkMode": "Cambiar modo oscuro"
   },
+  "character": {
+    "startingBall": "Bola inicial",
+    "unlockRequirement": "Requisito de desbloqueo",
+    "unknown": "Desconocido",
+    "none": "Ninguno"
+  },
   "pages": {
     "balls": {
       "title": "Todas las bolas",

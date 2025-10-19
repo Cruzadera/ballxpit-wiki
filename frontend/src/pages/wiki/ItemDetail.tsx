@@ -2,12 +2,14 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import WikiSection from '../../components/wiki/WikiSection';
+import { useWikiLayout } from '../../hooks/useWikiLayout';
 import { fetchWiki } from '../../utils/wikiApi';
 import type { WikiItem } from '../../types/wiki';
 
 export default function ItemDetail() {
   const { slug } = useParams();
   const { t, i18n } = useTranslation();
+  const { setDetailBreadcrumb } = useWikiLayout();
   const [item, setItem] = useState<WikiItem | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [hasError, setHasError] = useState(false);
@@ -42,6 +44,18 @@ export default function ItemDetail() {
       mounted = false;
     };
   }, [slug, i18n.language]);
+
+  useEffect(() => {
+    if (item?.name) {
+      setDetailBreadcrumb(item.name);
+    } else {
+      setDetailBreadcrumb(null);
+    }
+
+    return () => {
+      setDetailBreadcrumb(null);
+    };
+  }, [item?.name, setDetailBreadcrumb]);
 
   if (isLoading) {
     return <div className="text-sm text-slate-400">{t('loading')}</div>;

@@ -28,13 +28,15 @@ type EvolutionSeed = {
 
 type CharacterSeed = {
   slug?: string;
-  name: string;
-  nombre?: string;
-  description?: string;
-  descripcion?: string;
+  name_en: string;
+  name_es: string;
+  description_en?: string;
+  description_es?: string;
+  starting_ball_en?: string;
+  starting_ball_es?: string;
+  unlock_requirement_en?: string;
+  unlock_requirement_es?: string;
   imageUrl?: string;
-  title?: string;
-  titulo?: string;
 };
 
 type ItemSeed = {
@@ -189,17 +191,19 @@ async function main() {
   }
 
   for (const character of characters) {
-    const slug = character.slug ?? slugify(character.name);
+    const slug = character.slug ?? slugify(character.name_en);
     await prisma.character.create({
       data: {
         slug,
-        name: character.name,
-        nombre: character.nombre ?? null,
-        description: character.description ?? null,
-        descripcion: character.descripcion ?? null,
-        imageUrl: character.imageUrl ?? null,
-        title: character.title ?? null,
-        titulo: character.titulo ?? null
+        nameEn: character.name_en,
+        nameEs: character.name_es,
+        descriptionEn: character.description_en ?? null,
+        descriptionEs: character.description_es ?? null,
+        startingBallEn: character.starting_ball_en ?? null,
+        startingBallEs: character.starting_ball_es ?? null,
+        unlockRequirementEn: character.unlock_requirement_en ?? null,
+        unlockRequirementEs: character.unlock_requirement_es ?? null,
+        imageUrl: character.imageUrl ?? null
       }
     });
   }

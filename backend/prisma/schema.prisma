@@ -60,15 +60,19 @@ model Evolution {
 }
 
 model Character {
-  id          Int     @id @default(autoincrement())
-  name        String
-  nombre      String?
-  description String?
-  descripcion String?
-  imageUrl    String?
-  title       String?
-  titulo      String?
-  slug        String  @unique
+  id                    Int      @id @default(autoincrement())
+  slug                  String   @unique
+  nameEn                String
+  nameEs                String
+  descriptionEn         String?
+  descriptionEs         String?
+  startingBallEn        String?
+  startingBallEs        String?
+  unlockRequirementEn   String?
+  unlockRequirementEs   String?
+  imageUrl              String?
+  createdAt             DateTime @default(now())
+  updatedAt             DateTime @updatedAt
 }
 
 model Item {
