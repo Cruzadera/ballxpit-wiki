@@ -8,7 +8,8 @@ async function bootstrap() {
     origin: [
       'http://192.168.1.31:5173',     
       'http://ballxpitwiki.com',        
-      'http://api.ballxpitwiki.com'     
+      'http://api.ballxpitwiki.com',
+      'https://ballxpit-wiki.onrender.com' 
     ],
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization'],
