@@ -1,16 +1,525 @@
 [
   {
-    "slug": "burn-x-iron",
-    "description": "Combines raw flame with tempered metal to forge an adaptable tank breaker.",
-    "descripcion": "Combina fuego puro con metal templado para forjar un rompe tanques adaptable.",
-    "result": "Shadow Alloy",
-    "components": ["Burn Spark", "Iron Shell"]
+    "slug": "bleed-brood-mother-leech",
+    "description": "Fusion that creates a life-draining leech.",
+    "descripcion": "Fusión que crea una sanguijuela que absorbe vida.",
+    "result": "Leech",
+    "components": [
+      "Bleed",
+      "Brood Mother"
+    ]
   },
   {
-    "slug": "bloom-x-crystal",
-    "description": "Arcane pollen crystallises into a focused warding core.",
-    "descripcion": "El polen arcano cristaliza en un núcleo protector enfocado.",
-    "result": "Crystal Shard",
-    "components": ["Arcane Bloom", "Iron Shell"]
+    "slug": "bleed-charm-frenzy",
+    "description": "Increases attack at the cost of losing control.",
+    "descripcion": "Incrementa el ataque al costo de perder control.",
+    "result": "Frenzy",
+    "components": [
+      "Bleed",
+      "Charm"
+    ]
+  },
+  {
+    "slug": "bleed-dark-sacrifice",
+    "description": "Turns your life force into destructive power.",
+    "descripcion": "Convierte tu vida en poder destructivo.",
+    "result": "Sacrifice",
+    "components": [
+      "Bleed",
+      "Dark"
+    ]
+  },
+  {
+    "slug": "bleed-iron-hemorrhage",
+    "description": "Inflicts continuous damage with every hit.",
+    "descripcion": "Daño continuo con cada impacto.",
+    "result": "Hemorrhage",
+    "components": [
+      "Bleed",
+      "Iron"
+    ]
+  },
+  {
+    "slug": "bleed-vampire-vampire-lord",
+    "description": "Superior form that constantly steals life.",
+    "descripcion": "Versión superior que roba vida de forma constante.",
+    "result": "Vampire Lord",
+    "components": [
+      "Bleed",
+      "Vampire"
+    ]
+  },
+  {
+    "slug": "brood-mother-cell-larva",
+    "description": "Creates a primordial new biological form.",
+    "descripcion": "Crea una nueva forma biológica primigenia.",
+    "result": "Larva",
+    "components": [
+      "Brood Mother",
+      "Cell"
+    ]
+  },
+  {
+    "slug": "brood-mother-egg-sack-spider-queen",
+    "description": "Summons arachnid swarms.",
+    "descripcion": "Invoca enjambres arácnidos.",
+    "result": "Spider Queen",
+    "components": [
+      "Brood Mother",
+      "Egg Sack"
+    ]
+  },
+  {
+    "slug": "brood-mother-vampire-mosquito-king",
+    "description": "Grants aerial life drain.",
+    "descripcion": "Otorga drenaje de vida aéreo.",
+    "result": "Mosquito King",
+    "components": [
+      "Brood Mother",
+      "Vampire"
+    ]
+  },
+  {
+    "slug": "fire-charm-frenzy",
+    "description": "Fiery fusion that triggers battle frenzy.",
+    "descripcion": "Fusión ardiente que provoca frenesí de combate.",
+    "result": "Frenzy",
+    "components": [
+      "Fire",
+      "Charm"
+    ]
+  },
+  {
+    "slug": "fire-earthquake-magma",
+    "description": "Generates a burning core that scorches the ground.",
+    "descripcion": "Genera un núcleo ardiente que quema el suelo.",
+    "result": "Magma",
+    "components": [
+      "Fire",
+      "Earthquake"
+    ]
+  },
+  {
+    "slug": "fire-freeze-frozen-flame",
+    "description": "Unites fire and ice in deadly balance.",
+    "descripcion": "Une fuego y hielo en equilibrio mortal.",
+    "result": "Frozen Flame",
+    "components": [
+      "Fire",
+      "Freeze"
+    ]
+  },
+  {
+    "slug": "fire-iron-bomb",
+    "description": "Explodes to deal massive damage.",
+    "descripcion": "Explota causando daño masivo.",
+    "result": "Bomb",
+    "components": [
+      "Fire",
+      "Iron"
+    ]
+  },
+  {
+    "slug": "fire-light-sun",
+    "description": "Emits constant warmth and healing.",
+    "descripcion": "Emite calor y curación constante.",
+    "result": "Sun",
+    "components": [
+      "Fire",
+      "Light"
+    ]
+  },
+  {
+    "slug": "fire-wind-inferno",
+    "description": "Living flame that razes everything.",
+    "descripcion": "Llama viva que arrasa con todo.",
+    "result": "Inferno",
+    "components": [
+      "Fire",
+      "Wind"
+    ]
+  },
+  {
+    "slug": "cell-earthquake-overgrowth",
+    "description": "Multiplies living matter.",
+    "descripcion": "Multiplica la materia viva.",
+    "result": "Overgrowth",
+    "components": [
+      "Cell",
+      "Earthquake"
+    ]
+  },
+  {
+    "slug": "cell-laser-radioactive-beam",
+    "description": "Fusion of pure energy and biology.",
+    "descripcion": "Fusión de energía pura y biología.",
+    "result": "Radioactive Beam",
+    "components": [
+      "Cell",
+      "Laser"
+    ]
+  },
+  {
+    "slug": "cell-poison-virus",
+    "description": "Creates a fast-spreading pathogen.",
+    "descripcion": "Crea un patógeno de rápida propagación.",
+    "result": "Virus",
+    "components": [
+      "Cell",
+      "Poison"
+    ]
+  },
+  {
+    "slug": "charm-dark-incubus",
+    "description": "Entity of dark desire.",
+    "descripcion": "Entidad de deseo oscuro.",
+    "result": "Incubus",
+    "components": [
+      "Charm",
+      "Dark"
+    ]
+  },
+  {
+    "slug": "charm-light-enamored",
+    "description": "Radiates attraction and power.",
+    "descripcion": "Irradia atracción y poder.",
+    "result": "Enamored",
+    "components": [
+      "Charm",
+      "Light"
+    ]
+  },
+  {
+    "slug": "charm-lightning-enamored",
+    "description": "Energetic variant of the enchantment.",
+    "descripcion": "Variante energética del encantamiento.",
+    "result": "Enamored",
+    "components": [
+      "Charm",
+      "Lightning"
+    ]
+  },
+  {
+    "slug": "charm-vampire-succubus",
+    "description": "Enchants and drains its victims.",
+    "descripcion": "Encanta y drena a sus víctimas.",
+    "result": "Succubus",
+    "components": [
+      "Charm",
+      "Vampire"
+    ]
+  },
+  {
+    "slug": "dark-ghost-ghost",
+    "description": "Complete spiritual manifestation.",
+    "descripcion": "Manifestación espiritual completa.",
+    "result": "Ghost",
+    "components": [
+      "Dark",
+      "Ghost"
+    ]
+  },
+  {
+    "slug": "dark-iron-assassin",
+    "description": "Shadow hunter with deadly precision.",
+    "descripcion": "Cazador de sombras y precisión.",
+    "result": "Assassin",
+    "components": [
+      "Dark",
+      "Iron"
+    ]
+  },
+  {
+    "slug": "dark-light-flash",
+    "description": "Brief union between light and darkness.",
+    "descripcion": "Breve unión entre luz y oscuridad.",
+    "result": "Flash",
+    "components": [
+      "Dark",
+      "Light"
+    ]
+  },
+  {
+    "slug": "dark-vampire-vampire-lord",
+    "description": "Ultimate dark evolution.",
+    "descripcion": "Evolución oscura definitiva.",
+    "result": "Vampire Lord",
+    "components": [
+      "Dark",
+      "Vampire"
+    ]
+  },
+  {
+    "slug": "dark-wind-noxious",
+    "description": "Expels invisible toxins.",
+    "descripcion": "Expulsa toxinas invisibles.",
+    "result": "Noxious",
+    "components": [
+      "Dark",
+      "Wind"
+    ]
+  },
+  {
+    "slug": "earthquake-freeze-glacier",
+    "description": "Frozen lands that imprison enemies.",
+    "descripcion": "Tierras heladas que aprisionan enemigos.",
+    "result": "Glacier",
+    "components": [
+      "Earthquake",
+      "Freeze"
+    ]
+  },
+  {
+    "slug": "earthquake-poison-swamp",
+    "description": "Persistent poisonous field.",
+    "descripcion": "Campo venenoso persistente.",
+    "result": "Swamp",
+    "components": [
+      "Earthquake",
+      "Poison"
+    ]
+  },
+  {
+    "slug": "earthquake-wind-sandstorm",
+    "description": "Reduces enemy visibility and mobility.",
+    "descripcion": "Reduce la visibilidad y movilidad enemiga.",
+    "result": "Sandstorm",
+    "components": [
+      "Earthquake",
+      "Wind"
+    ]
+  },
+  {
+    "slug": "egg-sack-iron-scattershot",
+    "description": "Fires concentrated metallic projectiles.",
+    "descripcion": "Dispara proyectiles metálicos concentrados.",
+    "result": "Scattershot",
+    "components": [
+      "Egg Sack",
+      "Iron"
+    ]
+  },
+  {
+    "slug": "egg-sack-vampire-mosquito-swarm",
+    "description": "Drains life across an area.",
+    "descripcion": "Drena vida en área.",
+    "result": "Mosquito Swarm",
+    "components": [
+      "Egg Sack",
+      "Vampire"
+    ]
+  },
+  {
+    "slug": "freeze-ghost-apparition",
+    "description": "Spectral freezing entity.",
+    "descripcion": "Entidad congelante espectral.",
+    "result": "Apparition",
+    "components": [
+      "Freeze",
+      "Ghost"
+    ]
+  },
+  {
+    "slug": "freeze-laser-ice-ray",
+    "description": "Freezes and slices simultaneously.",
+    "descripcion": "Congela y corta simultáneamente.",
+    "result": "Ice Ray",
+    "components": [
+      "Freeze",
+      "Laser"
+    ]
+  },
+  {
+    "slug": "freeze-lightning-blizzard",
+    "description": "Generates icy storms.",
+    "descripcion": "Genera tormentas heladas.",
+    "result": "Blizzard",
+    "components": [
+      "Freeze",
+      "Lightning"
+    ]
+  },
+  {
+    "slug": "freeze-wind-blizzard",
+    "description": "Natural version of the same phenomenon.",
+    "descripcion": "Versión natural del mismo fenómeno.",
+    "result": "Blizzard",
+    "components": [
+      "Freeze",
+      "Wind"
+    ]
+  },
+  {
+    "slug": "ghost-iron-assassin",
+    "description": "A razor-edged ethereal entity.",
+    "descripcion": "Entidad etérea afilada.",
+    "result": "Assassin",
+    "components": [
+      "Ghost",
+      "Iron"
+    ]
+  },
+  {
+    "slug": "ghost-poison-virus",
+    "description": "Spreads spiritual diseases.",
+    "descripcion": "Transmite enfermedades espirituales.",
+    "result": "Virus",
+    "components": [
+      "Ghost",
+      "Poison"
+    ]
+  },
+  {
+    "slug": "ghost-vampire-soul-siphon",
+    "description": "Absorbs vital energy from enemies.",
+    "descripcion": "Absorbe energía vital de enemigos.",
+    "result": "Soul Siphon",
+    "components": [
+      "Ghost",
+      "Vampire"
+    ]
+  },
+  {
+    "slug": "iron-lightning-lightning-rod",
+    "description": "Channels the energy of storms.",
+    "descripcion": "Canaliza la energía de tormentas.",
+    "result": "Lightning Rod",
+    "components": [
+      "Iron",
+      "Lightning"
+    ]
+  },
+  {
+    "slug": "laser-light-laser-beam",
+    "description": "Pure concentration of luminous energy.",
+    "descripcion": "Concentración pura de energía luminosa.",
+    "result": "Laser Beam",
+    "components": [
+      "Laser",
+      "Light"
+    ]
+  },
+  {
+    "slug": "laser-poison-radioactive-beam",
+    "description": "Combines energy and poison.",
+    "descripcion": "Combina energía y veneno.",
+    "result": "Radioactive Beam",
+    "components": [
+      "Laser",
+      "Poison"
+    ]
+  },
+  {
+    "slug": "vertical-laser-horizontal-laser-sacred-laser",
+    "description": "Damages enemies across the entire grid.",
+    "descripcion": "Daña enemigos en toda la cuadrícula.",
+    "result": "Sacred Laser",
+    "components": [
+      "Vertical Laser",
+      "Horizontal Laser"
+    ]
+  },
+  {
+    "slug": "light-lightning-lightning",
+    "description": "Strikes multiple targets instantly.",
+    "descripcion": "Golpea instantáneamente a múltiples objetivos.",
+    "result": "Lightning",
+    "components": [
+      "Light",
+      "Lightning"
+    ]
+  },
+  {
+    "slug": "lightning-wind-storm",
+    "description": "Chaotic fusion that strikes in an area.",
+    "descripcion": "Fusión caótica que golpea en área.",
+    "result": "Storm",
+    "components": [
+      "Lightning",
+      "Wind"
+    ]
+  },
+  {
+    "slug": "poison-wind-noxious",
+    "description": "Disperses toxins through the air.",
+    "descripcion": "Dispersa toxinas por el aire.",
+    "result": "Noxious",
+    "components": [
+      "Poison",
+      "Wind"
+    ]
+  },
+  {
+    "slug": "rattle-war-horn-cornucopia",
+    "description": "Boosts regeneration and defence.",
+    "descripcion": "Aumenta regeneración y defensa.",
+    "result": "Cornucopia",
+    "components": [
+      "Rattle",
+      "War Horn"
+    ]
+  },
+  {
+    "slug": "bottomless-chalice-vampiric-sword-soul-reaper",
+    "description": "Steals life with every attack.",
+    "descripcion": "Roba vida con cada ataque.",
+    "result": "Soul Reaper",
+    "components": [
+      "Bottomless Chalice",
+      "Vampiric Sword"
+    ]
+  },
+  {
+    "slug": "diamond-dagger-emerald-dagger-ruby-dagger-sapphire-dagger-sharpshooter-s-crossbow",
+    "description": "Improves accuracy and critical damage.",
+    "descripcion": "Mejora precisión y daño crítico.",
+    "result": "Sharpshooter’s Crossbow",
+    "components": [
+      "Diamond Dagger",
+      "Emerald Dagger",
+      "Ruby Dagger",
+      "Sapphire Dagger"
+    ]
+  },
+  {
+    "slug": "bomb-poison-nuclear-bomb",
+    "description": "Fuses a Bomb with a Poison ball.",
+    "descripcion": "Fusiona una Bomba con una bola Veneno.",
+    "result": "Nuclear Bomb",
+    "components": [
+      "Bomb",
+      "Poison"
+    ]
+  },
+  {
+    "slug": "sun-dark-black-hole",
+    "description": "Fuses a Sun with a Dark ball.",
+    "descripcion": "Fusiona un Sol con un Oscuro.",
+    "result": "Black Hole",
+    "components": [
+      "Sun",
+      "Dark"
+    ]
+  },
+  {
+    "slug": "incubus-succubus-satan",
+    "description": "Merges an Incubus with a Succubus.",
+    "descripcion": "Funde un Íncubo con un Súcubo.",
+    "result": "Satan",
+    "components": [
+      "Incubus",
+      "Succubus"
+    ]
+  },
+  {
+    "slug": "vampire-lord-mosquito-king-spider-queen-nosferatu",
+    "description": "Unites Vampire Lord, Mosquito King, and Spider Queen.",
+    "descripcion": "Une Señor Vampiro, Rey Mosquito y Reina Araña.",
+    "result": "Nosferatu",
+    "components": [
+      "Vampire Lord",
+      "Mosquito King",
+      "Spider Queen"
+    ]
   }
 ]

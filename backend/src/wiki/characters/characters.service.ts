@@ -8,7 +8,7 @@ export class CharactersService {
 
   async findAll(language: SupportedLanguage) {
     const characters = await this.prisma.character.findMany({
-      orderBy: { name: 'asc' }
+      orderBy: { nameEn: 'asc' }
     });
 
     return characters.map((character) => this.mapCharacter(character, language));
@@ -29,22 +29,29 @@ export class CharactersService {
   private mapCharacter(
     character: {
       slug: string;
-      name: string;
-      nombre: string | null;
-      description: string | null;
-      descripcion: string | null;
+      nameEn: string;
+      nameEs: string;
+      descriptionEn: string | null;
+      descriptionEs: string | null;
+      startingBallEn: string | null;
+      startingBallEs: string | null;
+      unlockRequirementEn: string | null;
+      unlockRequirementEs: string | null;
       imageUrl: string | null;
-      title: string | null;
-      titulo: string | null;
     },
     language: SupportedLanguage
   ) {
     return {
       slug: character.slug,
-      name: translateField(language, character.name, character.nombre),
-      description: translateField(language, character.description, character.descripcion),
-      imageUrl: character.imageUrl,
-      title: translateField(language, character.title, character.titulo)
+      name: translateField(language, character.nameEn, character.nameEs),
+      description: translateField(language, character.descriptionEn, character.descriptionEs),
+      startingBall: translateField(language, character.startingBallEn, character.startingBallEs),
+      unlockRequirement: translateField(
+        language,
+        character.unlockRequirementEn,
+        character.unlockRequirementEs
+      ),
+      imageUrl: character.imageUrl
     };
   }
 }

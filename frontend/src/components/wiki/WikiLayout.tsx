@@ -48,6 +48,7 @@ const useDarkMode = () => {
 
 export type WikiLayoutContext = {
   searchTerm: string;
+  setDetailBreadcrumb: (label: string | null) => void;
 };
 
 export default function WikiLayout() {
@@ -58,6 +59,7 @@ export default function WikiLayout() {
   const [sections, setSections] = useState<WikiSection[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [hasError, setHasError] = useState(false);
+  const [detailBreadcrumb, setDetailBreadcrumb] = useState<string | null>(null);
 
   useEffect(() => {
     let mounted = true;
@@ -95,12 +97,25 @@ export default function WikiLayout() {
       return { path, label };
     });
 
-    return [{ path: '/wiki', label: t('breadcrumbs.wiki') }, ...items.filter((item) => item.path !== '/wiki')];
-  }, [location.pathname, t]);
+    const resolved = [{ path: '/wiki', label: t('breadcrumbs.wiki') }, ...items.filter((item) => item.path !== '/wiki')];
+
+    if (detailBreadcrumb && resolved.length > 0) {
+      resolved[resolved.length - 1] = {
+        ...resolved[resolved.length - 1],
+        label: detailBreadcrumb
+      };
+    }
+
+    return resolved;
+  }, [detailBreadcrumb, location.pathname, t]);
 
   useEffect(() => {
     document.documentElement.lang = i18n.language;
   }, [i18n.language]);
+
+  useEffect(() => {
+    setDetailBreadcrumb(null);
+  }, [location.pathname]);
 
   return (
     <div className="min-h-screen bg-slate-950 text-slate-100">
@@ -152,7 +167,7 @@ export default function WikiLayout() {
           </div>
         ) : (
           <main className="flex-1">
-            <Outlet context={{ searchTerm }} />
+            <Outlet context={{ searchTerm, setDetailBreadcrumb }} />
           </main>
         )}
       </div>

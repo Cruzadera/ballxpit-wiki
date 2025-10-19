@@ -2,12 +2,14 @@ import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import WikiSection from '../../components/wiki/WikiSection';
+import { useWikiLayout } from '../../hooks/useWikiLayout';
 import { fetchWiki } from '../../utils/wikiApi';
 import type { WikiBallDetail } from '../../types/wiki';
 
 export default function BallDetail() {
   const { slug } = useParams();
   const { t, i18n } = useTranslation();
+  const { setDetailBreadcrumb } = useWikiLayout();
   const [ball, setBall] = useState<WikiBallDetail | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [hasError, setHasError] = useState(false);
@@ -42,6 +44,18 @@ export default function BallDetail() {
       mounted = false;
     };
   }, [slug, i18n.language]);
+
+  useEffect(() => {
+    if (ball?.name) {
+      setDetailBreadcrumb(ball.name);
+    } else {
+      setDetailBreadcrumb(null);
+    }
+
+    return () => {
+      setDetailBreadcrumb(null);
+    };
+  }, [ball?.name, setDetailBreadcrumb]);
 
   if (isLoading) {
     return <div className="text-sm text-slate-400">{t('loading')}</div>;

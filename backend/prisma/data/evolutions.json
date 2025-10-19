@@ -1,16 +1,65 @@
 [
   {
-    "slug": "burn-to-dark",
-    "description": "The ember collapses inward, awakening a gravitational curse.",
-    "descripcion": "La brasa se colapsa hacia adentro despertando una maldición gravitacional.",
-    "base": "Burn Spark",
-    "result": "Dark Core"
+    "slug": "bleed-to-hemorrhage",
+    "description": "Bleed intensifies until it becomes an unstoppable hemorrhage.",
+    "descripcion": "El sangrado se intensifica hasta convertirse en una hemorragia imparable.",
+    "base": "Bleed",
+    "result": "Hemorrhage"
   },
   {
-    "slug": "bloom-to-crystal",
-    "description": "Mana petals freeze into a reflective bulwark.",
-    "descripcion": "Los pétalos de maná se congelan en un baluarte reflectante.",
-    "base": "Arcane Bloom",
-    "result": "Crystal Shard"
+    "slug": "vampire-to-vampire-lord",
+    "description": "The vampire ascends into a lord who feeds without end.",
+    "descripcion": "El vampiro asciende a un señor que se alimenta sin descanso.",
+    "base": "Vampire",
+    "result": "Vampire Lord"
+  },
+  {
+    "slug": "brood-mother-to-spider-queen",
+    "description": "The brood matriarch evolves into a queen commanding venomous legions.",
+    "descripcion": "La matriarca de la prole evoluciona en una reina que dirige legiones venenosas.",
+    "base": "Brood Mother",
+    "result": "Spider Queen"
+  },
+  {
+    "slug": "fire-to-inferno",
+    "description": "A disciplined flame erupts into a self-sustaining inferno.",
+    "descripcion": "La llama disciplinada estalla en un infierno autosuficiente.",
+    "base": "Fire",
+    "result": "Inferno"
+  },
+  {
+    "slug": "freeze-to-blizzard",
+    "description": "A solitary frost crystal blossoms into a roaming blizzard.",
+    "descripcion": "Un cristal de escarcha se transforma en una ventisca errante.",
+    "base": "Freeze",
+    "result": "Blizzard"
+  },
+  {
+    "slug": "light-to-sun",
+    "description": "The radiant spark matures into a restorative sun.",
+    "descripcion": "La chispa radiante madura hasta convertirse en un sol restaurador.",
+    "base": "Light",
+    "result": "Sun"
+  },
+  {
+    "slug": "dark-to-black-hole",
+    "description": "Condensed shadows collapse into a devouring singularity.",
+    "descripcion": "Las sombras condensadas colapsan en una singularidad devoradora.",
+    "base": "Dark",
+    "result": "Black Hole"
+  },
+  {
+    "slug": "cell-to-overgrowth",
+    "description": "The living cell multiplies uncontrollably into rampant overgrowth.",
+    "descripcion": "La célula viviente se multiplica sin control en un sobrecrecimiento desatado.",
+    "base": "Cell",
+    "result": "Overgrowth"
+  },
+  {
+    "slug": "poison-to-noxious",
+    "description": "Potent toxins refine into an airborne noxious miasma.",
+    "descripcion": "Las toxinas potentes se refinan en una miasma nociva suspendida en el aire.",
+    "base": "Poison",
+    "result": "Noxious"
   }
 ]

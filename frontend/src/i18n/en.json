@@ -31,6 +31,12 @@
   "layout": {
     "darkMode": "Toggle dark mode"
   },
+  "character": {
+    "startingBall": "Starting ball",
+    "unlockRequirement": "Unlock requirement",
+    "unknown": "Unknown",
+    "none": "None"
+  },
   "pages": {
     "balls": {
       "title": "All balls",

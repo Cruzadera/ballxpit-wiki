@@ -1,44 +1,485 @@
 [
   {
-    "name": "Burn Spark",
-    "nombre": "Chispa Ígnea",
-    "description": "A volatile ember that never cools down, ideal for forging aggressive builds.",
-    "descripcion": "Una brasa volátil que nunca se enfría, ideal para forjar estrategias agresivas.",
-    "imageUrl": "https://static.ballxpitwiki.com/wiki/balls/burn-spark.png"
+    "name": "Bleed",
+    "nombre": "Sangrar",
+    "description": "Inflicts steady bleed damage that stacks with each hit.",
+    "descripcion": "Causa daño continuo al enemigo.",
+    "imageUrl": "/icons/dark.svg"
   },
   {
-    "name": "Iron Shell",
-    "nombre": "Coraza de Hierro",
-    "description": "An unbreakable alloy sphere that anchors defensive formations.",
-    "descripcion": "Una esfera de aleación irrompible que ancla formaciones defensivas.",
-    "imageUrl": "https://static.ballxpitwiki.com/wiki/balls/iron-shell.png"
+    "name": "Brood Mother",
+    "nombre": "Madre Criadora",
+    "description": "Spawns parasitic offspring that overwhelm the arena.",
+    "descripcion": "Engendra criaturas parasitarias.",
+    "imageUrl": "/icons/default.svg"
   },
   {
-    "name": "Dark Core",
-    "nombre": "Núcleo Oscuro",
-    "description": "A dense core that manipulates void energy and hexes nearby foes.",
-    "descripcion": "Un núcleo denso que manipula energía del vacío y maldice a los enemigos cercanos.",
-    "imageUrl": "https://static.ballxpitwiki.com/wiki/balls/dark-core.png"
+    "name": "Fire",
+    "nombre": "Fuego",
+    "description": "Engulfs targets in lingering flames that scorch armor and flesh.",
+    "descripcion": "Inflige daño ígneo persistente.",
+    "imageUrl": "/icons/fire.svg"
   },
   {
-    "name": "Arcane Bloom",
-    "nombre": "Flor Arcana",
-    "description": "Pulses with eldritch mana that amplifies support combos and rituals.",
-    "descripcion": "Pulsa con maná arcano que amplifica combos de apoyo y rituales.",
-    "imageUrl": "https://static.ballxpitwiki.com/wiki/balls/arcane-bloom.png"
+    "name": "Cell",
+    "nombre": "Célula",
+    "description": "A living nucleus that adapts quickly to any battlefield threat.",
+    "descripcion": "Base de toda materia viva.",
+    "imageUrl": "/icons/default.svg"
   },
   {
-    "name": "Crystal Shard",
-    "nombre": "Fragmento de Cristal",
-    "description": "A prismatic shard that refracts spells into protective sigils.",
-    "descripcion": "Un fragmento prismático que refracta hechizos en sigilos protectores.",
-    "imageUrl": "https://static.ballxpitwiki.com/wiki/balls/crystal-shard.png"
+    "name": "Charm",
+    "nombre": "Encanto",
+    "description": "Bends foes to your will through irresistible allure.",
+    "descripcion": "Seduce o manipula a los enemigos.",
+    "imageUrl": "/icons/magic.svg"
   },
   {
-    "name": "Shadow Alloy",
-    "nombre": "Aleación Sombría",
-    "description": "Forged from lightless matter, this ball slips between planes with ease.",
-    "descripcion": "Forjada con materia sin luz, esta bola se desliza entre planos con facilidad.",
-    "imageUrl": "https://static.ballxpitwiki.com/wiki/balls/shadow-alloy.png"
+    "name": "Dark",
+    "nombre": "Oscuro",
+    "description": "Channels forbidden shadow energy to curse and drain enemies.",
+    "descripcion": "Canaliza energía negativa o prohibida.",
+    "imageUrl": "/icons/dark.svg"
+  },
+  {
+    "name": "Earthquake",
+    "nombre": "Terremoto",
+    "description": "Shakes the ground with destructive tremors that topple formations.",
+    "descripcion": "Provoca temblores devastadores.",
+    "imageUrl": "/icons/nature.svg"
+  },
+  {
+    "name": "Egg Sack",
+    "nombre": "Saco de Huevos",
+    "description": "Packed with hatchlings ready to burst forth on impact.",
+    "descripcion": "Contiene larvas listas para eclosionar.",
+    "imageUrl": "/icons/default.svg"
+  },
+  {
+    "name": "Freeze",
+    "nombre": "Congelar",
+    "description": "Encases opponents in ice, slowing them to a crawl.",
+    "descripcion": "Congela a los enemigos y ralentiza su movimiento.",
+    "imageUrl": "/icons/ice.svg"
+  },
+  {
+    "name": "Ghost",
+    "nombre": "Fantasma",
+    "description": "Slips through walls and foes alike, ignoring physical barriers.",
+    "descripcion": "Atraviesa muros y enemigos.",
+    "imageUrl": "/icons/ghost.svg"
+  },
+  {
+    "name": "Iron",
+    "nombre": "Metal",
+    "description": "A dense sphere that rebounds with brutal force and barely dents.",
+    "descripcion": "Sólida y resistente, con rebotes potentes.",
+    "imageUrl": "/icons/metal.svg"
+  },
+  {
+    "name": "Laser",
+    "nombre": "Láser",
+    "description": "Fires concentrated energy beams that pierce straight lines.",
+    "descripcion": "Dispara rayos de energía concentrada.",
+    "imageUrl": "/icons/default.svg"
+  },
+  {
+    "name": "Light",
+    "nombre": "Luz",
+    "description": "Bathes the arena in purifying radiance that reveals hidden threats.",
+    "descripcion": "Purifica y revela lo oculto.",
+    "imageUrl": "/icons/light.svg"
+  },
+  {
+    "name": "Lightning",
+    "nombre": "Relámpago",
+    "description": "Unleashes chained bolts that race between clustered targets.",
+    "descripcion": "Descarga energía en cadena.",
+    "imageUrl": "/icons/light.svg"
+  },
+  {
+    "name": "Poison",
+    "nombre": "Veneno",
+    "description": "Corrodes enemies over time with toxic spores.",
+    "descripcion": "Debilita lentamente al enemigo.",
+    "imageUrl": "/icons/poison.svg"
+  },
+  {
+    "name": "Vampire",
+    "nombre": "Vampiro",
+    "description": "Drains vitality from every collision to sustain the wielder.",
+    "descripcion": "Absorbe vida de los enemigos.",
+    "imageUrl": "/icons/dark.svg"
+  },
+  {
+    "name": "Wind",
+    "nombre": "Viento",
+    "description": "Commands swirling gusts that redirect trajectories midair.",
+    "descripcion": "Controla corrientes y tormentas.",
+    "imageUrl": "/icons/wind.svg"
+  },
+  {
+    "name": "Leech",
+    "nombre": "Sanguijuela",
+    "description": "Clings to enemies and siphons their lifeblood relentlessly.",
+    "descripcion": "Fusión que crea una sanguijuela que absorbe vida.",
+    "imageUrl": "/icons/dark.svg"
+  },
+  {
+    "name": "Frenzy",
+    "nombre": "Frenesí",
+    "description": "Explodes with reckless aggression, trading control for ferocity.",
+    "descripcion": "Incrementa el ataque al costo de perder control.",
+    "imageUrl": "/icons/default.svg"
+  },
+  {
+    "name": "Sacrifice",
+    "nombre": "Sacrificio",
+    "description": "Converts your own life force into devastating annihilation.",
+    "descripcion": "Convierte tu vida en poder destructivo.",
+    "imageUrl": "/icons/ice.svg"
+  },
+  {
+    "name": "Hemorrhage",
+    "nombre": "Hemorragia",
+    "description": "Deepens every wound until foes collapse from blood loss.",
+    "descripcion": "Daño continuo con cada impacto.",
+    "imageUrl": "/icons/dark.svg"
+  },
+  {
+    "name": "Vampire Lord",
+    "nombre": "Señor Vampiro",
+    "description": "An apex predator that feeds continuously on the battlefield.",
+    "descripcion": "Versión superior que roba vida de forma constante.",
+    "imageUrl": "/icons/dark.svg"
+  },
+  {
+    "name": "Larva",
+    "nombre": "Larva",
+    "description": "A primordial creature that evolves rapidly into new threats.",
+    "descripcion": "Crea una nueva forma biológica primigenia.",
+    "imageUrl": "/icons/default.svg"
+  },
+  {
+    "name": "Spider Queen",
+    "nombre": "Reina Araña",
+    "description": "Commands venomous broods that blanket the arena in webs.",
+    "descripcion": "Invoca enjambres arácnidos.",
+    "imageUrl": "/icons/default.svg"
+  },
+  {
+    "name": "Mosquito King",
+    "nombre": "Rey Mosquito",
+    "description": "Aerial leech that drains foes from above with relentless bites.",
+    "descripcion": "Otorga drenaje de vida aéreo.",
+    "imageUrl": "/icons/default.svg"
+  },
+  {
+    "name": "Magma",
+    "nombre": "Magma",
+    "description": "Spills molten rock trails that sear anything they touch.",
+    "descripcion": "Genera un núcleo ardiente que quema el suelo.",
+    "imageUrl": "/icons/fire.svg"
+  },
+  {
+    "name": "Frozen Flame",
+    "nombre": "Llama Congelada",
+    "description": "Balances opposing elements to flash-freeze and cauterise at once.",
+    "descripcion": "Une fuego y hielo en equilibrio mortal.",
+    "imageUrl": "/icons/fire.svg"
+  },
+  {
+    "name": "Bomb",
+    "nombre": "Bomba",
+    "description": "Detonates on command to obliterate clustered enemies.",
+    "descripcion": "Explota causando daño masivo.",
+    "imageUrl": "/icons/default.svg"
+  },
+  {
+    "name": "Sun",
+    "nombre": "Sol",
+    "description": "Radiates constant warmth that heals allies and burns invaders.",
+    "descripcion": "Emite calor y curación constante.",
+    "imageUrl": "/icons/fire.svg"
+  },
+  {
+    "name": "Inferno",
+    "nombre": "Infierno",
+    "description": "Summons a living wildfire that devours the battlefield.",
+    "descripcion": "Llama viva que arrasa con todo.",
+    "imageUrl": "/icons/fire.svg"
+  },
+  {
+    "name": "Overgrowth",
+    "nombre": "Sobrecrecimiento",
+    "description": "Unleashes rampant biomass that overruns terrain instantly.",
+    "descripcion": "Multiplica la materia viva.",
+    "imageUrl": "/icons/nature.svg"
+  },
+  {
+    "name": "Radioactive Beam",
+    "nombre": "Rayo Radiactivo",
+    "description": "Fuses light and toxin into a beam that irradiates targets.",
+    "descripcion": "Fusión de energía pura y biología.",
+    "imageUrl": "/icons/light.svg"
+  },
+  {
+    "name": "Virus",
+    "nombre": "Virus",
+    "description": "Spreads a fast-acting plague that debilitates entire waves.",
+    "descripcion": "Crea un patógeno de rápida propagación.",
+    "imageUrl": "/icons/poison.svg"
+  },
+  {
+    "name": "Incubus",
+    "nombre": "Íncubo",
+    "description": "A shadowy tempter that feeds on the desires of prey.",
+    "descripcion": "Entidad de deseo oscuro.",
+    "imageUrl": "/icons/magic.svg"
+  },
+  {
+    "name": "Enamored",
+    "nombre": "Enamorado",
+    "description": "Charms everything nearby into a lovestruck stupor.",
+    "descripcion": "Irradia atracción y poder.",
+    "imageUrl": "/icons/magic.svg"
+  },
+  {
+    "name": "Succubus",
+    "nombre": "Súcubo",
+    "description": "Drains strength while entrancing foes with allure.",
+    "descripcion": "Encanta y drena a sus víctimas.",
+    "imageUrl": "/icons/magic.svg"
+  },
+  {
+    "name": "Apparition",
+    "nombre": "Aparición",
+    "description": "A spectral chill that freezes and haunts simultaneously.",
+    "descripcion": "Entidad congelante espectral.",
+    "imageUrl": "/icons/ghost.svg"
+  },
+  {
+    "name": "Assassin",
+    "nombre": "Asesino",
+    "description": "Strikes from the shadows with surgical lethality.",
+    "descripcion": "Cazador de sombras y precisión.",
+    "imageUrl": "/icons/default.svg"
+  },
+  {
+    "name": "Flash",
+    "nombre": "Destello",
+    "description": "Releases a brief union of light and darkness that blinds.",
+    "descripcion": "Breve unión entre luz y oscuridad.",
+    "imageUrl": "/icons/default.svg"
+  },
+  {
+    "name": "Noxious",
+    "nombre": "Nocivo",
+    "description": "Blankets the arena in invisible, choking toxins.",
+    "descripcion": "Expulsa toxinas invisibles.",
+    "imageUrl": "/icons/poison.svg"
+  },
+  {
+    "name": "Glacier",
+    "nombre": "Glaciar",
+    "description": "Raises colossal ice walls that trap foes in permafrost.",
+    "descripcion": "Tierras heladas que aprisionan enemigos.",
+    "imageUrl": "/icons/ice.svg"
+  },
+  {
+    "name": "Swamp",
+    "nombre": "Pantano",
+    "description": "Floods the ground with mire that poisons every step.",
+    "descripcion": "Campo venenoso persistente.",
+    "imageUrl": "/icons/nature.svg"
+  },
+  {
+    "name": "Sandstorm",
+    "nombre": "Tormenta de Arena",
+    "description": "Scours the battlefield with blinding, abrasive winds.",
+    "descripcion": "Reduce la visibilidad y movilidad enemiga.",
+    "imageUrl": "/icons/nature.svg"
+  },
+  {
+    "name": "Scattershot",
+    "nombre": "Escopeta",
+    "description": "Blasts short-range shrapnel in a brutal cone.",
+    "descripcion": "Dispara proyectiles metálicos concentrados.",
+    "imageUrl": "/icons/metal.svg"
+  },
+  {
+    "name": "Mosquito Swarm",
+    "nombre": "Enjambre de Mosquitos",
+    "description": "A buzzing cloud that drains life from every angle.",
+    "descripcion": "Drena vida en área.",
+    "imageUrl": "/icons/default.svg"
+  },
+  {
+    "name": "Ice Ray",
+    "nombre": "Rayo de Hielo",
+    "description": "Slices foes with razor-thin streams of frozen energy.",
+    "descripcion": "Congela y corta simultáneamente.",
+    "imageUrl": "/icons/ice.svg"
+  },
+  {
+    "name": "Blizzard",
+    "nombre": "Ventisca",
+    "description": "Unleashes raging snowstorms that bury whole waves.",
+    "descripcion": "Genera tormentas heladas.",
+    "imageUrl": "/icons/default.svg"
+  },
+  {
+    "name": "Soul Siphon",
+    "nombre": "Succiona Almas",
+    "description": "Extracts spirit essence to empower every strike.",
+    "descripcion": "Absorbe energía vital de enemigos.",
+    "imageUrl": "/icons/default.svg"
+  },
+  {
+    "name": "Lightning Rod",
+    "nombre": "Pararrayos",
+    "description": "Channels storms into a single, devastating discharge.",
+    "descripcion": "Canaliza la energía de tormentas.",
+    "imageUrl": "/icons/light.svg"
+  },
+  {
+    "name": "Laser Beam",
+    "nombre": "Rayo Láser",
+    "description": "Amplifies radiant energy into a precision beam.",
+    "descripcion": "Concentración pura de energía luminosa.",
+    "imageUrl": "/icons/light.svg"
+  },
+  {
+    "name": "Sacred Laser",
+    "nombre": "Láser Sagrado",
+    "description": "Sweeps holy light across the grid, searing all foes.",
+    "descripcion": "Daña enemigos en toda la cuadrícula.",
+    "imageUrl": "/icons/default.svg"
+  },
+  {
+    "name": "Vertical Laser",
+    "nombre": "Láser Vertical",
+    "description": "Projects a column of light that cleaves upward.",
+    "descripcion": "Proyecta un haz vertical que divide el campo de batalla.",
+    "imageUrl": "/icons/default.svg"
+  },
+  {
+    "name": "Horizontal Laser",
+    "nombre": "Láser Horizontal",
+    "description": "Emits a sweeping beam that slices laterally.",
+    "descripcion": "Emite un rayo rasante que corta de lado a lado.",
+    "imageUrl": "/icons/default.svg"
+  },
+  {
+    "name": "Storm",
+    "nombre": "Tormenta",
+    "description": "Calls forth chaotic winds and lightning strikes together.",
+    "descripcion": "Fusión caótica que golpea en área.",
+    "imageUrl": "/icons/wind.svg"
+  },
+  {
+    "name": "Cornucopia",
+    "nombre": "Cornucopia",
+    "description": "Blesses the party with abundance, bolstering regeneration.",
+    "descripcion": "Aumenta regeneración y defensa.",
+    "imageUrl": "/icons/default.svg"
+  },
+  {
+    "name": "Rattle",
+    "nombre": "Sonaja",
+    "description": "A rhythmic charm that rallies allies into tempo.",
+    "descripcion": "Un amuleto rítmico que marca el tempo de la ofensiva.",
+    "imageUrl": "/icons/default.svg"
+  },
+  {
+    "name": "War Horn",
+    "nombre": "Cuerno de Guerra",
+    "description": "Trumpets a battle cry that hardens defences instantly.",
+    "descripcion": "Hace resonar un grito marcial que refuerza las defensas.",
+    "imageUrl": "/icons/default.svg"
+  },
+  {
+    "name": "Soul Reaper",
+    "nombre": "Segador de Almas",
+    "description": "Harvests vitality with every swing of its cursed blade.",
+    "descripcion": "Roba vida con cada ataque.",
+    "imageUrl": "/icons/default.svg"
+  },
+  {
+    "name": "Bottomless Chalice",
+    "nombre": "Cáliz Inagotable",
+    "description": "A relic that never runs dry, suffusing allies with vigor.",
+    "descripcion": "Una reliquia que nunca se vacía y colma de vigor al equipo.",
+    "imageUrl": "/icons/ice.svg"
+  },
+  {
+    "name": "Vampiric Sword",
+    "nombre": "Espada Vampírica",
+    "description": "Imbued steel that steals blood on every cut.",
+    "descripcion": "Acero imbuido que roba sangre con cada tajo.",
+    "imageUrl": "/icons/default.svg"
+  },
+  {
+    "name": "Sharpshooter’s Crossbow",
+    "nombre": "Ballesta del Tirador",
+    "description": "Launches precision bolts that rarely miss their mark.",
+    "descripcion": "Mejora precisión y daño crítico.",
+    "imageUrl": "/icons/default.svg"
+  },
+  {
+    "name": "Diamond Dagger",
+    "nombre": "Daga de Diamante",
+    "description": "A flawless blade that pierces armour with ease.",
+    "descripcion": "Una hoja perfecta que atraviesa armaduras sin esfuerzo.",
+    "imageUrl": "/icons/default.svg"
+  },
+  {
+    "name": "Emerald Dagger",
+    "nombre": "Daga de Esmeralda",
+    "description": "Inflicts verdant venom with each stab.",
+    "descripcion": "Inyecta veneno esmeralda con cada estocada.",
+    "imageUrl": "/icons/default.svg"
+  },
+  {
+    "name": "Ruby Dagger",
+    "nombre": "Daga de Rubí",
+    "description": "Sears wounds with blazing gemstone heat.",
+    "descripcion": "Cauteriza las heridas con el calor de la gema.",
+    "imageUrl": "/icons/default.svg"
+  },
+  {
+    "name": "Sapphire Dagger",
+    "nombre": "Daga de Zafiro",
+    "description": "Chills targets to the core upon impact.",
+    "descripcion": "Enfría hasta el núcleo con cada impacto.",
+    "imageUrl": "/icons/default.svg"
+  },
+  {
+    "name": "Nuclear Bomb",
+    "nombre": "Bomba Nuclear",
+    "description": "Combines explosive force with lethal fallout.",
+    "descripcion": "Fusiona una Bomba con una bola Veneno.",
+    "imageUrl": "/icons/default.svg"
+  },
+  {
+    "name": "Black Hole",
+    "nombre": "Agujero Negro",
+    "description": "Crushes everything nearby into an inescapable void.",
+    "descripcion": "Fusiona un Sol con un Oscuro.",
+    "imageUrl": "/icons/default.svg"
+  },
+  {
+    "name": "Satan",
+    "nombre": "Satán",
+    "description": "Embodies unholy temptation and overwhelming power.",
+    "descripcion": "Funde un Íncubo con un Súcubo.",
+    "imageUrl": "/icons/default.svg"
+  },
+  {
+    "name": "Nosferatu",
+    "nombre": "Nosferatu",
+    "description": "An ancient bloodlord that commands every nocturnal brood.",
+    "descripcion": "Une Señor Vampiro, Rey Mosquito y Reina Araña.",
+    "imageUrl": "/icons/default.svg"
   }
 ]

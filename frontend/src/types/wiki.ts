@@ -92,7 +92,8 @@ export type WikiCharacter = {
   name: string | null;
   description: string | null;
   imageUrl: string | null;
-  title: string | null;
+  startingBall: string | null;
+  unlockRequirement: string | null;
 };
 
 export type WikiItem = {
