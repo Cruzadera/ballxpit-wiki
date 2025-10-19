@@ -3,6 +3,7 @@
     "balls": "Bolas",
     "fusions": "Fusiones",
     "evolutions": "Evoluciones",
+    "passives": "Pasivas",
     "characters": "Personajes",
     "items": "Objetos"
   },
@@ -20,6 +21,7 @@
     "balls": "Bolas",
     "fusions": "Fusiones",
     "evolutions": "Evoluciones",
+    "passives": "Pasivas",
     "characters": "Personajes",
     "items": "Objetos"
   },
@@ -49,6 +51,17 @@
     "evolutions": {
       "title": "Códice de evoluciones",
       "subtitle": "Sigue cómo cada núcleo asciende a nuevas formas."
+    },
+    "passives": {
+      "title": "Pasivas",
+      "subtitle": "Las pasivas no evolutivas que definen cada partida.",
+      "evolutionsTitle": "Evoluciones pasivas",
+      "evolutionsSubtitle": "Combina reliquias para desbloquear efectos mejorados.",
+      "combinedEffects": "Efectos combinados",
+      "detail": {
+        "subtitle": "Reliquias necesarias para esta evolución pasiva.",
+        "componentsLabel": "Componentes: {{value}}"
+      }
     },
     "characters": {
       "title": "Personajes clave",

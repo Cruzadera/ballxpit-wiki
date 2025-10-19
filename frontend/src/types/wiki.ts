@@ -103,3 +103,18 @@ export type WikiItem = {
   imageUrl: string | null;
   type: string | null;
 };
+
+export type WikiPassive = {
+  id: number;
+  name: string | null;
+  description: string | null;
+  imageUrl: string | null;
+};
+
+export type WikiPassiveEvolution = {
+  id: number;
+  slug: string;
+  components: string[];
+  componentsLabel: string;
+  result: string | null;
+};
