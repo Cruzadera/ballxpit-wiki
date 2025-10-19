@@ -9,6 +9,7 @@
   "cardCallToAction": "Click to view more details.",
   "darkModeLight": "☀️ Light mode",
   "darkModeDark": "🌙 Dark mode",
+  "home": "Home",
   "detailBack": "← Back to the list",
   "detailLoading": "Loading…",
   "detailNotFound": "Ball not found",
@@ -25,5 +26,11 @@
   "relatedFusionsEmpty": "This ball does not participate in any fusion.",
   "relatedEvolutions": "Related evolutions",
   "relatedEvolutionsEmpty": "This ball is not involved in any evolution.",
-  "unknownBallName": "Mystery ball"
+  "unknownBallName": "Mystery ball",
+  "characters": "Characters",
+  "description": "Description",
+  "stats": "Stats",
+  "related_links": "Related links",
+  "ball": "Ball",
+  "trait": "Trait"
 }

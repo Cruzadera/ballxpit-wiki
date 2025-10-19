@@ -9,6 +9,7 @@
   "cardCallToAction": "Haz clic para ver más detalles.",
   "darkModeLight": "☀️ Modo claro",
   "darkModeDark": "🌙 Modo oscuro",
+  "home": "Inicio",
   "detailBack": "← Volver a la lista",
   "detailLoading": "Cargando…",
   "detailNotFound": "Bola no encontrada",
@@ -25,5 +26,11 @@
   "relatedFusionsEmpty": "No hay fusiones registradas para esta bola.",
   "relatedEvolutions": "Evoluciones relacionadas",
   "relatedEvolutionsEmpty": "No hay evoluciones registradas para esta bola.",
-  "unknownBallName": "Bola misteriosa"
+  "unknownBallName": "Bola misteriosa",
+  "characters": "Personajes",
+  "description": "Descripción",
+  "stats": "Estadísticas",
+  "related_links": "Enlaces relacionados",
+  "ball": "Bola",
+  "trait": "Rasgo"
 }
