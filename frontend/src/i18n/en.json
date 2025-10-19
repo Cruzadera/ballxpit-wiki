@@ -74,8 +74,8 @@
   },
   "ballDetail": {
     "overview": "Overview",
-    "fusionRecipes": "Fusion recipes",
-    "fusionAppearances": "Appears in fusions",
+    "fusionsFrom": "Fusions that create this ball",
+    "fusionsInto": "Fusions that use this ball",
     "evolutionsFrom": "Evolutions from this ball",
     "evolutionsInto": "Evolutions into this ball"
   }

@@ -2,12 +2,15 @@ import { PrismaClient } from '@prisma/client';
 import fs from 'fs';
 import path from 'path';
 
+type BallType = 'pure' | 'fusion' | 'evolution';
+
 type BallSeed = {
   name: string;
   nombre?: string;
   description?: string;
   descripcion?: string;
   imageUrl?: string;
+  type?: BallType;
 };
 
 type FusionSeed = {
@@ -66,6 +69,20 @@ type PassiveEvolutionSeed = {
 
 const prisma = new PrismaClient();
 const dataDir = path.join(__dirname, 'data');
+
+const forcedEvolutionNames = new Set<string>([
+  'Vampire Lord',
+  'Spider Queen',
+  'Nosferatu',
+  'Satan',
+  'Black Hole',
+  'Sacred Laser',
+  'Cornucopia',
+  'Soul Reaper',
+  'Sharpshooter’s Crossbow'
+]);
+
+const forcedFusionNames = new Set<string>(['Hemorrhage', 'Inferno', 'Blizzard', 'Sun', 'Overgrowth', 'Noxious']);
 
 const passiveSeeds: PassiveSeed[] = [
   { name_en: "Archer's Effigy", name_es: 'Efigie del Arquero' },
@@ -230,11 +247,28 @@ async function main() {
   await prisma.passive.deleteMany();
   await prisma.ball.deleteMany();
 
-  const ballIds = new Map<string, { id: number; slug: string }>();
+  const fusionResults = new Set(fusions.map((fusion) => fusion.result));
+  const evolutionResults = new Set(evolutions.map((evolution) => evolution.result));
+
+  const ballIds = new Map<string, { id: number; slug: string; type: BallType }>();
   const usageCounter = new Map<string, UsageCounter>();
 
   for (const ball of balls) {
     const slug = slugify(ball.name);
+    let type: BallType = 'pure';
+
+    if (ball.type && (ball.type === 'pure' || ball.type === 'fusion' || ball.type === 'evolution')) {
+      type = ball.type;
+    } else if (forcedEvolutionNames.has(ball.name)) {
+      type = 'evolution';
+    } else if (forcedFusionNames.has(ball.name)) {
+      type = 'fusion';
+    } else if (evolutionResults.has(ball.name)) {
+      type = 'evolution';
+    } else if (fusionResults.has(ball.name)) {
+      type = 'fusion';
+    }
+
     const created = await prisma.ball.create({
       data: {
         name: ball.name,
@@ -242,11 +276,13 @@ async function main() {
         description: ball.description ?? null,
         descripcion: ball.descripcion ?? null,
         imageUrl: ball.imageUrl ?? null,
-        slug
+        slug,
+        type,
+        isPure: type === 'pure'
       }
     });
 
-    ballIds.set(ball.name, { id: created.id, slug });
+    ballIds.set(ball.name, { id: created.id, slug, type });
     ensureUsage(usageCounter, slug);
   }
 
@@ -294,6 +330,13 @@ async function main() {
     if (!baseBall || !resultBall) {
       console.warn(
         `⚠️  Evolution skipped because base "${evolution.base}" or result "${evolution.result}" was not found.`
+      );
+      continue;
+    }
+
+    if (resultBall.type !== 'evolution') {
+      console.warn(
+        `⚠️  Evolution skipped because result "${evolution.result}" is classified as "${resultBall.type}" instead of "evolution".`
       );
       continue;
     }
@@ -367,19 +410,6 @@ async function main() {
         result_en: evolution.result_en,
         result_es: evolution.result_es
       }
-    });
-  }
-
-  for (const [slug, usage] of usageCounter.entries()) {
-    const isPure =
-      usage.fusionResults === 0 &&
-      usage.fusionComponents === 0 &&
-      usage.evolutionBase === 0 &&
-      usage.evolutionResult === 0;
-
-    await prisma.ball.update({
-      where: { slug },
-      data: { isPure }
     });
   }
 

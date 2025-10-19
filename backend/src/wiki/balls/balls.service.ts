@@ -36,13 +36,20 @@ type BallWithRelations = Prisma.BallGetPayload<{
   };
 }>;
 
+type BallCategory = 'pure' | 'fusion' | 'evolution';
+
+const BALL_TYPE_ORDER: Record<BallCategory, number> = {
+  pure: 0,
+  fusion: 1,
+  evolution: 2
+};
+
 @Injectable()
 export class BallsService {
   constructor(private readonly prisma: PrismaService) {}
 
   async findAll(language: SupportedLanguage) {
     const balls = await this.prisma.ball.findMany({
-      orderBy: { name: 'asc' },
       include: {
         fusionResults: true,
         fusionsAsComponent: true,
@@ -50,14 +57,30 @@ export class BallsService {
       }
     });
 
-    return balls.map((ball) => ({
+    const mapped = balls.map((ball) => ({
       slug: ball.slug,
       name: translateField(language, ball.name, ball.nombre),
       description: translateField(language, ball.description, ball.descripcion),
       imageUrl: ball.imageUrl,
-      isPure: ball.isPure,
-      tags: this.buildTags(ball)
+      type: (ball.type as BallCategory | null) ?? null,
+      tags: this.buildTags({ type: ball.type })
     }));
+
+    const locale = language === 'es' ? 'es' : 'en';
+
+    return mapped.sort((a, b) => {
+      const aRank = this.getTypeRank(a.type);
+      const bRank = this.getTypeRank(b.type);
+
+      if (aRank !== bRank) {
+        return aRank - bRank;
+      }
+
+      const aName = a.name ?? '';
+      const bName = b.name ?? '';
+
+      return aName.localeCompare(bName, locale, { sensitivity: 'base' });
+    });
   }
 
   async findBySlug(slug: string, language: SupportedLanguage) {
@@ -108,9 +131,9 @@ export class BallsService {
       name: translateField(language, ball.name, ball.nombre),
       description: translateField(language, ball.description, ball.descripcion),
       imageUrl: ball.imageUrl,
-      isPure: ball.isPure,
-      tags: this.buildTags(ball),
-      fusionRecipes: ball.fusionResults.map((fusion) => ({
+      type: (ball.type as BallCategory | null) ?? null,
+      tags: this.buildTags({ type: ball.type }),
+      fusionsFrom: ball.fusionResults.map((fusion) => ({
         slug: fusion.slug,
         description: translateField(language, fusion.description, fusion.descripcion),
         result: {
@@ -126,7 +149,7 @@ export class BallsService {
             imageUrl: component.ball.imageUrl
           }))
       })),
-      fusionAppearances: ball.fusionsAsComponent.map(({ fusion }) => ({
+      fusionsInto: ball.fusionsAsComponent.map(({ fusion }) => ({
         slug: fusion.slug,
         result: {
           slug: fusion.result.slug,
@@ -155,25 +178,21 @@ export class BallsService {
     };
   }
 
-  private buildTags(ball: {
-    isPure: boolean;
-    fusionResults: { length: number };
-    evolutionsAsResult: { length: number };
-  }) {
-    const tags: string[] = [];
-
-    if (ball.isPure) {
-      tags.push('pure');
+  private buildTags(ball: { type: string | null }) {
+    if (!ball.type) {
+      return [];
     }
 
-    if (ball.fusionResults.length > 0) {
-      tags.push('fusion');
+    return ['pure', 'fusion', 'evolution'].includes(ball.type)
+      ? [ball.type as BallCategory]
+      : [];
+  }
+
+  private getTypeRank(type: string | null | undefined) {
+    if (!type || !['pure', 'fusion', 'evolution'].includes(type)) {
+      return Number.MAX_SAFE_INTEGER;
     }
 
-    if (ball.evolutionsAsResult.length > 0) {
-      tags.push('evolution');
-    }
-
-    return tags;
+    return BALL_TYPE_ORDER[type as BallCategory];
   }
 }

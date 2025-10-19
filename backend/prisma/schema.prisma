@@ -16,6 +16,7 @@ model Ball {
   description        String?
   descripcion        String?
   imageUrl           String?
+  type               String?
   isPure             Boolean           @default(false)
   slug               String            @unique
   evolutionsAsBase   Evolution[]       @relation("BaseBall")

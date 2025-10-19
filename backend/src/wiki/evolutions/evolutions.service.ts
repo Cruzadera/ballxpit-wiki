@@ -16,6 +16,11 @@ export class EvolutionsService {
 
   async findAll(language: SupportedLanguage) {
     const evolutions = await this.prisma.evolution.findMany({
+      where: {
+        resultBall: {
+          type: 'evolution'
+        }
+      },
       orderBy: { slug: 'asc' },
       include: {
         baseBall: true,
@@ -36,6 +41,10 @@ export class EvolutionsService {
     });
 
     if (!evolution) {
+      return null;
+    }
+
+    if (evolution.resultBall.type !== 'evolution') {
       return null;
     }
 
