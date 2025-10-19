@@ -11,6 +11,7 @@ const META_SECTIONS: MetaSection[] = [
   { path: '/wiki/balls', icon: '🟣', labels: { en: 'Balls', es: 'Bolas' } },
   { path: '/wiki/fusions', icon: '⚗️', labels: { en: 'Fusions', es: 'Fusiones' } },
   { path: '/wiki/evolutions', icon: '🧬', labels: { en: 'Evolutions', es: 'Evoluciones' } },
+  { path: '/wiki/passives', icon: '🧿', labels: { en: 'Passives', es: 'Pasivas' } },
   { path: '/wiki/characters', icon: '⚔️', labels: { en: 'Characters', es: 'Personajes' } },
   { path: '/wiki/items', icon: '🎒', labels: { en: 'Items', es: 'Objetos' } }
 ];

@@ -6,6 +6,8 @@ import FusionsPage from './pages/wiki/FusionsPage';
 import FusionDetail from './pages/wiki/FusionDetail';
 import EvolutionsPage from './pages/wiki/EvolutionsPage';
 import EvolutionDetail from './pages/wiki/EvolutionDetail';
+import PassivesPage from './pages/wiki/PassivesPage';
+import PassiveEvolutionDetail from './pages/wiki/PassiveEvolutionDetail';
 import CharactersPage from './pages/wiki/CharactersPage';
 import CharacterDetail from './pages/wiki/CharacterDetail';
 import ItemsPage from './pages/wiki/ItemsPage';
@@ -24,6 +26,8 @@ export const router = createBrowserRouter([
       { path: 'fusions/:slug', element: <FusionDetail /> },
       { path: 'evolutions', element: <EvolutionsPage /> },
       { path: 'evolutions/:slug', element: <EvolutionDetail /> },
+      { path: 'passives', element: <PassivesPage /> },
+      { path: 'passives/:slug', element: <PassiveEvolutionDetail /> },
       { path: 'characters', element: <CharactersPage /> },
       { path: 'characters/:slug', element: <CharacterDetail /> },
       { path: 'items', element: <ItemsPage /> },

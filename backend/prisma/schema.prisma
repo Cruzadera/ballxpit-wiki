@@ -87,3 +87,24 @@ model Item {
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
 }
+
+model Passive {
+  id             Int      @id @default(autoincrement())
+  name_en        String
+  name_es        String
+  description_en String?
+  description_es String?
+  imageUrl       String?
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+}
+
+model PassiveEvolution {
+  id            Int      @id @default(autoincrement())
+  components_en String
+  components_es String
+  result_en     String
+  result_es     String
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+}

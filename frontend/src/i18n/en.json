@@ -3,6 +3,7 @@
     "balls": "Balls",
     "fusions": "Fusions",
     "evolutions": "Evolutions",
+    "passives": "Passives",
     "characters": "Characters",
     "items": "Items"
   },
@@ -20,6 +21,7 @@
     "balls": "Balls",
     "fusions": "Fusions",
     "evolutions": "Evolutions",
+    "passives": "Passives",
     "characters": "Characters",
     "items": "Items"
   },
@@ -49,6 +51,17 @@
     "evolutions": {
       "title": "Evolution codex",
       "subtitle": "Track how each core ascends into new forms."
+    },
+    "passives": {
+      "title": "Passive relics",
+      "subtitle": "Non-evolution passives that shape every run.",
+      "evolutionsTitle": "Passive evolutions",
+      "evolutionsSubtitle": "Fuse special relics to unlock enhanced passives.",
+      "combinedEffects": "Combined effects",
+      "detail": {
+        "subtitle": "Required relics for this passive evolution.",
+        "componentsLabel": "Components: {{value}}"
+      }
     },
     "characters": {
       "title": "Key characters",
