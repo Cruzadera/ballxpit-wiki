@@ -1,0 +1,18 @@
+[
+  {
+    "name": "Twilight Crucible",
+    "nombre": "Crisol del Crepúsculo",
+    "description": "Catalyses fusion rituals while shielding handlers from backlash.",
+    "descripcion": "Cataliza rituales de fusión mientras protege a los encargados del retroceso.",
+    "imageUrl": "https://static.ballxpitwiki.com/wiki/items/twilight-crucible.png",
+    "type": "Fusion"
+  },
+  {
+    "name": "Archivist Codex",
+    "nombre": "Códice del Archivista",
+    "description": "An enchanted tome that records every discovered ball genealogy.",
+    "descripcion": "Un tomo encantado que registra cada genealogía de bolas descubierta.",
+    "imageUrl": "https://static.ballxpitwiki.com/wiki/items/archivist-codex.png",
+    "type": "Lore"
+  }
+]

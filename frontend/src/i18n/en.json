@@ -1,36 +1,63 @@
 {
-  "headerTitle": "⚪ Ball x Pit Wiki",
-  "heroTitle": "Explore the balls",
-  "heroSubtitle": "Search by name or discover their fusions and evolutions.",
-  "searchPlaceholder": "Search by name…",
-  "loadingBalls": "Loading balls…",
-  "noResults": "No balls matched your search.",
-  "cardFallbackDescription": "Click to view more details.",
-  "cardCallToAction": "Click to view more details.",
-  "darkModeLight": "☀️ Light mode",
-  "darkModeDark": "🌙 Dark mode",
-  "home": "Home",
-  "detailBack": "← Back to the list",
-  "detailLoading": "Loading…",
-  "detailNotFound": "Ball not found",
-  "detailDescriptionFallback": "No description available.",
-  "components": "Composed of",
-  "pureBall": "Essential ball: does not come from any combination.",
-  "evolvesFrom": "Evolves from",
-  "detailFusionsTitle": "🔗 Related fusions",
-  "detailFusionsEmpty": "No fusions are registered for this ball.",
-  "pureBallsHeading": "⚪ Pure balls",
-  "fusionBallsHeading": "🧪 Fusions",
-  "evolutionBallsHeading": "💥 Evolutions",
-  "relatedFusions": "🔗 Related fusions",
-  "relatedFusionsEmpty": "This ball does not participate in any fusion.",
-  "relatedEvolutions": "Related evolutions",
-  "relatedEvolutionsEmpty": "This ball is not involved in any evolution.",
-  "unknownBallName": "Mystery ball",
-  "characters": "Characters",
-  "description": "Description",
-  "stats": "Stats",
-  "related_links": "Related links",
-  "ball": "Ball",
-  "trait": "Trait"
+  "nav": {
+    "balls": "Balls",
+    "fusions": "Fusions",
+    "evolutions": "Evolutions",
+    "characters": "Characters",
+    "items": "Items"
+  },
+  "search": {
+    "placeholder": "Search by name...",
+    "clear": "Clear"
+  },
+  "noResults": "No results found.",
+  "noTitle": "Unnamed entry",
+  "noDescription": "No description available yet.",
+  "loading": "Loading wiki...",
+  "error": "Unable to load wiki entries. Please try again later.",
+  "breadcrumbs": {
+    "wiki": "Wiki",
+    "balls": "Balls",
+    "fusions": "Fusions",
+    "evolutions": "Evolutions",
+    "characters": "Characters",
+    "items": "Items"
+  },
+  "tags": {
+    "pure": "Pure",
+    "fusion": "Fusion",
+    "evolution": "Evolution"
+  },
+  "layout": {
+    "darkMode": "Toggle dark mode"
+  },
+  "pages": {
+    "balls": {
+      "title": "All balls",
+      "subtitle": "Browse every ball recorded by the Radiant Archive."
+    },
+    "fusions": {
+      "title": "Fusion index",
+      "subtitle": "Discover the rituals required to forge legendary balls."
+    },
+    "evolutions": {
+      "title": "Evolution codex",
+      "subtitle": "Track how each core ascends into new forms."
+    },
+    "characters": {
+      "title": "Key characters",
+      "subtitle": "Meet the allies and rivals who shape the Ball x Pit saga."
+    },
+    "items": {
+      "title": "Featured items",
+      "subtitle": "Equipment, tomes and relics that empower every run."
+    }
+  },
+  "ballDetail": {
+    "overview": "Overview",
+    "fusionRecipes": "Fusion recipes",
+    "fusionAppearances": "Appears in fusions",
+    "evolutionsFrom": "Evolutions from this ball",
+    "evolutionsInto": "Evolutions into this ball"
+  }
 }
