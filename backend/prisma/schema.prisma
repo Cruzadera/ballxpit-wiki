@@ -2,84 +2,84 @@ generator client {
   provider = "prisma-client-js"
 }
 
+// Datasource defaults to SQLite for local development. Set DATABASE_URL to a
+// PostgreSQL connection string on Render and run `prisma db push` to migrate.
 datasource db {
   provider = "sqlite"
   url      = env("DATABASE_URL")
 }
 
 model Ball {
-  id                   Int                   @id @default(autoincrement())
-  name                 String                @unique
-  nombre               String?
-  type                 String
-  tipo                 String                @default("pura")
-  level                Int
-  description          String
-  descripcion          String?
-  imageUrl             String
-  fusionResults        FusionRecipe[]        @relation("FusionResult")
-  fusionInputs         FusionInput[]
-  evolutionResults     Evolution[]           @relation("EvolutionResult")
-  evolutionComponents  EvolutionComponent[]
-  createdAt            DateTime              @default(now())
-  updatedAt            DateTime              @updatedAt
+  id                 Int               @id @default(autoincrement())
+  name               String
+  nombre             String?
+  description        String?
+  descripcion        String?
+  imageUrl           String?
+  isPure             Boolean           @default(false)
+  slug               String            @unique
+  evolutionsAsBase   Evolution[]       @relation("BaseBall")
+  evolutionsAsResult Evolution[]       @relation("ResultBall")
+  fusionResults      Fusion[]          @relation("ResultFusion")
+  fusionsAsComponent FusionComponent[]
+  createdAt          DateTime          @default(now())
+  updatedAt          DateTime          @updatedAt
 }
 
-model FusionRecipe {
-  id            Int           @id @default(autoincrement())
-  requiredLevel Int
-  origenA       String?
-  origenB       String?
-  resultado     String?
-  descripcion   String?
-  emoji         String?
-  tipo          String        @default("fusion")
-  resultId      Int
-  result        Ball          @relation("FusionResult", fields: [resultId], references: [id])
-  inputs        FusionInput[]
-  createdAt     DateTime      @default(now())
-  updatedAt     DateTime      @updatedAt
+model Fusion {
+  id          Int               @id @default(autoincrement())
+  slug        String            @unique
+  resultId    Int
+  description String?
+  descripcion String?
+  result      Ball              @relation("ResultFusion", fields: [resultId], references: [id])
+  components  FusionComponent[]
+  createdAt   DateTime          @default(now())
+  updatedAt   DateTime          @updatedAt
 }
 
-model FusionInput {
-  id        Int           @id @default(autoincrement())
-  recipeId  Int
-  ballId    Int
-  recipe    FusionRecipe  @relation(fields: [recipeId], references: [id], onDelete: Cascade)
-  ball      Ball          @relation(fields: [ballId], references: [id], onDelete: Cascade)
+model FusionComponent {
+  id       Int    @id @default(autoincrement())
+  fusionId Int
+  ballId   Int
+  fusion   Fusion @relation(fields: [fusionId], references: [id], onDelete: Cascade)
+  ball     Ball   @relation(fields: [ballId], references: [id], onDelete: Cascade)
 }
 
 model Evolution {
-  id            Int                 @id @default(autoincrement())
-  requiredLevel Int
-  descripcion   String?
-  emoji         String?
-  tipo          String              @default("evolucion")
-  resultId      Int
-  result        Ball                @relation("EvolutionResult", fields: [resultId], references: [id])
-  components    EvolutionComponent[]
-  createdAt     DateTime            @default(now())
-  updatedAt     DateTime            @updatedAt
-}
-
-model EvolutionComponent {
-  id          Int        @id @default(autoincrement())
-  evolutionId Int
-  ballId      Int
-  evolution   Evolution  @relation(fields: [evolutionId], references: [id], onDelete: Cascade)
-  ball        Ball       @relation(fields: [ballId], references: [id], onDelete: Cascade)
+  id          Int      @id @default(autoincrement())
+  slug        String   @unique
+  baseId      Int
+  resultId    Int
+  description String?
+  descripcion String?
+  baseBall    Ball     @relation("BaseBall", fields: [baseId], references: [id])
+  resultBall  Ball     @relation("ResultBall", fields: [resultId], references: [id])
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
 }
 
 model Character {
-  id             Int    @id @default(autoincrement())
-  slug           String @unique
-  name_es        String
-  name_en        String
-  short_es       String
-  short_en       String
-  description_es String
-  description_en String
-  ball           String
-  trait_es       String
-  trait_en       String
+  id          Int     @id @default(autoincrement())
+  name        String
+  nombre      String?
+  description String?
+  descripcion String?
+  imageUrl    String?
+  title       String?
+  titulo      String?
+  slug        String  @unique
+}
+
+model Item {
+  id          Int      @id @default(autoincrement())
+  name        String
+  nombre      String?
+  description String?
+  descripcion String?
+  imageUrl    String?
+  type        String?
+  slug        String   @unique
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
 }

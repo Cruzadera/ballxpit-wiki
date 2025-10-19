@@ -1,0 +1,20 @@
+[
+  {
+    "name": "The Penitent",
+    "nombre": "El Arrepentido",
+    "description": "A wandering tactician who reforges cursed balls into salvation engines.",
+    "descripcion": "Un táctico errante que reformula bolas malditas en motores de salvación.",
+    "imageUrl": "https://static.ballxpitwiki.com/wiki/characters/the-penitent.png",
+    "title": "Fallen Knight",
+    "titulo": "Caballero Caído"
+  },
+  {
+    "name": "Mender Luma",
+    "nombre": "Luma la Reparadora",
+    "description": "Leads the Radiant Forge and keeps the wiki archives alive.",
+    "descripcion": "Dirige la Forja Radiante y mantiene vivos los archivos de la wiki.",
+    "imageUrl": "https://static.ballxpitwiki.com/wiki/characters/mender-luma.png",
+    "title": "Radiant Archivist",
+    "titulo": "Archivista Radiante"
+  }
+]

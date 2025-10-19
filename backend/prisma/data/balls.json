@@ -1,104 +1,44 @@
 [
   {
-    "name": "Sangrar",
-    "nombre": "Sangrar",
-    "type": "Físico",
-    "descripcion": "Causa daño continuo al enemigo."
+    "name": "Burn Spark",
+    "nombre": "Chispa Ígnea",
+    "description": "A volatile ember that never cools down, ideal for forging aggressive builds.",
+    "descripcion": "Una brasa volátil que nunca se enfría, ideal para forjar estrategias agresivas.",
+    "imageUrl": "https://static.ballxpitwiki.com/wiki/balls/burn-spark.png"
   },
   {
-    "name": "Madre Criadora",
-    "nombre": "Madre Criadora",
-    "type": "Orgánico",
-    "descripcion": "Engendra criaturas parasitarias."
+    "name": "Iron Shell",
+    "nombre": "Coraza de Hierro",
+    "description": "An unbreakable alloy sphere that anchors defensive formations.",
+    "descripcion": "Una esfera de aleación irrompible que ancla formaciones defensivas.",
+    "imageUrl": "https://static.ballxpitwiki.com/wiki/balls/iron-shell.png"
   },
   {
-    "name": "Fuego",
-    "nombre": "Fuego",
-    "type": "Elemento",
-    "descripcion": "Inflige daño ígneo persistente."
+    "name": "Dark Core",
+    "nombre": "Núcleo Oscuro",
+    "description": "A dense core that manipulates void energy and hexes nearby foes.",
+    "descripcion": "Un núcleo denso que manipula energía del vacío y maldice a los enemigos cercanos.",
+    "imageUrl": "https://static.ballxpitwiki.com/wiki/balls/dark-core.png"
   },
   {
-    "name": "Célula",
-    "nombre": "Célula",
-    "type": "Biológico",
-    "descripcion": "Base de toda materia viva."
+    "name": "Arcane Bloom",
+    "nombre": "Flor Arcana",
+    "description": "Pulses with eldritch mana that amplifies support combos and rituals.",
+    "descripcion": "Pulsa con maná arcano que amplifica combos de apoyo y rituales.",
+    "imageUrl": "https://static.ballxpitwiki.com/wiki/balls/arcane-bloom.png"
   },
   {
-    "name": "Encanto",
-    "nombre": "Encanto",
-    "type": "Místico",
-    "descripcion": "Seduce o manipula a los enemigos."
+    "name": "Crystal Shard",
+    "nombre": "Fragmento de Cristal",
+    "description": "A prismatic shard that refracts spells into protective sigils.",
+    "descripcion": "Un fragmento prismático que refracta hechizos en sigilos protectores.",
+    "imageUrl": "https://static.ballxpitwiki.com/wiki/balls/crystal-shard.png"
   },
   {
-    "name": "Oscuro",
-    "nombre": "Oscuro",
-    "type": "Sombra",
-    "descripcion": "Canaliza energía negativa o prohibida."
-  },
-  {
-    "name": "Terremoto",
-    "nombre": "Terremoto",
-    "type": "Tierra",
-    "descripcion": "Provoca temblores devastadores."
-  },
-  {
-    "name": "Saco de Huevos",
-    "nombre": "Saco de Huevos",
-    "type": "Orgánico",
-    "descripcion": "Contiene larvas listas para eclosionar."
-  },
-  {
-    "name": "Congelar",
-    "nombre": "Congelar",
-    "type": "Frío",
-    "descripcion": "Congela a los enemigos y ralentiza su movimiento."
-  },
-  {
-    "name": "Fantasma",
-    "nombre": "Fantasma",
-    "type": "Espiritual",
-    "descripcion": "Atraviesa muros y enemigos."
-  },
-  {
-    "name": "Metal",
-    "nombre": "Metal",
-    "type": "Metal",
-    "descripcion": "Sólida y resistente, con rebotes potentes."
-  },
-  {
-    "name": "Láser",
-    "nombre": "Láser",
-    "type": "Energía",
-    "descripcion": "Dispara rayos de energía concentrada."
-  },
-  {
-    "name": "Luz",
-    "nombre": "Luz",
-    "type": "Sagrado",
-    "descripcion": "Purifica y revela lo oculto."
-  },
-  {
-    "name": "Relámpago",
-    "nombre": "Relámpago",
-    "type": "Eléctrico",
-    "descripcion": "Descarga energía en cadena."
-  },
-  {
-    "name": "Veneno",
-    "nombre": "Veneno",
-    "type": "Tóxico",
-    "descripcion": "Debilita lentamente al enemigo."
-  },
-  {
-    "name": "Vampiro",
-    "nombre": "Vampiro",
-    "type": "Oscura",
-    "descripcion": "Absorbe vida de los enemigos."
-  },
-  {
-    "name": "Viento",
-    "nombre": "Viento",
-    "type": "Aéreo",
-    "descripcion": "Controla corrientes y tormentas."
+    "name": "Shadow Alloy",
+    "nombre": "Aleación Sombría",
+    "description": "Forged from lightless matter, this ball slips between planes with ease.",
+    "descripcion": "Forjada con materia sin luz, esta bola se desliza entre planos con facilidad.",
+    "imageUrl": "https://static.ballxpitwiki.com/wiki/balls/shadow-alloy.png"
   }
 ]

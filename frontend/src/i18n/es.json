@@ -1,36 +1,63 @@
 {
-  "headerTitle": "⚪ Ball x Pit Wiki",
-  "heroTitle": "Explora las bolas",
-  "heroSubtitle": "Busca por nombre o descubre sus fusiones y evoluciones.",
-  "searchPlaceholder": "Buscar por nombre…",
-  "loadingBalls": "Cargando bolas…",
-  "noResults": "No se encontraron bolas que coincidan con la búsqueda.",
-  "cardFallbackDescription": "Haz clic para ver más detalles.",
-  "cardCallToAction": "Haz clic para ver más detalles.",
-  "darkModeLight": "☀️ Modo claro",
-  "darkModeDark": "🌙 Modo oscuro",
-  "home": "Inicio",
-  "detailBack": "← Volver a la lista",
-  "detailLoading": "Cargando…",
-  "detailNotFound": "Bola no encontrada",
-  "detailDescriptionFallback": "No hay descripción disponible.",
-  "components": "Se compone de",
-  "pureBall": "Bola esencial: no proviene de ninguna combinación.",
-  "evolvesFrom": "Evoluciona desde",
-  "detailFusionsTitle": "🔗 Fusiones relacionadas",
-  "detailFusionsEmpty": "No hay fusiones registradas para esta bola.",
-  "pureBallsHeading": "⚪ Bolas puras",
-  "fusionBallsHeading": "🧪 Fusiones",
-  "evolutionBallsHeading": "💥 Evoluciones",
-  "relatedFusions": "🔗 Fusiones relacionadas",
-  "relatedFusionsEmpty": "No hay fusiones registradas para esta bola.",
-  "relatedEvolutions": "Evoluciones relacionadas",
-  "relatedEvolutionsEmpty": "No hay evoluciones registradas para esta bola.",
-  "unknownBallName": "Bola misteriosa",
-  "characters": "Personajes",
-  "description": "Descripción",
-  "stats": "Estadísticas",
-  "related_links": "Enlaces relacionados",
-  "ball": "Bola",
-  "trait": "Rasgo"
+  "nav": {
+    "balls": "Bolas",
+    "fusions": "Fusiones",
+    "evolutions": "Evoluciones",
+    "characters": "Personajes",
+    "items": "Objetos"
+  },
+  "search": {
+    "placeholder": "Buscar por nombre...",
+    "clear": "Limpiar"
+  },
+  "noResults": "No se encontraron resultados.",
+  "noTitle": "Entrada sin nombre",
+  "noDescription": "No hay descripción disponible todavía.",
+  "loading": "Cargando la wiki...",
+  "error": "No fue posible cargar las entradas. Intenta de nuevo más tarde.",
+  "breadcrumbs": {
+    "wiki": "Wiki",
+    "balls": "Bolas",
+    "fusions": "Fusiones",
+    "evolutions": "Evoluciones",
+    "characters": "Personajes",
+    "items": "Objetos"
+  },
+  "tags": {
+    "pure": "Pura",
+    "fusion": "Fusión",
+    "evolution": "Evolución"
+  },
+  "layout": {
+    "darkMode": "Cambiar modo oscuro"
+  },
+  "pages": {
+    "balls": {
+      "title": "Todas las bolas",
+      "subtitle": "Explora cada registro conservado por el Archivo Radiante."
+    },
+    "fusions": {
+      "title": "Índice de fusiones",
+      "subtitle": "Descubre los rituales necesarios para forjar bolas legendarias."
+    },
+    "evolutions": {
+      "title": "Códice de evoluciones",
+      "subtitle": "Sigue cómo cada núcleo asciende a nuevas formas."
+    },
+    "characters": {
+      "title": "Personajes clave",
+      "subtitle": "Conoce a los aliados y rivales que dan forma a la saga Ball x Pit."
+    },
+    "items": {
+      "title": "Objetos destacados",
+      "subtitle": "Equipamiento, tomos y reliquias que potencian cada partida."
+    }
+  },
+  "ballDetail": {
+    "overview": "Resumen",
+    "fusionRecipes": "Recetas de fusión",
+    "fusionAppearances": "Participa en fusiones",
+    "evolutionsFrom": "Evoluciones desde esta bola",
+    "evolutionsInto": "Evoluciones hacia esta bola"
+  }
 }

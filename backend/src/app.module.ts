@@ -1,11 +1,8 @@
 import { Module } from '@nestjs/common';
-import { BallsModule } from './balls/balls.module';
-import { FusionsModule } from './fusions/fusions.module';
-import { EvolutionsModule } from './evolutions/evolutions.module';
-import { PrismaModule } from './prisma/prisma.module';
-import { CharactersModule } from './characters/characters.module';
+import { PrismaModule } from './common/prisma/prisma.module';
+import { WikiModule } from './wiki/wiki.module';
 
 @Module({
-  imports: [PrismaModule, BallsModule, FusionsModule, EvolutionsModule, CharactersModule]
+  imports: [PrismaModule, WikiModule]
 })
 export class AppModule {}

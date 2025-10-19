@@ -1,0 +1,16 @@
+[
+  {
+    "slug": "burn-to-dark",
+    "description": "The ember collapses inward, awakening a gravitational curse.",
+    "descripcion": "La brasa se colapsa hacia adentro despertando una maldición gravitacional.",
+    "base": "Burn Spark",
+    "result": "Dark Core"
+  },
+  {
+    "slug": "bloom-to-crystal",
+    "description": "Mana petals freeze into a reflective bulwark.",
+    "descripcion": "Los pétalos de maná se congelan en un baluarte reflectante.",
+    "base": "Arcane Bloom",
+    "result": "Crystal Shard"
+  }
+]
