@@ -69,3 +69,17 @@ model EvolutionComponent {
   evolution   Evolution  @relation(fields: [evolutionId], references: [id], onDelete: Cascade)
   ball        Ball       @relation(fields: [ballId], references: [id], onDelete: Cascade)
 }
+
+model Character {
+  id             Int    @id @default(autoincrement())
+  slug           String @unique
+  name_es        String
+  name_en        String
+  short_es       String
+  short_en       String
+  description_es String
+  description_en String
+  ball           String
+  trait_es       String
+  trait_en       String
+}
