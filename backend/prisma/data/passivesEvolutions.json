@@ -1,0 +1,50 @@
+[
+  {
+    "components_en": "Baby Rattle + War Horn",
+    "components_es": "Sonajero de Bebé + Cuerno de Guerra",
+    "result_en": "Cornucopia",
+    "result_es": "Cornucopia"
+  },
+  {
+    "components_en": "Reacher's Spear + Deadeye's Amulet",
+    "components_es": "Lanza del Alcanzador + Amuleto del Tirador",
+    "result_en": "Gracious Impaler",
+    "result_es": "Empalador Gracioso"
+  },
+  {
+    "components_en": "Breastplate + Wretched Onion",
+    "components_es": "Coraza + Cebolla Miserable",
+    "result_en": "Odiferous Shell",
+    "result_es": "Caparazón Fétido"
+  },
+  {
+    "components_en": "Ethereal Cloak + Ghostly Corset",
+    "components_es": "Capa Etérea + Corsé Fantasmal",
+    "result_en": "Phantom Regalia",
+    "result_es": "Regalia Fantasmal"
+  },
+  {
+    "components_en": "Everflowing Goblet + Vampiric Sword",
+    "components_es": "Cáliz Inagotable + Espada Vampírica",
+    "result_en": "Soul Reaver",
+    "result_es": "Segador de Almas"
+  },
+  {
+    "components_en": "Crown of Thorns + Spiked Collar",
+    "components_es": "Corona de Espinas + Collar con Púas",
+    "result_en": "Tormentor's Mask",
+    "result_es": "Máscara del Torturador"
+  },
+  {
+    "components_en": "Fleet Feet + Radiant Feather",
+    "components_es": "Pies Ligeros + Pluma Radiante",
+    "result_en": "Wings of the Anointed",
+    "result_es": "Alas de los Ungidos"
+  },
+  {
+    "components_en": "Diamond Hilted Dagger + Emerald Hilted Dagger + Ruby Hilted Dagger + Sapphire Hilted Dagger",
+    "components_es": "Daga con Empuñadura de Diamante + Daga con Empuñadura de Esmeralda + Daga con Empuñadura de Rubí + Daga con Empuñadura de Zafiro",
+    "result_en": "Deadeye's Cross",
+    "result_es": "Cruz del Tirador"
+  }
+]
