@@ -116,7 +116,7 @@ async function main() {
   const characters = readJson<CharacterSeed[]>('characters.json');
   const items = readJson<ItemSeed[]>('items.json');
   const passives = readJson<PassiveSeed[]>('passives.json');
-  const passiveEvolutions = readJson<PassiveEvolutionSeed[]>('passiveEvolutions.json');
+  const passiveEvolutions = readJson<PassiveEvolutionSeed[]>('passivesEvolutions.json');
 
   // 🧹 Limpieza previa
   await prisma.fusionComponent.deleteMany();
