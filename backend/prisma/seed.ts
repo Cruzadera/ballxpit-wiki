@@ -129,6 +129,9 @@ async function main() {
   for (const ball of balls) {
     const slug = slugify(ball.name);
     const type: BallType = ball.type ?? 'pure';
+    const imageUrl =
+      ball.imageUrl ??
+      `/wiki/images/${slug}.png`; // 🔥 Genera automáticamente la ruta por defecto
 
     const created = await prisma.ball.create({
       data: {
@@ -136,7 +139,7 @@ async function main() {
         nombre: ball.nombre ?? null,
         description: ball.description ?? null,
         descripcion: ball.descripcion ?? null,
-        imageUrl: ball.imageUrl ?? null,
+        imageUrl, 
         slug,
         type,
         isPure: type === 'pure'
