@@ -134,5 +134,69 @@
     "descripcion": "Atraviesa a los enemigos y los ralentiza un 30%.",
     "imageUrl": "/wiki/images/wind.png",
     "type": "pure"
+  },
+  {
+    "name": "Satan",
+    "nombre": "Satán",
+    "description": "Incubus + Succubus. Applies burn to all enemies every second and makes them berserk.",
+    "descripcion": "Íncubo + Súcubo. Aplica quemadura a todos los enemigos cada segundo y los vuelve enloquecidos.",
+    "imageUrl": "/wiki/images/satan.png",
+    "type": "evolution"
+  },
+  {
+    "name": "Nosferatu",
+    "nombre": "Nosferatu",
+    "description": "Spawns a vampire bat each bounce. Vampire bats fly towards a random enemy, dealing 132–176 damage on hit, turning into a Vampire Lord.",
+    "descripcion": "Genera un murciélago vampiro en cada rebote. Los murciélagos vuelan hacia un enemigo aleatorio, infligiendo 132–176 de daño al impactar y convirtiéndose en un Señor Vampiro.",
+    "imageUrl": "/wiki/images/nosferatu.png",
+    "type": "evolution"
+  },
+  {
+    "name": "Inferno",
+    "nombre": "Infierno",
+    "description": "Burn + Burn. Applies 1 stack of burn every second to all enemies within a 2-tile radius. Burn lasts 6 seconds, dealing 3–7 damage per stack per second.",
+    "descripcion": "Quemadura + Quemadura. Aplica 1 acumulación de quemadura cada segundo a todos los enemigos en un radio de 2 casillas. La quemadura dura 6 segundos e inflige 3–7 de daño por acumulación cada segundo.",
+    "imageUrl": "/wiki/images/inferno2.png",
+    "type": "evolution"
+  },
+  {
+    "name": "Frozen Flame",
+    "nombre": "Llama Helada",
+    "description": "Freeze + Burn. Adds 1 stack of frostburn on hit for 20 seconds (max 4). Frostburnt units take 8–12 damage per stack per second and receive 25% more damage from other sources.",
+    "descripcion": "Congelación + Quemadura. Añade 1 acumulación de congelación ardiente al golpear durante 20 segundos (máx. 4). Las unidades afectadas reciben 8–12 de daño por acumulación por segundo y un 25% más de daño de otras fuentes.",
+    "imageUrl": "/wiki/images/frozenflame.png",
+    "type": "evolution"
+  },
+  {
+    "name": "Voluptuous Egg Sac",
+    "nombre": "Saco de Huevos Voluptuoso",
+    "description": "Egg Sack + Egg Sack. Explodes into 2–3 egg sacs on hitting an enemy. Has a 3 second cooldown before it can be shot again.",
+    "descripcion": "Saco de Huevos + Saco de Huevos. Explota en 2–3 sacos de huevos al golpear a un enemigo. Tiene un tiempo de recarga de 3 segundos antes de poder lanzarse de nuevo.",
+    "imageUrl": "/wiki/images/vvveggsac.png",
+    "type": "evolution"
+  },
+  {
+    "name": "Overgrowth",
+    "nombre": "Sobrecrecimiento",
+    "description": "Cell + Earthquake. Applies 1 stack of overgrowth. Upon reaching 3 stacks, consumes them to deal 0–200 damage to all enemies in a 3×3 tile area.",
+    "descripcion": "Célula + Terremoto. Aplica 1 acumulación de sobrecrecimiento. Al alcanzar 3 acumulaciones, las consume para infligir de 0 a 200 de daño a todos los enemigos en un área de 3×3 casillas.",
+    "imageUrl": "/wiki/images/overgrowth2.png",
+    "type": "evolution"
+  },
+  {
+    "name": "Berserk",
+    "nombre": "Furia",
+    "description": "Bleed + Burn or Charm. Each hit has a 30% chance of causing enemies to go berserk for 6 seconds. Berserk enemies deal 15–24 damage to adjacent enemies every second.",
+    "descripcion": "Sangrado + Quemadura o Encanto. Cada golpe tiene un 30% de probabilidad de volver enloquecidos a los enemigos durante 6 segundos. Los enemigos enloquecidos infligen 15–24 de daño a los enemigos cercanos cada segundo.",
+    "imageUrl": "/wiki/images/berserk2.png",
+    "type": "evolution"
+  },
+  {
+    "name": "Hemorrhage",
+    "nombre": "Hemorragia",
+    "description": "Bleed + Iron. Inflicts 3 stacks of bleed. When hitting an enemy with 12 or more stacks, consumes them to deal 20% of their current health as damage.",
+    "descripcion": "Sangrado + Hierro. Inflige 3 acumulaciones de sangrado. Al golpear a un enemigo con 12 o más acumulaciones, las consume e inflige un 20% de su salud actual como daño.",
+    "imageUrl": "/wiki/images/hemorrhage.png",
+    "type": "evolution"
   }
 ]

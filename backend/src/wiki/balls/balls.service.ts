@@ -31,9 +31,13 @@ export class BallsService {
 
   async findAll(language: SupportedLanguage) {
     const balls = await this.prisma.ball.findMany({
+       where: {
+        type: 'pure' 
+      },
       include: {
         evolutionsAsResult: true
-      }
+      },
+      orderBy: { name: 'asc' }
     });
 
     const mapped = balls.map((ball) => ({

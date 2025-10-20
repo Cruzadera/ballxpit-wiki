@@ -120,7 +120,7 @@ async function main() {
     ballIds.set(ball.name, { id: created.id, slug, type });
   }
 
-  // ⚙️ Crear evoluciones
+  // ⚙️ Crear evoluciones (incluyendo compuestas)
   for (const evolution of evolutions) {
     const baseBall = ballIds.get(evolution.base);
     const resultBall = ballIds.get(evolution.result);
@@ -130,10 +130,18 @@ async function main() {
       continue;
     }
 
+    // Si la base y el resultado son evoluciones, seguimos creando la relación
+    // pero no las tratamos como "puras"
+    if (baseBall.type === 'evolution' && resultBall.type === 'evolution') {
+      console.log(`🔁 Compound evolution detected: ${evolution.base} -> ${evolution.result}`);
+    }
+
     const slug = evolution.slug ?? slugify(`${evolution.base}-to-${evolution.result}`);
 
-    await prisma.evolution.create({
-      data: {
+    await prisma.evolution.upsert({
+      where: { slug },
+      update: {},
+      create: {
         slug,
         description: evolution.description ?? null,
         descripcion: evolution.descripcion ?? null,
@@ -141,7 +149,6 @@ async function main() {
         resultBall: { connect: { id: resultBall.id } }
       }
     });
-
   }
 
   // 🧩 Crear personajes
