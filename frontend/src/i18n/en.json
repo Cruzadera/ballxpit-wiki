@@ -7,6 +7,22 @@
     "characters": "Characters",
     "items": "Items"
   },
+  "menu": {
+    "home": "Home",
+    "balls": "Balls",
+    "evolutions": "Evolutions",
+    "characters": "Characters",
+    "passives": "Passives",
+    "about": "About"
+  },
+  "breadcrumb": {
+    "wiki": "Wiki",
+    "balls": "Balls",
+    "evolutions": "Evolutions",
+    "characters": "Characters",
+    "passives": "Passives",
+    "about": "About"
+  },
   "search": {
     "placeholder": "Search by name...",
     "clear": "Clear"
@@ -78,5 +94,66 @@
     "fusionsInto": "Fusions that use this ball",
     "evolutionsFrom": "Evolutions from this ball",
     "evolutionsInto": "Evolutions into this ball"
+  },
+  "wiki": {
+    "breadcrumbLabel": "Wiki navigation trail",
+    "index": {
+      "welcomeTitle": "Welcome to the Ball x Pit Archives",
+      "welcomeDescription": "Explore every ball, evolution and hero chronicled by the Radiant Archive.",
+      "cards": {
+        "balls": {
+          "title": "Ball compendium",
+          "description": "Browse elemental cores, fusion marvels and experimental prototypes."
+        },
+        "evolutions": {
+          "title": "Evolution gallery",
+          "description": "Trace how each core transforms into devastating upgrades."
+        },
+        "characters": {
+          "title": "Heroes and rivals",
+          "description": "Meet the pilots, scholars and villains fighting for the arena."
+        },
+        "passives": {
+          "title": "Passive relics",
+          "description": "Study relics that reshape your strategy every run."
+        }
+      }
+    },
+    "evolutions": {
+      "baseLabel": "Base",
+      "resultLabel": "Result",
+      "unknownBase": "Unknown base",
+      "unknownResult": "Unknown result"
+    },
+    "characters": {
+      "startingBall": "Starting ball",
+      "unlockRequirement": "Unlock requirement",
+      "unknown": "Unknown"
+    },
+    "passives": {
+      "title": "Passive relics",
+      "subtitle": "Artifacts that provide permanent bonuses during a run.",
+      "empty": "No passives registered yet."
+    },
+    "about": {
+      "mission": {
+        "title": "Mission",
+        "body": "Ball x Pit Wiki preserves every discovery from the arena, ensuring players can plan unstoppable builds in any language."
+      },
+      "data": {
+        "title": "Data sources",
+        "body": "All entries are fetched live from the official Ball x Pit backend. Nothing is edited by hand, so you are always reading the latest canon.",
+        "points": {
+          "balls": "Balls: core abilities, origins and images.",
+          "evolutions": "Evolutions: transformation requirements and outcomes.",
+          "characters": "Characters: biographies, starting loadouts and unlock conditions.",
+          "passives": "Passives: relics that empower your build."
+        }
+      },
+      "design": {
+        "title": "Design inspiration",
+        "body": "The interface blends the cozy charm of Stardew Valley Wiki with the energetic rhythm of Vampire Survivors Wiki for a nostalgic yet modern feel."
+      }
+    }
   }
 }
