@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import WikiSection from '../../components/wiki/WikiSection';
 import { useWikiLayout } from '../../hooks/useWikiLayout';
 import { fetchWiki } from '../../utils/wikiApi';
-import type { WikiBallDetail } from '../../types/wiki';
+import type { WikiBallDetail, WikiEvolution } from '../../types/wiki';
 
 export default function BallDetail() {
   const { slug } = useParams();
@@ -13,6 +13,8 @@ export default function BallDetail() {
   const [ball, setBall] = useState<WikiBallDetail | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [hasError, setHasError] = useState(false);
+  const [possibleEvolutions, setPossibleEvolutions] = useState<WikiEvolution[]>([]);
+  const [isLoadingPossibleEvolutions, setIsLoadingPossibleEvolutions] = useState(false);
 
   useEffect(() => {
     if (!slug) {
@@ -57,6 +59,72 @@ export default function BallDetail() {
     };
   }, [ball?.name, setDetailBreadcrumb]);
 
+  useEffect(() => {
+    if (!ball || ball.type !== 'pure') {
+      setPossibleEvolutions([]);
+      setIsLoadingPossibleEvolutions(false);
+      return;
+    }
+
+    let mounted = true;
+    setIsLoadingPossibleEvolutions(true);
+
+    fetchWiki<WikiEvolution[]>('/evolutions')
+      .then((data) => {
+        if (!mounted) {
+          return;
+        }
+
+        const filtered = data
+          .filter((evolution) => {
+            const matchesSlug = evolution.base.slug === ball.slug;
+            const matchesName = ball.name && evolution.base.name?.toLowerCase() === ball.name.toLowerCase();
+            return matchesSlug || matchesName;
+          })
+          .map((evolution) => ({
+            ...evolution,
+            imageUrl: evolution.imageUrl ?? evolution.result.imageUrl ?? null
+          }));
+
+        setPossibleEvolutions(filtered);
+      })
+      .catch(() => {
+        if (mounted) {
+          setPossibleEvolutions([]);
+        }
+      })
+      .finally(() => {
+        if (mounted) {
+          setIsLoadingPossibleEvolutions(false);
+        }
+      });
+
+    return () => {
+      mounted = false;
+    };
+  }, [ball?.slug, ball?.name, ball?.type, i18n.language]);
+
+  const buildEvolutionImageSrc = (imageUrl?: string | null) => {
+    if (!imageUrl) {
+      return null;
+    }
+
+    if (/^https?:\/\//i.test(imageUrl)) {
+      return imageUrl;
+    }
+
+    const normalized = imageUrl.replace(/^\/+/, '');
+    if (normalized.startsWith('wiki/images/')) {
+      return `/${normalized}`;
+    }
+
+    if (imageUrl.startsWith('/wiki/images/')) {
+      return imageUrl;
+    }
+
+    return `/wiki/images/${normalized}`;
+  };
+
   if (isLoading) {
     return <div className="text-sm text-slate-400">{t('loading')}</div>;
   }
@@ -92,6 +160,41 @@ export default function BallDetail() {
           <p className="text-base text-slate-300">{ball.description ?? t('noDescription')}</p>
         </div>
       </section>
+
+      {ball.type === 'pure' && (
+        <WikiSection title={t('ballDetail.possibleEvolutions')}>
+          {isLoadingPossibleEvolutions ? (
+            <p className="text-sm text-slate-400">{t('loading')}</p>
+          ) : possibleEvolutions.length > 0 ? (
+            <div className="grid gap-6 md:grid-cols-2">
+              {possibleEvolutions.map((evolution) => {
+                const imageSrc = buildEvolutionImageSrc(evolution.imageUrl ?? evolution.result.imageUrl);
+
+                return (
+                  <article
+                    key={evolution.slug}
+                    className="flex flex-col gap-4 rounded-2xl border border-slate-700/40 bg-slate-900/40 p-6 shadow-inner shadow-indigo-500/5"
+                  >
+                    {imageSrc && (
+                      <img
+                        src={imageSrc}
+                        alt={evolution.result.name ?? ''}
+                        className="h-32 w-full rounded-xl border border-slate-700/60 object-contain bg-slate-800/70"
+                      />
+                    )}
+                    <div className="flex flex-col gap-2">
+                      <h3 className="text-lg font-semibold text-slate-100">{evolution.result.name}</h3>
+                      <p className="text-sm text-slate-400">{evolution.description ?? t('noDescription')}</p>
+                    </div>
+                  </article>
+                );
+              })}
+            </div>
+          ) : (
+            <p className="text-sm text-slate-400">{t('ballDetail.noKnownEvolutions')}</p>
+          )}
+        </WikiSection>
+      )}
 
       {ball.fusionsFrom.length > 0 && (
         <WikiSection title={t('ballDetail.fusionsFrom')}>

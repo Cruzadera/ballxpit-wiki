@@ -41,6 +41,7 @@ export type WikiBallEvolution = {
     name: string | null;
     imageUrl: string | null;
   };
+  imageUrl?: string | null;
 };
 
 export type WikiBallDetail = WikiBall & {
@@ -75,6 +76,7 @@ export type WikiFusion = {
 export type WikiEvolution = {
   slug: string;
   description: string | null;
+  imageUrl?: string | null;
   base: {
     slug: string;
     name: string | null;

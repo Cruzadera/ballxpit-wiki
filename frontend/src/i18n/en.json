@@ -93,7 +93,9 @@
     "fusionsFrom": "Fusions that create this ball",
     "fusionsInto": "Fusions that use this ball",
     "evolutionsFrom": "Evolutions from this ball",
-    "evolutionsInto": "Evolutions into this ball"
+    "evolutionsInto": "Evolutions into this ball",
+    "possibleEvolutions": "🔁 Possible Evolutions",
+    "noKnownEvolutions": "This ball has no known evolutions."
   },
   "wiki": {
     "breadcrumbLabel": "Wiki navigation trail",
