@@ -2,7 +2,7 @@ import { PrismaClient } from '@prisma/client';
 import fs from 'fs';
 import path from 'path';
 
-type BallType = 'pure' | 'fusion' | 'evolution';
+type BallType = 'pure' | 'evolution';
 
 type BallSeed = {
   name: string;
@@ -11,14 +11,6 @@ type BallSeed = {
   descripcion?: string;
   imageUrl?: string;
   type?: BallType;
-};
-
-type FusionSeed = {
-  slug?: string;
-  description?: string;
-  descripcion?: string;
-  result: string;
-  components: string[];
 };
 
 type EvolutionSeed = {
@@ -86,32 +78,11 @@ function slugify(value: string): string {
     .replace(/(^-|-$)+/g, '');
 }
 
-type UsageCounter = {
-  fusionResults: number;
-  fusionComponents: number;
-  evolutionBase: number;
-  evolutionResult: number;
-};
-
-function ensureUsage(map: Map<string, UsageCounter>, slug: string): UsageCounter {
-  const current = map.get(slug);
-  if (current) return current;
-  const usage: UsageCounter = {
-    fusionResults: 0,
-    fusionComponents: 0,
-    evolutionBase: 0,
-    evolutionResult: 0
-  };
-  map.set(slug, usage);
-  return usage;
-}
-
 // 🌱 SEED PRINCIPAL
 async function main() {
   console.log('🌱 Loading wiki seed data...');
 
   const balls = readJson<BallSeed[]>('balls.json');
-  const fusions = readJson<FusionSeed[]>('fusions.json');
   const evolutions = readJson<EvolutionSeed[]>('evolutions.json');
   const characters = readJson<CharacterSeed[]>('characters.json');
   const items = readJson<ItemSeed[]>('items.json');
@@ -119,8 +90,6 @@ async function main() {
   const passiveEvolutions = readJson<PassiveEvolutionSeed[]>('passivesEvolutions.json');
 
   // 🧹 Limpieza previa
-  await prisma.fusionComponent.deleteMany();
-  await prisma.fusion.deleteMany();
   await prisma.evolution.deleteMany();
   await prisma.character.deleteMany();
   await prisma.item.deleteMany();
@@ -130,7 +99,6 @@ async function main() {
 
   // 🪄 Crear bolas
   const ballIds = new Map<string, { id: number; slug: string; type: BallType }>();
-  const usageCounter = new Map<string, UsageCounter>();
 
   for (const ball of balls) {
     const slug = slugify(ball.name);
@@ -150,7 +118,6 @@ async function main() {
     });
 
     ballIds.set(ball.name, { id: created.id, slug, type });
-    ensureUsage(usageCounter, slug);
   }
 
   // ⚙️ Crear evoluciones
@@ -175,52 +142,6 @@ async function main() {
       }
     });
 
-    ensureUsage(usageCounter, baseBall.slug).evolutionBase++;
-    ensureUsage(usageCounter, resultBall.slug).evolutionResult++;
-  }
-
-  // ⚙️ Crear fusiones
-  for (const fusion of fusions) {
-    if (!fusion.result) {
-      console.warn(`⚠️  Fusion skipped: missing result.`);
-      continue;
-    }
-
-    const resultBall = ballIds.get(fusion.result);
-    if (!resultBall) {
-      console.warn(`⚠️  Fusion result ball "${fusion.result}" not found.`);
-      continue;
-    }
-
-    const slug = fusion.slug ?? slugify(`${fusion.components.join('-')}-${fusion.result}`);
-
-    const createdFusion = await prisma.fusion.create({
-      data: {
-        slug,
-        description: fusion.description ?? null,
-        descripcion: fusion.descripcion ?? null,
-        result: { connect: { id: resultBall.id } }
-      }
-    });
-
-    ensureUsage(usageCounter, resultBall.slug).fusionResults++;
-
-    for (const component of fusion.components) {
-      const componentBall = ballIds.get(component);
-      if (!componentBall) {
-        console.warn(`⚠️  Fusion component "${component}" not found for ${fusion.result}.`);
-        continue;
-      }
-
-      await prisma.fusionComponent.create({
-        data: {
-          fusionId: createdFusion.id,
-          ballId: componentBall.id
-        }
-      });
-
-      ensureUsage(usageCounter, componentBall.slug).fusionComponents++;
-    }
   }
 
   // 🧩 Crear personajes

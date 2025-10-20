@@ -196,49 +196,6 @@ export default function BallDetail() {
         </WikiSection>
       )}
 
-      {ball.fusionsFrom.length > 0 && (
-        <WikiSection title={t('ballDetail.fusionsFrom')}>
-          <div className="grid gap-6 md:grid-cols-2">
-            {ball.fusionsFrom.map((fusion) => (
-              <div
-                key={fusion.slug}
-                className="rounded-2xl border border-slate-700/40 bg-slate-900/40 p-6 shadow-inner shadow-indigo-500/5"
-              >
-                <h3 className="text-lg font-semibold text-slate-100">{fusion.result.name}</h3>
-                <p className="mt-2 text-sm text-slate-400">{fusion.description ?? t('noDescription')}</p>
-                <div className="mt-4 flex flex-wrap items-center gap-3 text-sm text-slate-300">
-                  {fusion.components.map((component) => (
-                    <Link
-                      key={component.slug}
-                      to={`/wiki/balls/${component.slug}`}
-                      className="rounded-full border border-slate-600/40 px-3 py-1 hover:border-indigo-400/60 hover:text-indigo-200"
-                    >
-                      {component.name}
-                    </Link>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
-        </WikiSection>
-      )}
-
-      {ball.fusionsInto.length > 0 && (
-        <WikiSection title={t('ballDetail.fusionsInto')}>
-          <div className="flex flex-wrap gap-3">
-            {ball.fusionsInto.map((fusion) => (
-              <Link
-                key={fusion.slug}
-                to={`/wiki/fusions/${fusion.slug}`}
-                className="rounded-full border border-slate-600/40 px-4 py-2 text-sm hover:border-indigo-400/60 hover:text-indigo-200"
-              >
-                {fusion.result.name}
-              </Link>
-            ))}
-          </div>
-        </WikiSection>
-      )}
-
       {ball.evolutionsFrom.length > 0 && (
         <WikiSection title={t('ballDetail.evolutionsFrom')}>
           <div className="grid gap-4 md:grid-cols-2">

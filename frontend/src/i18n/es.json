@@ -1,7 +1,6 @@
 {
   "nav": {
     "balls": "Bolas",
-    "fusions": "Fusiones",
     "evolutions": "Evoluciones",
     "passives": "Pasivas",
     "characters": "Personajes",
@@ -35,7 +34,6 @@
   "breadcrumbs": {
     "wiki": "Wiki",
     "balls": "Bolas",
-    "fusions": "Fusiones",
     "evolutions": "Evoluciones",
     "passives": "Pasivas",
     "characters": "Personajes",
@@ -43,7 +41,6 @@
   },
   "tags": {
     "pure": "Pura",
-    "fusion": "Fusión",
     "evolution": "Evolución"
   },
   "layout": {
@@ -59,10 +56,6 @@
     "balls": {
       "title": "Todas las bolas",
       "subtitle": "Explora cada registro conservado por el Archivo Radiante."
-    },
-    "fusions": {
-      "title": "Índice de fusiones",
-      "subtitle": "Descubre los rituales necesarios para forjar bolas legendarias."
     },
     "evolutions": {
       "title": "Códice de evoluciones",
@@ -90,8 +83,6 @@
   },
   "ballDetail": {
     "overview": "Resumen",
-    "fusionsFrom": "Fusiones que crean esta bola",
-    "fusionsInto": "Fusiones que usan esta bola",
     "evolutionsFrom": "Evoluciones desde esta bola",
     "evolutionsInto": "Evoluciones hacia esta bola",
     "possibleEvolutions": "🔁 Posibles Evoluciones",
@@ -105,7 +96,7 @@
       "cards": {
         "balls": {
           "title": "Compendio de bolas",
-          "description": "Descubre núcleos elementales, maravillas de fusión y prototipos experimentales."
+          "description": "Descubre núcleos elementales y prototipos experimentales."
         },
         "evolutions": {
           "title": "Galería de evoluciones",
