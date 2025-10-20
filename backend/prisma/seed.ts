@@ -122,12 +122,45 @@ async function main() {
 
   // ⚙️ Crear evoluciones (incluyendo compuestas)
   for (const evolution of evolutions) {
-    const baseBall = ballIds.get(evolution.base);
-    const resultBall = ballIds.get(evolution.result);
+    let baseBall = ballIds.get(evolution.base);
+    let resultBall = ballIds.get(evolution.result);
 
-    if (!baseBall || !resultBall) {
-      console.warn(`⚠️  Evolution skipped because base "${evolution.base}" or result "${evolution.result}" was not found.`);
-      continue;
+    // Si no existe la base, la creamos como evolución genérica (aunque sea pure)
+    if (!baseBall) {
+      console.warn(`⚠️  Base ball "${evolution.base}" not found. Creating placeholder.`);
+      const created = await prisma.ball.create({
+        data: {
+          name: evolution.base,
+          nombre: evolution.base,
+          description: null,
+          descripcion: null,
+          imageUrl: null,
+          slug: slugify(evolution.base),
+          type: 'pure',
+          isPure: true
+        }
+      });
+      baseBall = { id: created.id, slug: created.slug, type: 'pure' };
+      ballIds.set(evolution.base, baseBall);
+    }
+
+    // Si no existe la resultante, la creamos como tipo "evolution"
+    if (!resultBall) {
+      console.warn(`⚠️  Result ball "${evolution.result}" not found. Creating placeholder.`);
+      const created = await prisma.ball.create({
+        data: {
+          name: evolution.result,
+          nombre: evolution.result,
+          description: null,
+          descripcion: null,
+          imageUrl: null,
+          slug: slugify(evolution.result),
+          type: 'evolution',
+          isPure: false
+        }
+      });
+      resultBall = { id: created.id, slug: created.slug, type: 'evolution' };
+      ballIds.set(evolution.result, resultBall);
     }
 
     // Si la base y el resultado son evoluciones, seguimos creando la relación
