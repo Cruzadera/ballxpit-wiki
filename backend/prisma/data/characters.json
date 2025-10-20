@@ -9,7 +9,7 @@
     "starting_ball_es": "Bola de purga",
     "unlock_requirement_en": null,
     "unlock_requirement_es": null,
-    "imageUrl": null
+    "imageUrl": "/wiki/images/the_warrior.webp"
   },
   {
     "slug": "the-itchy-finger",
@@ -21,7 +21,7 @@
     "starting_ball_es": "Bola de Fuego",
     "unlock_requirement_en": "Build the Sheriff’s Office",
     "unlock_requirement_es": "Construir la Oficina del Sheriff",
-    "imageUrl": null
+    "imageUrl": "/wiki/images/the_itchy_finger.webp"
   },
   {
     "slug": "the-repentant",
@@ -33,7 +33,7 @@
     "starting_ball_es": "Bola de Congelación",
     "unlock_requirement_en": "Build the Haunted House",
     "unlock_requirement_es": "Construir la casa encantada",
-    "imageUrl": null
+    "imageUrl": "/wiki/images/the_repentant.webp"
   },
   {
     "slug": "the-cohabitants",
@@ -45,11 +45,11 @@
     "starting_ball_es": "Madre Criadora",
     "unlock_requirement_en": "Build a Cozy Home",
     "unlock_requirement_es": "Construir un hogar acogedor",
-    "imageUrl": null
+    "imageUrl": "/wiki/images/the_cohabitants.webp"
   },
   {
-    "slug": "the-thinker",
-    "name_en": "The Thinker",
+    "slug": "the-cogitador",
+    "name_en": "The Cogitador",
     "name_es": "El Cogitador",
     "description_en": "Automatically selects each upgrade.",
     "description_es": "Selecciona automáticamente cada actualización.",
@@ -57,19 +57,19 @@
     "starting_ball_es": "Láser Vertical",
     "unlock_requirement_en": "Build the Villa",
     "unlock_requirement_es": "Construir la Villa",
-    "imageUrl": null
+    "imageUrl": "/wiki/images/the_cogitador.webp"
   },
   {
     "slug": "the-integrated",
-    "name_en": "The Integrated",
-    "name_es": "Los Integrados",
+    "name_en": "The Embedded",
+    "name_es": "El Incrustado",
     "description_en": "All balls pierce through every enemy.",
     "description_es": "Todas las bolas atraviesan a todos los enemigos.",
     "starting_ball_en": "Poison Ball",
     "starting_ball_es": "Bola Venenosa",
     "unlock_requirement_en": "Build a Veterans’ Shelter",
     "unlock_requirement_es": "Construir un refugio para veteranos",
-    "imageUrl": null
+    "imageUrl": "/wiki/images/the_embedded.webp"
   },
   {
     "slug": "the-empty-nest",
@@ -81,7 +81,7 @@
     "starting_ball_es": "Bola Fantasma",
     "unlock_requirement_en": null,
     "unlock_requirement_es": null,
-    "imageUrl": null
+    "imageUrl": "/wiki/images/the_empty_nester.webp"
   },
   {
     "slug": "the-shadow",
@@ -93,7 +93,7 @@
     "starting_ball_es": "Bola Oscura",
     "unlock_requirement_en": "Build the Mausoleum",
     "unlock_requirement_es": "Construir el Mausoleo",
-    "imageUrl": null
+    "imageUrl": "/wiki/images/the_shade.webp"
   },
   {
     "slug": "the-shieldbearer",
@@ -105,7 +105,7 @@
     "starting_ball_es": "Bola de Hierro",
     "unlock_requirement_en": null,
     "unlock_requirement_es": null,
-    "imageUrl": null
+    "imageUrl": "/wiki/images/the_shieldbearer.webp"
   },
   {
     "slug": "the-waster",
@@ -117,7 +117,7 @@
     "starting_ball_es": "Bola de Vampiro",
     "unlock_requirement_en": null,
     "unlock_requirement_es": null,
-    "imageUrl": null
+    "imageUrl": "/wiki/images/the_spendthrift.webp"
   },
   {
     "slug": "the-flagellant",
@@ -129,7 +129,7 @@
     "starting_ball_es": "Saco de Huevos",
     "unlock_requirement_en": null,
     "unlock_requirement_es": null,
-    "imageUrl": null
+    "imageUrl": "/wiki/images/the_flagellant.webp"
   },
   {
     "slug": "the-juggler",
@@ -141,7 +141,7 @@
     "starting_ball_es": "Bola de Rayos",
     "unlock_requirement_en": null,
     "unlock_requirement_es": null,
-    "imageUrl": null
+    "imageUrl": "/wiki/images/the_juggler.webp"
   },
   {
     "slug": "the-tactician",
@@ -153,7 +153,7 @@
     "starting_ball_es": "Bola de Hierro",
     "unlock_requirement_en": null,
     "unlock_requirement_es": null,
-    "imageUrl": null
+    "imageUrl": "/wiki/images/the_tactician.webp"
   },
   {
     "slug": "the-radical",
@@ -165,7 +165,7 @@
     "starting_ball_es": "Bola de Viento",
     "unlock_requirement_en": null,
     "unlock_requirement_es": null,
-    "imageUrl": null
+    "imageUrl": "/wiki/images/the_radical.webp"
   },
   {
     "slug": "the-physicist",
@@ -177,6 +177,6 @@
     "starting_ball_es": "Bola de Luz",
     "unlock_requirement_en": null,
     "unlock_requirement_es": null,
-    "imageUrl": null
+    "imageUrl": "/wiki/images/the_physicist.webp"
   }
 ]
