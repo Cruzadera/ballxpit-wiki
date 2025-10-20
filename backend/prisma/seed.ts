@@ -19,6 +19,7 @@ type EvolutionSeed = {
   descripcion?: string;
   base: string;
   result: string;
+  imageUrl?: string;
 };
 
 type CharacterSeed = {
@@ -78,6 +79,31 @@ function slugify(value: string): string {
     .replace(/(^-|-$)+/g, '');
 }
 
+function resolveImagePath(resultName: string): string | null {
+  if (!resultName) return null;
+
+  const normalized = resultName
+    .toLowerCase()
+    .replace(/[\s'"]/g, '')
+    .replace(/[^a-z0-9]/g, '');
+
+  const baseDir = path.join(__dirname, '../../frontend/public/wiki/images');
+  const candidates = [
+    `${normalized}.png`,
+    `${normalized}2.png`,
+    `${normalized}3.png`,
+    `${normalized}4.png`,
+  ];
+
+  for (const file of candidates) {
+    if (fs.existsSync(path.join(baseDir, file))) {
+      return `/wiki/images/${file}`;
+    }
+  }
+
+  return null;
+}
+
 // 🌱 SEED PRINCIPAL
 async function main() {
   console.log('🌱 Loading wiki seed data...');
@@ -98,7 +124,7 @@ async function main() {
   await prisma.ball.deleteMany();
 
   // 🪄 Crear bolas
-  const ballIds = new Map<string, { id: number; slug: string; type: BallType }>();
+  const ballIds = new Map<string, { id: number; slug: string; type: BallType; imageUrl: string | null }>();
 
   for (const ball of balls) {
     const slug = slugify(ball.name);
@@ -117,7 +143,7 @@ async function main() {
       }
     });
 
-    ballIds.set(ball.name, { id: created.id, slug, type });
+    ballIds.set(ball.name, { id: created.id, slug, type, imageUrl: created.imageUrl });
   }
 
  // ⚙️ Crear evoluciones
@@ -145,7 +171,7 @@ async function main() {
           isPure: false
         }
       });
-      resultBall = { id: created.id, slug: created.slug, type: 'evolution' };
+      resultBall = { id: created.id, slug: created.slug, type: 'evolution', imageUrl: created.imageUrl };
       ballIds.set(evolution.result, resultBall);
     }
 
@@ -159,12 +185,17 @@ async function main() {
       continue;
     }
 
-    // Crear evolución
+    const imageUrl =
+      evolution['imageUrl'] ??
+      resultBall?.imageUrl ??
+      resolveImagePath(evolution.result);
+
     await prisma.evolution.create({
       data: {
         slug,
         description: evolution.description ?? null,
         descripcion: evolution.descripcion ?? null,
+        imageUrl: imageUrl ?? null,
         baseBall: { connect: { id: baseBall.id } },
         resultBall: { connect: { id: resultBall.id } }
       }
