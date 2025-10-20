@@ -1,65 +1,240 @@
 [
   {
+    "slug": "bleed-to-leech",
+    "description": "Bleed + Brood Mother. Each hit drains 1 health and adds 2 bleed stacks to the target.",
+    "descripcion": "Sangrado + Madre Cría. Cada golpe drena 1 punto de salud y añade 2 acumulaciones de sangrado al objetivo.",
+    "base": "Bleed",
+    "result": "Leech"
+  },
+  {
+    "slug": "bleed-to-berserk",
+    "description": "Bleed + Charm. Grants 30% attack speed and 25% more damage but removes manual control for 3 seconds after each trigger.",
+    "descripcion": "Sangrado + Encanto. Otorga 30% de velocidad de ataque y 25% más de daño pero elimina el control manual durante 3 segundos tras activarse.",
+    "base": "Bleed",
+    "result": "Berserk"
+  },
+  {
+    "slug": "bleed-to-sacrifice",
+    "description": "Bleed + Dark. Detonates on impact, dealing massive damage in a 3-tile radius and consuming all bleed stacks for bonus damage.",
+    "descripcion": "Sangrado + Oscura. Detona al impactar, infligiendo gran daño en un radio de 3 casillas y consumiendo todas las acumulaciones de sangrado para daño adicional.",
+    "base": "Bleed",
+    "result": "Sacrifice"
+  },
+  {
     "slug": "bleed-to-hemorrhage",
-    "description": "Bleed intensifies until it becomes an unstoppable hemorrhage.",
-    "descripcion": "El sangrado se intensifica hasta convertirse en una hemorragia imparable.",
+    "description": "Bleed + Iron. Applies 4 bleed stacks per hit and deals bonus damage equal to 50% of the target’s total bleed stacks.",
+    "descripcion": "Sangrado + Hierro. Aplica 4 acumulaciones de sangrado por golpe e inflige daño adicional igual al 50% del sangrado acumulado en el objetivo.",
     "base": "Bleed",
     "result": "Hemorrhage"
   },
   {
-    "slug": "vampire-to-vampire-lord",
-    "description": "The vampire ascends into a lord who feeds without end.",
-    "descripcion": "El vampiro asciende a un señor que se alimenta sin descanso.",
-    "base": "Vampire",
+    "slug": "bleed-to-vampire-lord",
+    "description": "Bleed + Vampire. Each hit inflicts 3 stacks of bleed. Heals 1 health and consumes all stacks when striking an enemy with at least 10 bleed stacks. Also works with Dark instead of Bleed.",
+    "descripcion": "Sangrado + Vampiro. Cada golpe inflige 3 acumulaciones de sangrado. Cura 1 punto de salud y consume todas las acumulaciones al golpear a un enemigo con al menos 10 acumulaciones de sangrado. También funciona con Oscura en lugar de Sangrado.",
+    "base": "Bleed",
     "result": "Vampire Lord"
   },
   {
+    "slug": "brood-mother-to-maggot",
+    "description": "Brood Mother + Cell. Splits into two larvae on hit; larvae deal 40% damage and reattach after 3 seconds.",
+    "descripcion": "Madre Cría + Célula. Se divide en dos larvas al golpear; las larvas infligen 40% de daño y se reincorporan tras 3 segundos.",
+    "base": "Brood Mother",
+    "result": "Maggot"
+  },
+  {
     "slug": "brood-mother-to-spider-queen",
-    "description": "The brood matriarch evolves into a queen commanding venomous legions.",
-    "descripcion": "La matriarca de la prole evoluciona en una reina que dirige legiones venenosas.",
+    "description": "Brood Mother + Egg Sack. Spawns three spiderlings that deal 6 damage per second and apply poison stacks while active.",
+    "descripcion": "Madre Cría + Saco de Huevos. Genera tres arañitas que infligen 6 de daño por segundo y aplican acumulaciones de veneno mientras están activas.",
     "base": "Brood Mother",
     "result": "Spider Queen"
   },
   {
-    "slug": "fire-to-inferno",
-    "description": "A disciplined flame erupts into a self-sustaining inferno.",
-    "descripcion": "La llama disciplinada estalla en un infierno autosuficiente.",
-    "base": "Fire",
-    "result": "Inferno"
+    "slug": "brood-mother-to-mosquito-king",
+    "description": "Brood Mother + Vampire. Summons a swarm that drains 2 health per second from enemies within 3 tiles and returns it to the player.",
+    "descripcion": "Madre Cría + Vampiro. Invoca un enjambre que drena 2 puntos de salud por segundo de los enemigos a 3 casillas y los devuelve al jugador.",
+    "base": "Brood Mother",
+    "result": "Mosquito King"
   },
   {
-    "slug": "freeze-to-blizzard",
-    "description": "A solitary frost crystal blossoms into a roaming blizzard.",
-    "descripcion": "Un cristal de escarcha se transforma en una ventisca errante.",
-    "base": "Freeze",
-    "result": "Blizzard"
+    "slug": "burn-to-magma",
+    "description": "Burn + Earthquake. Leaves a lava pool for 4 seconds that applies 1 burn stack per second and slows enemies by 20%.",
+    "descripcion": "Quemadura + Terremoto. Deja un charco de lava durante 4 segundos que aplica 1 acumulación de quemadura por segundo y ralentiza a los enemigos un 20%.",
+    "base": "Burn",
+    "result": "Magma"
   },
   {
-    "slug": "light-to-sun",
-    "description": "The radiant spark matures into a restorative sun.",
-    "descripcion": "La chispa radiante madura hasta convertirse en un sol restaurador.",
-    "base": "Light",
+    "slug": "burn-to-frozen-flame",
+    "description": "Burn + Freeze. Alternates between freezing and burning the target, increasing damage by 50% when swapping states.",
+    "descripcion": "Quemadura + Congelación. Alterna entre congelar y quemar al objetivo, aumentando el daño un 50% al cambiar de estado.",
+    "base": "Burn",
+    "result": "Frozen Flame"
+  },
+  {
+    "slug": "burn-to-bomb",
+    "description": "Burn + Iron. Detonates in a 3-tile radius for heavy damage and applies 3 burn stacks to all affected enemies.",
+    "descripcion": "Quemadura + Hierro. Detona en un radio de 3 casillas causando gran daño y aplicando 3 acumulaciones de quemadura a todos los enemigos afectados.",
+    "base": "Burn",
+    "result": "Bomb"
+  },
+  {
+    "slug": "burn-to-sun",
+    "description": "Burn + Light. Emits a radiant pulse every 2 seconds that heals allies for 1 health and applies 1 burn stack to enemies.",
+    "descripcion": "Quemadura + Luz. Emite un pulso radiante cada 2 segundos que cura 1 punto de salud a los aliados y aplica 1 acumulación de quemadura a los enemigos.",
+    "base": "Burn",
     "result": "Sun"
   },
   {
-    "slug": "dark-to-black-hole",
-    "description": "Condensed shadows collapse into a devouring singularity.",
-    "descripcion": "Las sombras condensadas colapsan en una singularidad devoradora.",
-    "base": "Dark",
-    "result": "Black Hole"
+    "slug": "burn-to-inferno",
+    "description": "Burn + Wind. Applies 1 stack of burn every second to all enemies within a 2-tile radius for 6 seconds, dealing 3-7 damage per stack per second.",
+    "descripcion": "Quemadura + Viento. Aplica una pila de quemadura cada segundo a todos los enemigos dentro de un radio de 2 casillas durante 6 segundos, infligiendo de 3 a 7 de daño por pila y segundo.",
+    "base": "Burn",
+    "result": "Inferno"
   },
   {
     "slug": "cell-to-overgrowth",
-    "description": "The living cell multiplies uncontrollably into rampant overgrowth.",
-    "descripcion": "La célula viviente se multiplica sin control en un sobrecrecimiento desatado.",
+    "description": "Cell + Earthquake. Spreads vines to adjacent tiles, dealing 5 damage per second and reducing enemy movement by 40%.",
+    "descripcion": "Célula + Terremoto. Extiende lianas a las casillas adyacentes, infligiendo 5 de daño por segundo y reduciendo el movimiento enemigo un 40%.",
     "base": "Cell",
     "result": "Overgrowth"
   },
   {
-    "slug": "poison-to-noxious",
-    "description": "Potent toxins refine into an airborne noxious miasma.",
-    "descripcion": "Las toxinas potentes se refinan en una miasma nociva suspendida en el aire.",
-    "base": "Poison",
+    "slug": "cell-to-radiation-beam",
+    "description": "Cell + Laser (H/V). Fires a piercing beam that travels through 4 tiles, applying radiation that deals 6 damage per second for 5 seconds.",
+    "descripcion": "Célula + Láser (H/V). Dispara un haz perforante que atraviesa 4 casillas y aplica radiación que inflige 6 de daño por segundo durante 5 segundos.",
+    "base": "Cell",
+    "result": "Radiation Beam"
+  },
+  {
+    "slug": "cell-to-virus",
+    "description": "Cell + Poison. Infects enemies for 8 seconds; infected enemies spread 2 poison stacks to nearby foes when defeated.",
+    "descripcion": "Célula + Veneno. Infecta a los enemigos durante 8 segundos; los infectados propagan 2 acumulaciones de veneno a los enemigos cercanos al ser derrotados.",
+    "base": "Cell",
+    "result": "Virus"
+  },
+  {
+    "slug": "charm-to-incubus",
+    "description": "Charm + Dark. Each hit charms the target for 2 seconds and siphons 1 health per second while the charm lasts.",
+    "descripcion": "Encanto + Oscura. Cada golpe encanta al objetivo durante 2 segundos y absorbe 1 punto de salud por segundo mientras dura el encanto.",
+    "base": "Charm",
+    "result": "Incubus"
+  },
+  {
+    "slug": "charm-to-lovestruck",
+    "description": "Charm + Light. Charms enemies for 3 seconds, reducing their damage by 20% but making them take 30% more damage from all sources.",
+    "descripcion": "Encanto + Luz. Encanta a los enemigos durante 3 segundos, reduce su daño un 20% pero hace que reciban 30% más de daño de todas las fuentes.",
+    "base": "Charm",
+    "result": "Lovestruck"
+  },
+  {
+    "slug": "charm-to-succubus",
+    "description": "Charm + Vampire. Hits steal 2 health and extend existing charm effects by 1 second.",
+    "descripcion": "Encanto + Vampiro. Los golpes roban 2 puntos de salud y extienden los efectos de encanto existentes en 1 segundo.",
+    "base": "Charm",
+    "result": "Succubus"
+  },
+  {
+    "slug": "ghost-to-phantom",
+    "description": "Ghost + Freeze. Passes through enemies while leaving a freezing trail that slows by 40% for 3 seconds.",
+    "descripcion": "Fantasma + Congelación. Atraviesa a los enemigos dejando un rastro helado que ralentiza un 40% durante 3 segundos.",
+    "base": "Ghost",
+    "result": "Phantom"
+  },
+  {
+    "slug": "dark-to-assassin",
+    "description": "Dark + Iron. Gains 50% critical chance and doubles bleed stacks on critical hits.",
+    "descripcion": "Oscura + Hierro. Obtiene 50% de probabilidad de golpe crítico y duplica las acumulaciones de sangrado al lograr un crítico.",
+    "base": "Dark",
+    "result": "Assassin"
+  },
+  {
+    "slug": "dark-to-flash",
+    "description": "Dark + Light. Releases a blinding burst on impact that deals 12 damage and stuns enemies for 0.5 seconds.",
+    "descripcion": "Oscura + Luz. Libera un destello cegador al impactar que inflige 12 de daño y aturde a los enemigos por 0,5 segundos.",
+    "base": "Dark",
+    "result": "Flash"
+  },
+  {
+    "slug": "dark-to-noxious",
+    "description": "Dark + Wind. Leaves a toxic cloud for 5 seconds that deals 5 damage per second and slows enemies by 25%.",
+    "descripcion": "Oscura + Viento. Deja una nube tóxica durante 5 segundos que inflige 5 de daño por segundo y ralentiza a los enemigos un 25%.",
+    "base": "Dark",
     "result": "Noxious"
+  },
+  {
+    "slug": "earthquake-to-glacier",
+    "description": "Earthquake + Freeze. Raises an ice wall for 4 seconds that blocks projectiles and slows enemies by 60%.",
+    "descripcion": "Terremoto + Congelación. Eleva un muro de hielo durante 4 segundos que bloquea proyectiles y ralentiza a los enemigos un 60%.",
+    "base": "Earthquake",
+    "result": "Glacier"
+  },
+  {
+    "slug": "earthquake-to-swamp",
+    "description": "Earthquake + Poison. Creates a swamp for 5 seconds that applies 3 poison stacks per second and reduces movement by 35%.",
+    "descripcion": "Terremoto + Veneno. Crea un pantano durante 5 segundos que aplica 3 acumulaciones de veneno por segundo y reduce el movimiento un 35%.",
+    "base": "Earthquake",
+    "result": "Swamp"
+  },
+  {
+    "slug": "earthquake-to-sandstorm",
+    "description": "Earthquake + Wind. Summons a sandstorm that deals 8 damage per second and reduces enemy accuracy by 40%.",
+    "descripcion": "Terremoto + Viento. Invoca una tormenta de arena que inflige 8 de daño por segundo y reduce la precisión enemiga un 40%.",
+    "base": "Earthquake",
+    "result": "Sandstorm"
+  },
+  {
+    "slug": "egg-sack-to-shotgun",
+    "description": "Egg Sack + Iron. Splits into five metal shards that deal 8 damage each and apply 1 bleed stack.",
+    "descripcion": "Saco de Huevos + Hierro. Se divide en cinco fragmentos metálicos que infligen 8 de daño cada uno y aplican 1 acumulación de sangrado.",
+    "base": "Egg Sack",
+    "result": "Shotgun"
+  },
+  {
+    "slug": "egg-sack-to-mosquito-swarm",
+    "description": "Egg Sack + Vampire. Releases four mosquitos that drain 1 health per second for 4 seconds from nearby enemies.",
+    "descripcion": "Saco de Huevos + Vampiro. Libera cuatro mosquitos que drenan 1 punto de salud por segundo durante 4 segundos de los enemigos cercanos.",
+    "base": "Egg Sack",
+    "result": "Mosquito Swarm"
+  },
+  {
+    "slug": "freeze-to-freeze-ray",
+    "description": "Freeze + Laser (H/V). Fires a continuous beam that applies 5 freeze stacks and deals 15 damage per second.",
+    "descripcion": "Congelación + Láser (H/V). Dispara un rayo continuo que aplica 5 acumulaciones de congelación e inflige 15 de daño por segundo.",
+    "base": "Freeze",
+    "result": "Freeze Ray"
+  },
+  {
+    "slug": "freeze-to-blizzard",
+    "description": "Freeze + Wind. Creates a blizzard that lasts 6 seconds, dealing 6 damage per second and freezing enemies for 2 seconds on entry.",
+    "descripcion": "Congelación + Viento. Crea una ventisca que dura 6 segundos, inflige 6 de daño por segundo y congela a los enemigos durante 2 segundos al entrar.",
+    "base": "Freeze",
+    "result": "Blizzard"
+  },
+  {
+    "slug": "ghost-to-soul-siphon",
+    "description": "Ghost + Vampire. Steals 2 health from all enemies within 2 tiles and grants a 1-point shield for 5 seconds.",
+    "descripcion": "Fantasma + Vampiro. Roba 2 puntos de salud a todos los enemigos a 2 casillas y otorga un escudo de 1 punto durante 5 segundos.",
+    "base": "Ghost",
+    "result": "Soul Siphon"
+  },
+  {
+    "slug": "iron-to-lightning-rod",
+    "description": "Iron + Lightning. Charges for 1 second and releases chain lightning that hits up to 5 enemies for 18 damage each.",
+    "descripcion": "Hierro + Rayo. Se carga durante 1 segundo y libera un rayo encadenado que golpea hasta 5 enemigos infligiendo 18 de daño cada uno.",
+    "base": "Iron",
+    "result": "Lightning Rod"
+  },
+  {
+    "slug": "laser-h-v-to-laser-beam",
+    "description": "Laser (H/V) + Light. Fires horizontal and vertical beams simultaneously, dealing 20 damage per tile crossed.",
+    "descripcion": "Láser (H/V) + Luz. Dispara haces horizontal y vertical simultáneamente, infligiendo 20 de daño por casilla atravesada.",
+    "base": "Laser (H/V)",
+    "result": "Laser Beam"
+  },
+  {
+    "slug": "ghost-to-wraith",
+    "description": "Ghost + Dark. Phases through enemies, applying a shadow mark that increases damage taken by 25% for 4 seconds.",
+    "descripcion": "Fantasma + Oscura. Atraviesa a los enemigos aplicando una marca de sombra que aumenta el daño recibido en 25% durante 4 segundos.",
+    "base": "Ghost",
+    "result": "Wraith"
   }
 ]

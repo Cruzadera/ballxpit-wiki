@@ -89,6 +89,7 @@ const ballNameAliases: Record<string, string> = {
   Fire: 'Burn',
   Frenzy: 'Berserk',
   Larva: 'Maggot',
+  Laser: 'Laser (H/V)',
   'Radioactive Beam': 'Radiation Beam',
   Enamored: 'Lovestruck',
   Apparition: 'Phantom',
@@ -100,121 +101,121 @@ const ballNameAliases: Record<string, string> = {
 const officialBallSeeds: BallSeed[] = [
   {
     name: 'Bleed',
-    nombre: 'Sangrar',
-    description: 'A cursed ball that feeds on the wounds of others.',
-    descripcion: 'Una bola maldita que se alimenta de las heridas de los demás.',
+    nombre: 'Sangrado',
+    description: 'Inflicts bleed stacks; each stack deals damage when you hit the enemy.',
+    descripcion: 'Inflige pilas de sangrado; cada pila hace daño cuando golpeas al enemigo.',
     type: 'pure'
   },
   {
     name: 'Brood Mother',
-    nombre: 'Madre Criadora',
-    description: 'Spawns lesser orbs under her control.',
-    descripcion: 'Engendra orbes menores bajo su control.',
+    nombre: 'Madre Cría',
+    description: 'Has a chance to spawn a baby ball whenever it hits an enemy.',
+    descripcion: 'Tiene cierta probabilidad de generar una bola bebé al golpear al enemigo.',
     type: 'pure'
   },
   {
     name: 'Burn',
-    nombre: 'Fuego',
-    description: 'A volatile ember that ignites everything nearby.',
-    descripcion: 'Una brasa volátil que prende todo a su alrededor.',
+    nombre: 'Quemadura',
+    description: 'Applies a stack of burn on impact; burning enemies take damage over time.',
+    descripcion: 'Aplica una pila de quemadura al impactar; los enemigos quemados reciben daño con el tiempo.',
     type: 'pure'
   },
   {
     name: 'Cell',
     nombre: 'Célula',
-    description: 'The origin of all life, simple but full of potential.',
-    descripcion: 'El origen de toda vida, simple pero lleno de potencial.',
+    description: 'Divides and clones itself multiple times after hitting an enemy.',
+    descripcion: 'Se divide y clona varias veces después de golpear a un enemigo.',
     type: 'pure'
   },
   {
     name: 'Charm',
     nombre: 'Encanto',
-    description: 'A mesmerizing ball that manipulates enemies.',
-    descripcion: 'Una bola hipnótica que manipula a los enemigos.',
+    description: 'Has a chance to charm enemies, forcing them to attack others.',
+    descripcion: 'Tiene una probabilidad de encantar a los enemigos, obligándolos a atacar a otros.',
     type: 'pure'
   },
   {
     name: 'Dark',
-    nombre: 'Oscuro',
-    description: 'The essence of shadow and forbidden power.',
-    descripcion: 'La esencia de la sombra y el poder prohibido.',
+    nombre: 'Oscura',
+    description: 'Deals high damage but destroys itself on impact and requires a cooldown.',
+    descripcion: 'Inflige mucho daño pero se destruye al impactar y requiere enfriamiento.',
     type: 'pure'
   },
   {
     name: 'Earthquake',
     nombre: 'Terremoto',
-    description: 'A trembling force that shatters the ground.',
-    descripcion: 'Una fuerza temblorosa que hace añicos el suelo.',
+    description: 'Deals area damage around the impact point.',
+    descripcion: 'Causa daño en un área cercana al punto de impacto.',
     type: 'pure'
   },
   {
     name: 'Egg Sack',
     nombre: 'Saco de Huevos',
-    description: 'Fragile container of countless possibilities.',
-    descripcion: 'Contenedor frágil de incontables posibilidades.',
+    description: 'Explodes into two to four baby balls on impact.',
+    descripcion: 'Explota en dos a cuatro bolas bebé al impactar.',
     type: 'pure'
   },
   {
     name: 'Freeze',
     nombre: 'Congelación',
-    description: 'A frozen sphere that stops time itself.',
-    descripcion: 'Una esfera helada que detiene el tiempo mismo.',
+    description: 'Temporarily freezes enemies, making them take increased damage.',
+    descripcion: 'Congela temporalmente a los enemigos, quienes reciben más daño.',
     type: 'pure'
   },
   {
     name: 'Ghost',
     nombre: 'Fantasma',
-    description: 'A spectral orb that passes through matter.',
-    descripcion: 'Una esfera espectral que atraviesa la materia.',
+    description: 'Passes through enemies without stopping.',
+    descripcion: 'Atraviesa a los enemigos sin detenerse.',
     type: 'pure'
   },
   {
     name: 'Iron',
     nombre: 'Hierro',
-    description: 'A metallic orb of resilience and strength.',
-    descripcion: 'Una esfera metálica de resistencia y fuerza.',
+    description: 'Deals double damage but travels more slowly.',
+    descripcion: 'Inflige el doble de daño pero viaja más lentamente.',
     type: 'pure'
   },
   {
-    name: 'Laser',
-    nombre: 'Láser',
-    description: 'A precise beam condensed into solid form.',
-    descripcion: 'Un rayo preciso condensado en forma sólida.',
+    name: 'Laser (H/V)',
+    nombre: 'Láser (H/V)',
+    description: 'Strikes every enemy aligned horizontally or vertically.',
+    descripcion: 'Golpea a todos los enemigos alineados en fila o columna.',
     type: 'pure'
   },
   {
     name: 'Light',
     nombre: 'Luz',
-    description: 'A radiant sphere of pure illumination.',
-    descripcion: 'Una esfera radiante de pura iluminación.',
+    description: 'Blinds enemies on hit; blinded enemies can miss their attacks.',
+    descripcion: 'Ciega a los enemigos al golpear; los cegados pueden fallar sus ataques.',
     type: 'pure'
   },
   {
     name: 'Lightning',
     nombre: 'Rayo',
-    description: 'A ball of pure electric discharge.',
-    descripcion: 'Una bola de pura descarga eléctrica.',
+    description: 'Chains lightning to multiple nearby enemies.',
+    descripcion: 'Encadena rayos hacia varios enemigos cercanos.',
     type: 'pure'
   },
   {
     name: 'Poison',
     nombre: 'Veneno',
-    description: 'Slowly corrupts and infects everything it touches.',
-    descripcion: 'Corrompe e infecta lentamente todo lo que toca.',
+    description: 'Applies poison that deals damage over time.',
+    descripcion: 'Aplica veneno que inflige daño con el tiempo.',
     type: 'pure'
   },
   {
     name: 'Vampire',
     nombre: 'Vampiro',
-    description: 'An ancient orb that feeds on the life of others.',
-    descripcion: 'Una esfera ancestral que se alimenta de la vida ajena.',
+    description: 'Successful hits have a chance to heal you.',
+    descripcion: 'Los golpes acertados tienen probabilidad de curarte.',
     type: 'pure'
   },
   {
     name: 'Wind',
     nombre: 'Viento',
-    description: 'A constantly shifting sphere of air and motion.',
-    descripcion: 'Una esfera en constante movimiento de aire y energía.',
+    description: 'Pierces through enemies and slows them by 30%.',
+    descripcion: 'Atraviesa a los enemigos y los ralentiza un 30%.',
     type: 'pure'
   },
   {

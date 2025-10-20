@@ -156,7 +156,7 @@
     "result": "Radioactive Beam",
     "components": [
       "Cell",
-      "Laser"
+      "Laser (H/V)"
     ]
   },
   {
@@ -326,7 +326,7 @@
     "result": "Ice Ray",
     "components": [
       "Freeze",
-      "Laser"
+      "Laser (H/V)"
     ]
   },
   {
@@ -395,7 +395,7 @@
     "descripcion": "Concentración pura de energía luminosa.",
     "result": "Laser Beam",
     "components": [
-      "Laser",
+      "Laser (H/V)",
       "Light"
     ]
   },
@@ -405,7 +405,7 @@
     "descripcion": "Combina energía y veneno.",
     "result": "Radioactive Beam",
     "components": [
-      "Laser",
+      "Laser (H/V)",
       "Poison"
     ]
   },
