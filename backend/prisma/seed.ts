@@ -664,6 +664,19 @@ function applyBallAliases(ballIds: Map<string, { id: number; slug: string; type:
 async function main() {
   console.log('🌱 Loading wiki seed data...');
 
+  console.log('🧹 Clearing database before seeding...');
+  await prisma.$executeRawUnsafe(`PRAGMA foreign_keys = OFF;`);
+  await prisma.evolution.deleteMany();
+  await prisma.fusionComponent.deleteMany();
+  await prisma.fusion.deleteMany();
+  await prisma.character.deleteMany();
+  await prisma.item.deleteMany();
+  await prisma.passiveEvolution.deleteMany();
+  await prisma.passive.deleteMany();
+  await prisma.ball.deleteMany();
+  await prisma.$executeRawUnsafe(`PRAGMA foreign_keys = ON;`);
+  console.log('✅ Database cleared successfully.');
+
   const balls = readJson<BallSeed[]>('balls.json');
   const fusions = readJson<FusionSeed[]>('fusions.json');
   const evolutions = readJson<EvolutionSeed[]>('evolutions.json');
@@ -807,15 +820,23 @@ async function main() {
 
     const slug = evolution.slug ?? slugify(`${evolution.base}-to-${evolution.result}`);
 
-    await prisma.evolution.create({
-      data: {
-        slug,
-        description: evolution.description ?? null,
-        descripcion: evolution.descripcion ?? null,
-        baseBall: { connect: { id: baseBall.id } },
-        resultBall: { connect: { id: resultBall.id } }
+    try {
+      await prisma.evolution.create({
+        data: {
+          slug,
+          description: evolution.description ?? null,
+          descripcion: evolution.descripcion ?? null,
+          baseBall: { connect: { id: baseBall.id } },
+          resultBall: { connect: { id: resultBall.id } }
+        }
+      });
+    } catch (err: any) {
+      if (err.code === 'P2002') {
+        console.warn(`⚠️ Evolution with slug "${slug}" already exists, skipping...`);
+        continue;
       }
-    });
+      throw err;
+    }
 
     ensureUsage(usageCounter, baseBall.slug).evolutionBase++;
     ensureUsage(usageCounter, resultBall.slug).evolutionResult++;
