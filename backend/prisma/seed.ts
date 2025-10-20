@@ -195,7 +195,7 @@ async function main() {
         slug,
         description: evolution.description ?? null,
         descripcion: evolution.descripcion ?? null,
-        imageUrl: imageUrl ?? null,
+        //imageUrl: imageUrl ?? null,
         baseBall: { connect: { id: baseBall.id } },
         resultBall: { connect: { id: resultBall.id } }
       }
