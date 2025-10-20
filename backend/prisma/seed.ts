@@ -125,23 +125,22 @@ async function main() {
     let baseBall = ballIds.get(evolution.base);
     let resultBall = ballIds.get(evolution.result);
 
-    // Si la bola base no existe, no se puede crear
     if (!baseBall) {
       console.warn(`⚠️ Base ball "${evolution.base}" not found, skipping evolution.`);
       continue;
     }
 
-    // Si la bola resultante no existe, la creamos automáticamente
+    // Si el resultado no existe, crearlo automáticamente
     if (!resultBall) {
-      const slug = slugify(evolution.result);
+      const slugResult = slugify(evolution.result);
       const created = await prisma.ball.create({
         data: {
           name: evolution.result,
-          nombre: evolution.result, // opcional: traducir si quieres
+          nombre: evolution.result,
           description: evolution.description ?? null,
           descripcion: evolution.descripcion ?? null,
-          imageUrl: `/wiki/images/${slug}.png`, // genera ruta dinámica
-          slug,
+          imageUrl: `/wiki/images/${slugResult}.png`,
+          slug: slugResult,
           type: 'evolution',
           isPure: false
         }
@@ -150,8 +149,17 @@ async function main() {
       ballIds.set(evolution.result, resultBall);
     }
 
+    // Crear slug de evolución
     const slug = evolution.slug ?? slugify(`${evolution.base}-to-${evolution.result}`);
 
+    // ⚠️ Evitar duplicados comprobando si ya existe
+    const existing = await prisma.evolution.findUnique({ where: { slug } });
+    if (existing) {
+      console.warn(`⚠️ Evolution "${slug}" already exists, skipping duplicate.`);
+      continue;
+    }
+
+    // Crear evolución
     await prisma.evolution.create({
       data: {
         slug,
@@ -162,6 +170,7 @@ async function main() {
       }
     });
   }
+
   // 🧩 Crear personajes
   for (const character of characters) {
     const slug = character.slug ?? slugify(character.name_en);
