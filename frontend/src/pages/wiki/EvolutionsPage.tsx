@@ -70,6 +70,18 @@ export default function EvolutionsPage() {
               key={evolution.slug}
               className="rounded-2xl border border-slate-700/40 bg-slate-900/40 p-6 shadow-inner shadow-indigo-500/5"
             >
+              {evolution.imageUrl ? (
+                <img
+                  src={evolution.imageUrl}
+                  alt={`${evolution.base.name} → ${evolution.result.name}`}
+                  className="mb-3 h-32 w-full rounded-xl object-contain"
+                  loading="lazy"
+                />
+              ) : (
+                <div className="mb-3 flex h-32 w-full items-center justify-center rounded-xl bg-neutral-800 text-sm text-gray-400">
+                  Sin imagen
+                </div>
+              )}
               <header className="flex flex-col gap-1">
                 <h3 className="text-lg font-semibold text-slate-100">
                   <Link to={`/wiki/evolutions/${evolution.slug}`} className="hover:text-indigo-200">
