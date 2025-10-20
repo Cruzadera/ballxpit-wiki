@@ -7,6 +7,22 @@
     "characters": "Personajes",
     "items": "Objetos"
   },
+  "menu": {
+    "home": "Inicio",
+    "balls": "Bolas",
+    "evolutions": "Evoluciones",
+    "characters": "Personajes",
+    "passives": "Pasivas",
+    "about": "Acerca de"
+  },
+  "breadcrumb": {
+    "wiki": "Wiki",
+    "balls": "Bolas",
+    "evolutions": "Evoluciones",
+    "characters": "Personajes",
+    "passives": "Pasivas",
+    "about": "Acerca de"
+  },
   "search": {
     "placeholder": "Buscar por nombre...",
     "clear": "Limpiar"
@@ -78,5 +94,66 @@
     "fusionsInto": "Fusiones que usan esta bola",
     "evolutionsFrom": "Evoluciones desde esta bola",
     "evolutionsInto": "Evoluciones hacia esta bola"
+  },
+  "wiki": {
+    "breadcrumbLabel": "Rastro de navegación de la wiki",
+    "index": {
+      "welcomeTitle": "Bienvenido al Archivo Ball x Pit",
+      "welcomeDescription": "Explora cada bola, evolución y héroe registrado por el Archivo Radiante.",
+      "cards": {
+        "balls": {
+          "title": "Compendio de bolas",
+          "description": "Descubre núcleos elementales, maravillas de fusión y prototipos experimentales."
+        },
+        "evolutions": {
+          "title": "Galería de evoluciones",
+          "description": "Sigue cómo cada núcleo se transforma en mejoras devastadoras."
+        },
+        "characters": {
+          "title": "Héroes y rivales",
+          "description": "Conoce a pilotos, estudiosos y villanos que disputan la arena."
+        },
+        "passives": {
+          "title": "Reliquias pasivas",
+          "description": "Estudia reliquias que redefinen tu estrategia en cada partida."
+        }
+      }
+    },
+    "evolutions": {
+      "baseLabel": "Base",
+      "resultLabel": "Resultado",
+      "unknownBase": "Base desconocida",
+      "unknownResult": "Resultado desconocido"
+    },
+    "characters": {
+      "startingBall": "Bola inicial",
+      "unlockRequirement": "Requisito de desbloqueo",
+      "unknown": "Desconocido"
+    },
+    "passives": {
+      "title": "Reliquias pasivas",
+      "subtitle": "Artefactos que otorgan bonificaciones permanentes durante la partida.",
+      "empty": "Aún no hay pasivas registradas."
+    },
+    "about": {
+      "mission": {
+        "title": "Misión",
+        "body": "La Ball x Pit Wiki conserva cada hallazgo de la arena para que puedas planear construcciones imparables en cualquier idioma."
+      },
+      "data": {
+        "title": "Fuentes de datos",
+        "body": "Todas las entradas se obtienen en vivo del backend oficial de Ball x Pit. Nada se edita a mano, así que siempre lees el canon más reciente.",
+        "points": {
+          "balls": "Bolas: habilidades, orígenes e imágenes.",
+          "evolutions": "Evoluciones: requisitos de transformación y resultados.",
+          "characters": "Personajes: biografías, equipo inicial y condiciones de desbloqueo.",
+          "passives": "Pasivas: reliquias que potencian tu construcción."
+        }
+      },
+      "design": {
+        "title": "Inspiración de diseño",
+        "body": "La interfaz combina el encanto acogedor de la wiki de Stardew Valley con el ritmo vibrante de la wiki de Vampire Survivors para lograr una vibra nostálgica pero moderna."
+      }
+    }
   }
 }
