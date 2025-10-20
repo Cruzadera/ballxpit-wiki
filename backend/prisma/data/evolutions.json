@@ -499,7 +499,7 @@
     "slug": "laser-to-holylaser",
     "description": "Vertical + Horizontal Laser. Deals 24–36 damage to all enemies in the same row and column.",
     "descripcion": "Láser vertical + horizontal. Inflige entre 24 y 36 de daño a todos los enemigos en la misma fila y columna.",
-    "base": "Laser",
+    "base": "Laser (H/V)",
     "result": "Holy Laser",
     "imageUrl": "/wiki/images/holylaser.png"
   },
@@ -507,7 +507,7 @@
     "slug": "laser-to-freezeray",
     "description": "Laser + Freeze. Emits a freeze ray that deals 20–50 damage and can freeze for 10s (10% chance).",
     "descripcion": "Láser + Hielo. Emite un rayo congelante que inflige entre 20 y 50 de daño y puede congelar durante 10 segundos (10% de probabilidad).",
-    "base": "Laser",
+    "base": "Laser (H/V)",
     "result": "Freeze Ray",
     "imageUrl": "/wiki/images/freezeray2.png"
   },
@@ -515,7 +515,7 @@
     "slug": "laser-to-laserbeam",
     "description": "Laser + Light. Emits a laser beam on hit that deals 30–42 damage and blinds enemies for 8s.",
     "descripcion": "Láser + Luz. Emite un rayo láser al impactar que inflige entre 30 y 42 de daño y ciega a los enemigos durante 8 segundos.",
-    "base": "Laser",
+    "base": "Laser (H/V)",
     "result": "Laser Beam",
     "imageUrl": "/wiki/images/laserbeam.png"
   },
@@ -523,7 +523,7 @@
     "slug": "laser-to-radiationbeam",
     "description": "Laser + Cell or Poison. Emits a radiation beam that deals 24–48 damage and applies radiation stacks.",
     "descripcion": "Láser + Célula o Veneno. Emite un rayo de radiación que inflige entre 24 y 48 de daño y aplica acumulaciones de radiación.",
-    "base": "Laser",
+    "base": "Laser (H/V)",
     "result": "Radiation Beam",
     "imageUrl": "/wiki/images/radiationbeam.png"
   },
