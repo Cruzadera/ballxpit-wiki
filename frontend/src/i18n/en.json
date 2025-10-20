@@ -1,7 +1,6 @@
 {
   "nav": {
     "balls": "Balls",
-    "fusions": "Fusions",
     "evolutions": "Evolutions",
     "passives": "Passives",
     "characters": "Characters",
@@ -35,7 +34,6 @@
   "breadcrumbs": {
     "wiki": "Wiki",
     "balls": "Balls",
-    "fusions": "Fusions",
     "evolutions": "Evolutions",
     "passives": "Passives",
     "characters": "Characters",
@@ -43,7 +41,6 @@
   },
   "tags": {
     "pure": "Pure",
-    "fusion": "Fusion",
     "evolution": "Evolution"
   },
   "layout": {
@@ -59,10 +56,6 @@
     "balls": {
       "title": "All balls",
       "subtitle": "Browse every ball recorded by the Radiant Archive."
-    },
-    "fusions": {
-      "title": "Fusion index",
-      "subtitle": "Discover the rituals required to forge legendary balls."
     },
     "evolutions": {
       "title": "Evolution codex",
@@ -90,8 +83,6 @@
   },
   "ballDetail": {
     "overview": "Overview",
-    "fusionsFrom": "Fusions that create this ball",
-    "fusionsInto": "Fusions that use this ball",
     "evolutionsFrom": "Evolutions from this ball",
     "evolutionsInto": "Evolutions into this ball",
     "possibleEvolutions": "🔁 Possible Evolutions",
@@ -105,7 +96,7 @@
       "cards": {
         "balls": {
           "title": "Ball compendium",
-          "description": "Browse elemental cores, fusion marvels and experimental prototypes."
+          "description": "Browse elemental cores and experimental prototypes."
         },
         "evolutions": {
           "title": "Evolution gallery",

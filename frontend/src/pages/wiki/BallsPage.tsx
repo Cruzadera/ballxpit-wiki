@@ -8,8 +8,7 @@ import type { WikiBall } from '../../types/wiki';
 
 const TYPE_ORDER: Record<NonNullable<WikiBall['type']>, number> = {
   pure: 0,
-  fusion: 1,
-  evolution: 2
+  evolution: 1
 };
 
 export default function BallsPage() {

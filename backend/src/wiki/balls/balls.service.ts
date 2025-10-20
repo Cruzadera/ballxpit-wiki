@@ -5,24 +5,6 @@ import { SupportedLanguage, translateField } from '../../common/i18n/language.ut
 
 type BallWithRelations = Prisma.BallGetPayload<{
   include: {
-    fusionResults: {
-      include: {
-        components: {
-          include: {
-            ball: true;
-          };
-        };
-      };
-    };
-    fusionsAsComponent: {
-      include: {
-        fusion: {
-          include: {
-            result: true;
-          };
-        };
-      };
-    };
     evolutionsAsBase: {
       include: {
         resultBall: true;
@@ -36,12 +18,11 @@ type BallWithRelations = Prisma.BallGetPayload<{
   };
 }>;
 
-type BallCategory = 'pure' | 'fusion' | 'evolution';
+type BallCategory = 'pure' | 'evolution';
 
 const BALL_TYPE_ORDER: Record<BallCategory, number> = {
   pure: 0,
-  fusion: 1,
-  evolution: 2
+  evolution: 1
 };
 
 @Injectable()
@@ -51,8 +32,6 @@ export class BallsService {
   async findAll(language: SupportedLanguage) {
     const balls = await this.prisma.ball.findMany({
       include: {
-        fusionResults: true,
-        fusionsAsComponent: true,
         evolutionsAsResult: true
       }
     });
@@ -87,24 +66,6 @@ export class BallsService {
     const ball = await this.prisma.ball.findUnique({
       where: { slug },
       include: {
-        fusionResults: {
-          include: {
-            components: {
-              include: {
-                ball: true
-              }
-            }
-          }
-        },
-        fusionsAsComponent: {
-          include: {
-            fusion: {
-              include: {
-                result: true
-              }
-            }
-          }
-        },
         evolutionsAsBase: {
           include: {
             resultBall: true
@@ -133,30 +94,6 @@ export class BallsService {
       imageUrl: ball.imageUrl,
       type: (ball.type as BallCategory | null) ?? null,
       tags: this.buildTags({ type: ball.type }),
-      fusionsFrom: ball.fusionResults.map((fusion) => ({
-        slug: fusion.slug,
-        description: translateField(language, fusion.description, fusion.descripcion),
-        result: {
-          slug: ball.slug,
-          name: translateField(language, ball.name, ball.nombre),
-          imageUrl: ball.imageUrl
-        },
-        components: fusion.components
-          .filter((component) => component.ball)
-          .map((component) => ({
-            slug: component.ball.slug,
-            name: translateField(language, component.ball.name, component.ball.nombre),
-            imageUrl: component.ball.imageUrl
-          }))
-      })),
-      fusionsInto: ball.fusionsAsComponent.map(({ fusion }) => ({
-        slug: fusion.slug,
-        result: {
-          slug: fusion.result.slug,
-          name: translateField(language, fusion.result.name, fusion.result.nombre),
-          imageUrl: fusion.result.imageUrl
-        }
-      })),
       evolutionsFrom: ball.evolutionsAsBase.map((evolution) => ({
         slug: evolution.slug,
         result: {
@@ -183,13 +120,13 @@ export class BallsService {
       return [];
     }
 
-    return ['pure', 'fusion', 'evolution'].includes(ball.type)
+    return ['pure', 'evolution'].includes(ball.type)
       ? [ball.type as BallCategory]
       : [];
   }
 
   private getTypeRank(type: string | null | undefined) {
-    if (!type || !['pure', 'fusion', 'evolution'].includes(type)) {
+    if (!type || !['pure', 'evolution'].includes(type)) {
       return Number.MAX_SAFE_INTEGER;
     }
 

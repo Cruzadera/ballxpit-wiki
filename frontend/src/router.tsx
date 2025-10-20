@@ -2,8 +2,6 @@ import { Navigate, createBrowserRouter } from 'react-router-dom';
 import WikiLayout from './components/wiki/WikiLayout';
 import BallsPage from './pages/wiki/BallsPage';
 import BallDetail from './pages/wiki/BallDetail';
-import FusionsPage from './pages/wiki/FusionsPage';
-import FusionDetail from './pages/wiki/FusionDetail';
 import EvolutionsPage from './pages/wiki/EvolutionsPage';
 import EvolutionDetail from './pages/wiki/EvolutionDetail';
 import PassivesPage from './pages/wiki/PassivesPage';
@@ -22,8 +20,6 @@ export const router = createBrowserRouter([
       { index: true, element: <Navigate to="balls" replace /> },
       { path: 'balls', element: <BallsPage /> },
       { path: 'balls/:slug', element: <BallDetail /> },
-      { path: 'fusions', element: <FusionsPage /> },
-      { path: 'fusions/:slug', element: <FusionDetail /> },
       { path: 'evolutions', element: <EvolutionsPage /> },
       { path: 'evolutions/:slug', element: <EvolutionDetail /> },
       { path: 'passives', element: <PassivesPage /> },

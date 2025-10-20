@@ -9,23 +9,8 @@ export type WikiBall = {
   name: string | null;
   description: string | null;
   imageUrl: string | null;
-  type: 'pure' | 'fusion' | 'evolution' | null;
+  type: 'pure' | 'evolution' | null;
   tags: string[];
-};
-
-export type WikiBallFusion = {
-  slug: string;
-  description: string | null;
-  result: {
-    slug: string;
-    name: string | null;
-    imageUrl: string | null;
-  };
-  components: Array<{
-    slug: string;
-    name: string | null;
-    imageUrl: string | null;
-  }>;
 };
 
 export type WikiBallEvolution = {
@@ -45,32 +30,8 @@ export type WikiBallEvolution = {
 };
 
 export type WikiBallDetail = WikiBall & {
-  fusionsFrom: WikiBallFusion[];
-  fusionsInto: Array<{
-    slug: string;
-    result: {
-      slug: string;
-      name: string | null;
-      imageUrl: string | null;
-    };
-  }>;
   evolutionsFrom: WikiBallEvolution[];
   evolutionsInto: WikiBallEvolution[];
-};
-
-export type WikiFusion = {
-  slug: string;
-  description: string | null;
-  result: {
-    slug: string;
-    name: string | null;
-    imageUrl: string | null;
-  };
-  components: Array<{
-    slug: string;
-    name: string | null;
-    imageUrl: string | null;
-  }>;
 };
 
 export type WikiEvolution = {

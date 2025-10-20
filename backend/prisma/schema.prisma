@@ -21,30 +21,8 @@ model Ball {
   slug               String            @unique
   evolutionsAsBase   Evolution[]       @relation("BaseBall")
   evolutionsAsResult Evolution[]       @relation("ResultBall")
-  fusionResults      Fusion[]          @relation("ResultFusion")
-  fusionsAsComponent FusionComponent[]
   createdAt          DateTime          @default(now())
   updatedAt          DateTime          @updatedAt
-}
-
-model Fusion {
-  id          Int               @id @default(autoincrement())
-  slug        String            @unique
-  resultId    Int
-  description String?
-  descripcion String?
-  result      Ball              @relation("ResultFusion", fields: [resultId], references: [id])
-  components  FusionComponent[]
-  createdAt   DateTime          @default(now())
-  updatedAt   DateTime          @updatedAt
-}
-
-model FusionComponent {
-  id       Int    @id @default(autoincrement())
-  fusionId Int
-  ballId   Int
-  fusion   Fusion @relation(fields: [fusionId], references: [id], onDelete: Cascade)
-  ball     Ball   @relation(fields: [ballId], references: [id], onDelete: Cascade)
 }
 
 model Evolution {
