@@ -4,7 +4,7 @@
     "nombre": "Sangrado",
     "description": "Inflicts bleed stacks; each stack deals damage when you hit the enemy.",
     "descripcion": "Inflige pilas de sangrado; cada pila hace daño cuando golpeas al enemigo.",
-    "imageUrl": "/wiki/images/hemorr.png",
+    "imageUrl": "/wiki/images/bleed.png",
     "type": "pure"
   },
   {
@@ -12,7 +12,7 @@
     "nombre": "Madre Cría",
     "description": "Has a chance to spawn a baby ball whenever it hits an enemy.",
     "descripcion": "Tiene cierta probabilidad de generar una bola bebé al golpear al enemigo.",
-    "imageUrl": "/wiki/images/maggot.png",
+    "imageUrl": "/wiki/images/brood_mother.png",
     "type": "pure"
   },
   {
@@ -20,7 +20,7 @@
     "nombre": "Quemadura",
     "description": "Applies a stack of burn on impact; burning enemies take damage over time.",
     "descripcion": "Aplica una pila de quemadura al impactar; los enemigos quemados reciben daño con el tiempo.",
-    "imageUrl": "/wiki/images/inferno.png",
+    "imageUrl": "/wiki/images/burn.png",
     "type": "pure"
   },
   {
@@ -28,7 +28,7 @@
     "nombre": "Célula",
     "description": "Divides and clones itself multiple times after hitting an enemy.",
     "descripcion": "Se divide y clona varias veces después de golpear a un enemigo.",
-    "imageUrl": "/wiki/images/virus.png",
+    "imageUrl": "/wiki/images/cell.png",
     "type": "pure"
   },
   {
@@ -36,15 +36,15 @@
     "nombre": "Encanto",
     "description": "Has a chance to charm enemies, forcing them to attack others.",
     "descripcion": "Tiene una probabilidad de encantar a los enemigos, obligándolos a atacar a otros.",
-    "imageUrl": "/wiki/images/lovestruck.png",
+    "imageUrl": "/wiki/images/charm.png",
     "type": "pure"
   },
   {
     "name": "Dark",
-    "nombre": "Oscura",
+    "nombre": "Oscuridad",
     "description": "Deals high damage but destroys itself on impact and requires a cooldown.",
     "descripcion": "Inflige mucho daño pero se destruye al impactar y requiere enfriamiento.",
-    "imageUrl": "/wiki/images/wraith.png",
+    "imageUrl": "/wiki/images/dark.png",
     "type": "pure"
   },
   {
@@ -52,7 +52,7 @@
     "nombre": "Terremoto",
     "description": "Deals area damage around the impact point.",
     "descripcion": "Causa daño en un área cercana al punto de impacto.",
-    "imageUrl": "/wiki/images/magma.png",
+    "imageUrl": "/wiki/images/earthquake.png",
     "type": "pure"
   },
   {
@@ -68,7 +68,7 @@
     "nombre": "Congelación",
     "description": "Temporarily freezes enemies, making them take increased damage.",
     "descripcion": "Congela temporalmente a los enemigos, quienes reciben más daño.",
-    "imageUrl": "/wiki/images/blizzard.png",
+    "imageUrl": "/wiki/images/freeze.png",
     "type": "pure"
   },
   {
@@ -76,7 +76,7 @@
     "nombre": "Fantasma",
     "description": "Passes through enemies without stopping.",
     "descripcion": "Atraviesa a los enemigos sin detenerse.",
-    "imageUrl": "/wiki/images/phantom.png",
+    "imageUrl": "/wiki/images/ghost.png",
     "type": "pure"
   },
   {
@@ -84,7 +84,7 @@
     "nombre": "Hierro",
     "description": "Deals double damage but travels more slowly.",
     "descripcion": "Inflige el doble de daño pero viaja más lentamente.",
-    "imageUrl": "/wiki/images/shotgun.png",
+    "imageUrl": "/wiki/images/iron.png",
     "type": "pure"
   },
   {
@@ -92,7 +92,7 @@
     "nombre": "Láser (H/V)",
     "description": "Strikes every enemy aligned horizontally or vertically.",
     "descripcion": "Golpea a todos los enemigos alineados en fila o columna.",
-    "imageUrl": "/wiki/images/laserbeam.png",
+    "imageUrl": "/wiki/images/laser.png",
     "type": "pure"
   },
   {
@@ -100,7 +100,7 @@
     "nombre": "Luz",
     "description": "Blinds enemies on hit; blinded enemies can miss their attacks.",
     "descripcion": "Ciega a los enemigos al golpear; los cegados pueden fallar sus ataques.",
-    "imageUrl": "/wiki/images/sun.png",
+    "imageUrl": "/wiki/images/light.png",
     "type": "pure"
   },
   {
@@ -108,7 +108,7 @@
     "nombre": "Rayo",
     "description": "Chains lightning to multiple nearby enemies.",
     "descripcion": "Encadena rayos hacia varios enemigos cercanos.",
-    "imageUrl": "/wiki/images/lightningrod.png",
+    "imageUrl": "/wiki/images/lightning.png",
     "type": "pure"
   },
   {
@@ -116,7 +116,7 @@
     "nombre": "Veneno",
     "description": "Applies poison that deals damage over time.",
     "descripcion": "Aplica veneno que inflige daño con el tiempo.",
-    "imageUrl": "/wiki/images/noxious.png",
+    "imageUrl": "/wiki/images/poison.png",
     "type": "pure"
   },
   {
@@ -124,7 +124,7 @@
     "nombre": "Vampiro",
     "description": "Successful hits have a chance to heal you.",
     "descripcion": "Los golpes acertados tienen probabilidad de curarte.",
-    "imageUrl": "/wiki/images/nosferatu.png",
+    "imageUrl": "/wiki/images/vampire.png",
     "type": "pure"
   },
   {
@@ -132,434 +132,7 @@
     "nombre": "Viento",
     "description": "Pierces through enemies and slows them by 30%.",
     "descripcion": "Atraviesa a los enemigos y los ralentiza un 30%.",
-    "imageUrl": "/wiki/images/storm.png",
+    "imageUrl": "/wiki/images/wind.png",
     "type": "pure"
-  },
-  {
-    "name": "Leech",
-    "nombre": "Sanguijuela",
-    "description": "Bleed + Brood Mother. Each hit drains 1 health and adds 2 bleed stacks to the target.",
-    "descripcion": "Sangrado + Madre Cría. Cada golpe drena 1 punto de salud y añade 2 acumulaciones de sangrado al objetivo.",
-    "imageUrl": "/wiki/images/leech.png",
-    "type": "evolution"
-  },
-  {
-    "name": "Berserk",
-    "nombre": "Frenesí",
-    "description": "Bleed + Charm. Grants 30% attack speed and 25% more damage but removes manual control for 3 seconds after each trigger.",
-    "descripcion": "Sangrado + Encanto. Otorga 30% de velocidad de ataque y 25% más de daño pero elimina el control manual durante 3 segundos tras activarse.",
-    "imageUrl": "/wiki/images/berserk.png",
-    "type": "evolution"
-  },
-  {
-    "name": "Sacrifice",
-    "nombre": "Sacrificio",
-    "description": "Bleed + Dark. Detonates on impact, dealing massive damage in a 3-tile radius and consuming all bleed stacks for bonus damage.",
-    "descripcion": "Sangrado + Oscura. Detona al impactar, infligiendo gran daño en un radio de 3 casillas y consumiendo todas las acumulaciones de sangrado para daño adicional.",
-    "imageUrl": "/wiki/images/sacrifice.png",
-    "type": "evolution"
-  },
-  {
-    "name": "Hemorrhage",
-    "nombre": "Hemorragia",
-    "description": "Bleed + Iron. Applies 4 bleed stacks per hit and deals bonus damage equal to 50% of the target’s total bleed stacks.",
-    "descripcion": "Sangrado + Hierro. Aplica 4 acumulaciones de sangrado por golpe e inflige daño adicional igual al 50% del sangrado acumulado en el objetivo.",
-    "imageUrl": "/wiki/images/hemorrhage.png",
-    "type": "evolution"
-  },
-  {
-    "name": "Vampire Lord",
-    "nombre": "Señor Vampiro",
-    "description": "Bleed + Vampire. Each hit inflicts 3 stacks of bleed. Heals 1 health and consumes all stacks when striking an enemy with at least 10 bleed stacks. Also works with Dark instead of Bleed.",
-    "descripcion": "Sangrado + Vampiro. Cada golpe inflige 3 acumulaciones de sangrado. Cura 1 punto de salud y consume todas las acumulaciones al golpear a un enemigo con al menos 10 acumulaciones de sangrado. También funciona con Oscura en lugar de Sangrado.",
-    "imageUrl": "/wiki/images/vampirelord.png",
-    "type": "evolution"
-  },
-  {
-    "name": "Maggot",
-    "nombre": "Gusano",
-    "description": "Brood Mother + Cell. Splits into two larvae on hit; larvae deal 40% damage and reattach after 3 seconds.",
-    "descripcion": "Madre Cría + Célula. Se divide en dos larvas al golpear; las larvas infligen 40% de daño y se reincorporan tras 3 segundos.",
-    "imageUrl": "/wiki/images/maggot.png",
-    "type": "evolution"
-  },
-  {
-    "name": "Spider Queen",
-    "nombre": "Reina Araña",
-    "description": "Brood Mother + Egg Sack. Spawns three spiderlings that deal 6 damage per second and apply poison stacks while active.",
-    "descripcion": "Madre Cría + Saco de Huevos. Genera tres arañitas que infligen 6 de daño por segundo y aplican acumulaciones de veneno mientras están activas.",
-    "imageUrl": "/wiki/images/spiderqueen.png",
-    "type": "evolution"
-  },
-  {
-    "name": "Mosquito King",
-    "nombre": "Rey Mosquito",
-    "description": "Brood Mother + Vampire. Summons a swarm that drains 2 health per second from enemies within 3 tiles and returns it to the player.",
-    "descripcion": "Madre Cría + Vampiro. Invoca un enjambre que drena 2 puntos de salud por segundo de los enemigos a 3 casillas y los devuelve al jugador.",
-    "imageUrl": "/wiki/images/mosquitoking.png",
-    "type": "evolution"
-  },
-  {
-    "name": "Magma",
-    "nombre": "Magma",
-    "description": "Burn + Earthquake. Leaves a lava pool for 4 seconds that applies 1 burn stack per second and slows enemies by 20%.",
-    "descripcion": "Quemadura + Terremoto. Deja un charco de lava durante 4 segundos que aplica 1 acumulación de quemadura por segundo y ralentiza a los enemigos un 20%.",
-    "imageUrl": "/wiki/images/magma.png",
-    "type": "evolution"
-  },
-  {
-    "name": "Frozen Flame",
-    "nombre": "Llama Helada",
-    "description": "Burn + Freeze. Alternates between freezing and burning the target, increasing damage by 50% when swapping states.",
-    "descripcion": "Quemadura + Congelación. Alterna entre congelar y quemar al objetivo, aumentando el daño un 50% al cambiar de estado.",
-    "imageUrl": "/wiki/images/frozenflame.png",
-    "type": "evolution"
-  },
-  {
-    "name": "Bomb",
-    "nombre": "Bomba",
-    "description": "Burn + Iron. Detonates in a 3-tile radius for heavy damage and applies 3 burn stacks to all affected enemies.",
-    "descripcion": "Quemadura + Hierro. Detona en un radio de 3 casillas causando gran daño y aplicando 3 acumulaciones de quemadura a todos los enemigos afectados.",
-    "imageUrl": "/wiki/images/bomb.png",
-    "type": "evolution"
-  },
-  {
-    "name": "Sun",
-    "nombre": "Sol",
-    "description": "Burn + Light. Emits a radiant pulse every 2 seconds that heals allies for 1 health and applies 1 burn stack to enemies.",
-    "descripcion": "Quemadura + Luz. Emite un pulso radiante cada 2 segundos que cura 1 punto de salud a los aliados y aplica 1 acumulación de quemadura a los enemigos.",
-    "imageUrl": "/wiki/images/sun.png",
-    "type": "evolution"
-  },
-  {
-    "name": "Inferno",
-    "nombre": "Infierno",
-    "description": "Burn + Wind. Applies 1 stack of burn every second to all enemies within a 2-tile radius for 6 seconds, dealing 3-7 damage per stack per second.",
-    "descripcion": "Quemadura + Viento. Aplica una pila de quemadura cada segundo a todos los enemigos dentro de un radio de 2 casillas durante 6 segundos, infligiendo de 3 a 7 de daño por pila y segundo.",
-    "imageUrl": "/wiki/images/inferno.png",
-    "type": "evolution"
-  },
-  {
-    "name": "Overgrowth",
-    "nombre": "Sobrecrecimiento",
-    "description": "Cell + Earthquake. Spreads vines to adjacent tiles, dealing 5 damage per second and reducing enemy movement by 40%.",
-    "descripcion": "Célula + Terremoto. Extiende lianas a las casillas adyacentes, infligiendo 5 de daño por segundo y reduciendo el movimiento enemigo un 40%.",
-    "imageUrl": "/wiki/images/overgrowth.png",
-    "type": "evolution"
-  },
-  {
-    "name": "Radiation Beam",
-    "nombre": "Rayo Radiactivo",
-    "description": "Cell + Laser (H/V). Fires a piercing beam that travels through 4 tiles, applying radiation that deals 6 damage per second for 5 seconds.",
-    "descripcion": "Célula + Láser (H/V). Dispara un haz perforante que atraviesa 4 casillas y aplica radiación que inflige 6 de daño por segundo durante 5 segundos.",
-    "imageUrl": "/wiki/images/radiationbeam.png",
-    "type": "evolution"
-  },
-  {
-    "name": "Virus",
-    "nombre": "Virus",
-    "description": "Cell + Poison. Infects enemies for 8 seconds; infected enemies spread 2 poison stacks to nearby foes when defeated.",
-    "descripcion": "Célula + Veneno. Infecta a los enemigos durante 8 segundos; los infectados propagan 2 acumulaciones de veneno a los enemigos cercanos al ser derrotados.",
-    "imageUrl": "/wiki/images/virus.png",
-    "type": "evolution"
-  },
-  {
-    "name": "Incubus",
-    "nombre": "Íncubo",
-    "description": "Charm + Dark. Each hit charms the target for 2 seconds and siphons 1 health per second while the charm lasts.",
-    "descripcion": "Encanto + Oscura. Cada golpe encanta al objetivo durante 2 segundos y absorbe 1 punto de salud por segundo mientras dura el encanto.",
-    "imageUrl": "/wiki/images/incubus3.png",
-    "type": "evolution"
-  },
-  {
-    "name": "Lovestruck",
-    "nombre": "Enamorado",
-    "description": "Charm + Light. Charms enemies for 3 seconds, reducing their damage by 20% but making them take 30% more damage from all sources.",
-    "descripcion": "Encanto + Luz. Encanta a los enemigos durante 3 segundos, reduce su daño un 20% pero hace que reciban 30% más de daño de todas las fuentes.",
-    "imageUrl": "/wiki/images/lovestruck.png",
-    "type": "evolution"
-  },
-  {
-    "name": "Succubus",
-    "nombre": "Súcubo",
-    "description": "Charm + Vampire. Hits steal 2 health and extend existing charm effects by 1 second.",
-    "descripcion": "Encanto + Vampiro. Los golpes roban 2 puntos de salud y extienden los efectos de encanto existentes en 1 segundo.",
-    "imageUrl": "/wiki/images/succubus3.png",
-    "type": "evolution"
-  },
-  {
-    "name": "Phantom",
-    "nombre": "Fantasma",
-    "description": "Ghost + Freeze. Passes through enemies while leaving a freezing trail that slows by 40% for 3 seconds.",
-    "descripcion": "Fantasma + Congelación. Atraviesa a los enemigos dejando un rastro helado que ralentiza un 40% durante 3 segundos.",
-    "imageUrl": "/wiki/images/phantom.png",
-    "type": "evolution"
-  },
-  {
-    "name": "Assassin",
-    "nombre": "Asesino",
-    "description": "Dark + Iron. Gains 50% critical chance and doubles bleed stacks on critical hits.",
-    "descripcion": "Oscura + Hierro. Obtiene 50% de probabilidad de golpe crítico y duplica las acumulaciones de sangrado al lograr un crítico.",
-    "imageUrl": "/wiki/images/assassin.png",
-    "type": "evolution"
-  },
-  {
-    "name": "Flash",
-    "nombre": "Destello",
-    "description": "Dark + Light. Releases a blinding burst on impact that deals 12 damage and stuns enemies for 0.5 seconds.",
-    "descripcion": "Oscura + Luz. Libera un destello cegador al impactar que inflige 12 de daño y aturde a los enemigos por 0,5 segundos.",
-    "imageUrl": "/wiki/images/flash.png",
-    "type": "evolution"
-  },
-  {
-    "name": "Noxious",
-    "nombre": "Nocivo",
-    "description": "Dark + Wind. Leaves a toxic cloud for 5 seconds that deals 5 damage per second and slows enemies by 25%.",
-    "descripcion": "Oscura + Viento. Deja una nube tóxica durante 5 segundos que inflige 5 de daño por segundo y ralentiza a los enemigos un 25%.",
-    "imageUrl": "/wiki/images/noxious.png",
-    "type": "evolution"
-  },
-  {
-    "name": "Glacier",
-    "nombre": "Glaciar",
-    "description": "Earthquake + Freeze. Raises an ice wall for 4 seconds that blocks projectiles and slows enemies by 60%.",
-    "descripcion": "Terremoto + Congelación. Eleva un muro de hielo durante 4 segundos que bloquea proyectiles y ralentiza a los enemigos un 60%.",
-    "imageUrl": "/wiki/images/glacier.png",
-    "type": "evolution"
-  },
-  {
-    "name": "Swamp",
-    "nombre": "Pantano",
-    "description": "Earthquake + Poison. Creates a swamp for 5 seconds that applies 3 poison stacks per second and reduces movement by 35%.",
-    "descripcion": "Terremoto + Veneno. Crea un pantano durante 5 segundos que aplica 3 acumulaciones de veneno por segundo y reduce el movimiento un 35%.",
-    "imageUrl": "/wiki/images/swamp.png",
-    "type": "evolution"
-  },
-  {
-    "name": "Sandstorm",
-    "nombre": "Tormenta de Arena",
-    "description": "Earthquake + Wind. Summons a sandstorm that deals 8 damage per second and reduces enemy accuracy by 40%.",
-    "descripcion": "Terremoto + Viento. Invoca una tormenta de arena que inflige 8 de daño por segundo y reduce la precisión enemiga un 40%.",
-    "imageUrl": "/wiki/images/sandstorm.png",
-    "type": "evolution"
-  },
-  {
-    "name": "Shotgun",
-    "nombre": "Escopeta",
-    "description": "Egg Sack + Iron. Splits into five metal shards that deal 8 damage each and apply 1 bleed stack.",
-    "descripcion": "Saco de Huevos + Hierro. Se divide en cinco fragmentos metálicos que infligen 8 de daño cada uno y aplican 1 acumulación de sangrado.",
-    "imageUrl": "/wiki/images/shotgun.png",
-    "type": "evolution"
-  },
-  {
-    "name": "Mosquito Swarm",
-    "nombre": "Enjambre de Mosquitos",
-    "description": "Egg Sack + Vampire. Releases four mosquitos that drain 1 health per second for 4 seconds from nearby enemies.",
-    "descripcion": "Saco de Huevos + Vampiro. Libera cuatro mosquitos que drenan 1 punto de salud por segundo durante 4 segundos de los enemigos cercanos.",
-    "imageUrl": "/wiki/images/mosquitoswarm.png",
-    "type": "evolution"
-  },
-  {
-    "name": "Freeze Ray",
-    "nombre": "Rayo Congelante",
-    "description": "Freeze + Laser (H/V). Fires a continuous beam that applies 5 freeze stacks and deals 15 damage per second.",
-    "descripcion": "Congelación + Láser (H/V). Dispara un rayo continuo que aplica 5 acumulaciones de congelación e inflige 15 de daño por segundo.",
-    "imageUrl": "/wiki/images/freezeray.png",
-    "type": "evolution"
-  },
-  {
-    "name": "Blizzard",
-    "nombre": "Ventisca",
-    "description": "Freeze + Wind. Creates a blizzard that lasts 6 seconds, dealing 6 damage per second and freezing enemies for 2 seconds on entry.",
-    "descripcion": "Congelación + Viento. Crea una ventisca que dura 6 segundos, inflige 6 de daño por segundo y congela a los enemigos durante 2 segundos al entrar.",
-    "imageUrl": "/wiki/images/blizzard.png",
-    "type": "evolution"
-  },
-  {
-    "name": "Soul Siphon",
-    "nombre": "Succiona Almas",
-    "description": "Ghost + Vampire. Steals 2 health from all enemies within 2 tiles and grants a 1-point shield for 5 seconds.",
-    "descripcion": "Fantasma + Vampiro. Roba 2 puntos de salud a todos los enemigos a 2 casillas y otorga un escudo de 1 punto durante 5 segundos.",
-    "imageUrl": "/wiki/images/soulsucker.png",
-    "type": "evolution"
-  },
-  {
-    "name": "Lightning Rod",
-    "nombre": "Pararrayos",
-    "description": "Iron + Lightning. Charges for 1 second and releases chain lightning that hits up to 5 enemies for 18 damage each.",
-    "descripcion": "Hierro + Rayo. Se carga durante 1 segundo y libera un rayo encadenado que golpea hasta 5 enemigos infligiendo 18 de daño cada uno.",
-    "imageUrl": "/wiki/images/lightningrod.png",
-    "type": "evolution"
-  },
-  {
-    "name": "Laser Beam",
-    "nombre": "Rayo Láser",
-    "description": "Laser (H/V) + Light. Fires horizontal and vertical beams simultaneously, dealing 20 damage per tile crossed.",
-    "descripcion": "Láser (H/V) + Luz. Dispara haces horizontal y vertical simultáneamente, infligiendo 20 de daño por casilla atravesada.",
-    "imageUrl": "/wiki/images/laserbeam.png",
-    "type": "evolution"
-  },
-  {
-    "name": "Holy Lazer",
-    "nombre": "Láser Sagrado",
-    "description": "Purifies all it touches with divine energy.",
-    "descripcion": "Purifica todo lo que toca con energía divina.",
-    "imageUrl": "/icons/default.svg",
-    "type": "evolution"
-  },
-  {
-    "name": "Vertical Laser",
-    "nombre": "Láser Vertical",
-    "description": "Projects a column of light that cleaves upward.",
-    "descripcion": "Proyecta un haz vertical que divide el campo de batalla.",
-    "imageUrl": "/icons/default.svg"
-  },
-  {
-    "name": "Horizontal Laser",
-    "nombre": "Láser Horizontal",
-    "description": "Emits a sweeping beam that slices laterally.",
-    "descripcion": "Emite un rayo rasante que corta de lado a lado.",
-    "imageUrl": "/icons/default.svg"
-  },
-  {
-    "name": "Storm",
-    "nombre": "Tormenta",
-    "description": "Uncontrollable surge of elemental power.",
-    "descripcion": "Oleada incontrolable de poder elemental.",
-    "imageUrl": "/icons/wind.svg",
-    "type": "evolution"
-  },
-  {
-    "name": "Cornucopia",
-    "nombre": "Cornucopia",
-    "description": "Blesses the party with abundance, bolstering regeneration.",
-    "descripcion": "Aumenta regeneración y defensa.",
-    "imageUrl": "/icons/default.svg"
-  },
-  {
-    "name": "Rattle",
-    "nombre": "Sonaja",
-    "description": "A rhythmic charm that rallies allies into tempo.",
-    "descripcion": "Un amuleto rítmico que marca el tempo de la ofensiva.",
-    "imageUrl": "/icons/default.svg"
-  },
-  {
-    "name": "War Horn",
-    "nombre": "Cuerno de Guerra",
-    "description": "Trumpets a battle cry that hardens defences instantly.",
-    "descripcion": "Hace resonar un grito marcial que refuerza las defensas.",
-    "imageUrl": "/icons/default.svg"
-  },
-  {
-    "name": "Soul Reaper",
-    "nombre": "Segador de Almas",
-    "description": "Harvests vitality with every swing of its cursed blade.",
-    "descripcion": "Roba vida con cada ataque.",
-    "imageUrl": "/icons/default.svg"
-  },
-  {
-    "name": "Bottomless Chalice",
-    "nombre": "Cáliz Inagotable",
-    "description": "A relic that never runs dry, suffusing allies with vigor.",
-    "descripcion": "Una reliquia que nunca se vacía y colma de vigor al equipo.",
-    "imageUrl": "/icons/ice.svg"
-  },
-  {
-    "name": "Vampiric Sword",
-    "nombre": "Espada Vampírica",
-    "description": "Imbued steel that steals blood on every cut.",
-    "descripcion": "Acero imbuido que roba sangre con cada tajo.",
-    "imageUrl": "/icons/default.svg"
-  },
-  {
-    "name": "Sharpshooter’s Crossbow",
-    "nombre": "Ballesta del Tirador",
-    "description": "Launches precision bolts that rarely miss their mark.",
-    "descripcion": "Mejora precisión y daño crítico.",
-    "imageUrl": "/icons/default.svg"
-  },
-  {
-    "name": "Diamond Dagger",
-    "nombre": "Daga de Diamante",
-    "description": "A flawless blade that pierces armour with ease.",
-    "descripcion": "Una hoja perfecta que atraviesa armaduras sin esfuerzo.",
-    "imageUrl": "/icons/default.svg"
-  },
-  {
-    "name": "Emerald Dagger",
-    "nombre": "Daga de Esmeralda",
-    "description": "Inflicts verdant venom with each stab.",
-    "descripcion": "Inyecta veneno esmeralda con cada estocada.",
-    "imageUrl": "/icons/default.svg"
-  },
-  {
-    "name": "Ruby Dagger",
-    "nombre": "Daga de Rubí",
-    "description": "Sears wounds with blazing gemstone heat.",
-    "descripcion": "Cauteriza las heridas con el calor de la gema.",
-    "imageUrl": "/icons/default.svg"
-  },
-  {
-    "name": "Sapphire Dagger",
-    "nombre": "Daga de Zafiro",
-    "description": "Chills targets to the core upon impact.",
-    "descripcion": "Enfría hasta el núcleo con cada impacto.",
-    "imageUrl": "/icons/default.svg"
-  },
-  {
-    "name": "Nuclear Bomb",
-    "nombre": "Bomba Nuclear",
-    "description": "Ultimate destructive fusion of fire and poison.",
-    "descripcion": "Fusión destructiva suprema de fuego y veneno.",
-    "imageUrl": "/icons/default.svg",
-    "type": "evolution"
-  },
-  {
-    "name": "Black Hole",
-    "nombre": "Agujero Negro",
-    "description": "Absorbs everything into eternal void.",
-    "descripcion": "Absorbe todo en el vacío eterno.",
-    "imageUrl": "/icons/default.svg",
-    "type": "evolution"
-  },
-  {
-    "name": "Satan",
-    "nombre": "Satán",
-    "description": "Combination of temptation and darkness made flesh.",
-    "descripcion": "Combinación de tentación y oscuridad hecha carne.",
-    "imageUrl": "/icons/default.svg",
-    "type": "evolution"
-  },
-  {
-    "name": "Nosferatu",
-    "nombre": "Nosferatu",
-    "description": "Ultimate vampiric evolution, ruler of night.",
-    "descripcion": "Evolución vampírica definitiva, soberano de la noche.",
-    "imageUrl": "/icons/default.svg",
-    "type": "evolution"
-  },
-  {
-    "name": "Flicker",
-    "nombre": "Destello",
-    "description": "Brief spark between light and darkness.",
-    "descripcion": "Breve chispa entre la luz y la oscuridad.",
-    "type": "evolution",
-    "imageUrl": "/icons/default.svg"
-  },
-  {
-    "name": "Wraith",
-    "nombre": "Espectro",
-    "description": "Ghost + Dark. Phases through enemies, applying a shadow mark that increases damage taken by 25% for 4 seconds.",
-    "descripcion": "Fantasma + Oscura. Atraviesa a los enemigos aplicando una marca de sombra que aumenta el daño recibido en 25% durante 4 segundos.",
-    "type": "evolution",
-    "imageUrl": "/wiki/images/wraith.png"
-  },
-  {
-    "name": "Voluptuous Egg Sac",
-    "nombre": "Saco de Huevos Voluptuoso",
-    "description": "Massive nest filled with pulsating life.",
-    "descripcion": "Nido masivo lleno de vida palpitante.",
-    "type": "evolution",
-    "imageUrl": "/icons/default.svg"
   }
 ]
