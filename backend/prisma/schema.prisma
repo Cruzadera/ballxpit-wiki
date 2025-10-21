@@ -32,6 +32,7 @@ model Evolution {
   resultId    Int
   description String?
   descripcion String?
+  imageUrl    String? 
   baseBall    Ball     @relation("BaseBall", fields: [baseId], references: [id])
   resultBall  Ball     @relation("ResultBall", fields: [resultId], references: [id])
   createdAt   DateTime @default(now())
