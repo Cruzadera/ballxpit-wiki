@@ -104,6 +104,15 @@ function resolveImagePath(resultName: string): string | null {
   return null;
 }
 
+function imageFileNameFromName(name: string): string {
+  return `/wiki/images/${name
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/[^a-z0-9]/g, '')
+  }.png`;
+}
+
 // 🌱 SEED PRINCIPAL
 async function main() {
   console.log('🌱 Loading wiki seed data...');
@@ -198,9 +207,9 @@ async function main() {
         slug,
         description: evolution.description ?? null,
         descripcion: evolution.descripcion ?? null,
-        //imageUrl: imageUrl ?? null,
-        baseBall: { connect: { id: baseBall.id } },
-        resultBall: { connect: { id: resultBall.id } }
+        imageUrl: imageFileNameFromName(evolution.result),
+        baseBall: baseBall ? { connect: { id: baseBall.id } } : undefined,
+        resultBall: resultBall ? { connect: { id: resultBall.id } } : undefined
       }
     });
   }
